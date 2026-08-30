@@ -36,6 +36,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Any
 
+from tiny_langgraph.checkpoint import BaseCheckpointSaver
 from tiny_langgraph.reducers import extract_reducers
 
 __all__ = [
@@ -254,12 +255,14 @@ class StateGraph:
     def set_finish_point(self, name: str) -> None:
         self.add_edge(name, END)
 
-    def compile(self) -> CompiledStateGraph:
+    def compile(
+        self, checkpointer: BaseCheckpointSaver | None = None
+    ) -> CompiledStateGraph:
         """校验图结构并编译为可执行物。
 
-        阶段 3 起，因条件边让执行顺序依赖运行时状态，compile 不再预构建
-        执行顺序，而是把图结构原样传给 :class:`CompiledStateGraph`，
-        由 invoke 在运行时动态遍历。
+        Args:
+            checkpointer: 检查点存储（阶段 7）。传入后，invoke/stream 会
+                在每个超级步存快照，支持断点续跑和时间旅行。
         """
         if self._entry_point is None:
             raise ValueError(
@@ -271,6 +274,7 @@ class StateGraph:
             conditional_edges=self._conditional_edges,
             entry_point=self._entry_point,
             reducers=self._reducers,
+            checkpointer=checkpointer,
         )
 
 
@@ -291,12 +295,14 @@ class CompiledStateGraph:
         ],
         entry_point: str,
         reducers: dict[str, Callable[[Any, Any], Any]] | None = None,
+        checkpointer: BaseCheckpointSaver | None = None,
     ) -> None:
         self._nodes = nodes
         self._edges = edges
         self._conditional_edges = conditional_edges
         self._entry_point = entry_point
         self._reducers = reducers or {}
+        self._checkpointer = checkpointer
 
     def _merge(self, state: dict[str, Any], update: dict[str, Any]) -> None:
         """把更新片段合并进状态：有 Reducer 用 Reducer，否则覆盖。"""
@@ -308,33 +314,42 @@ class CompiledStateGraph:
 
     def stream(
         self,
-        input: dict[str, Any],
+        input: dict[str, Any] | None,
         *,
         recursion_limit: int = DEFAULT_RECURSION_LIMIT,
+        config: dict[str, Any] | None = None,
     ):
         """流式执行图，按 Pregel 超级步逐步 yield 事件。
 
         每个事件：``{"nodes": set[str], "state": dict, "step": int}``。
 
-        Pregel 超级步模型（阶段 6）：
-            1. 超级步 0：执行入口节点
-            2. 每个超级步：**同一层**的所有 pending 节点读同一个状态快照，
-               各自计算（概念上并行），然后合并所有更新
-            3. 下一超级步：收集所有后继节点
-            4. 直到没有 pending 节点
-
-        同层节点串行执行但**读同一个快照**，保证 Pregel 语义（互不影响）。
+        检查点（阶段 7）：
+            - 传了 ``config`` 含 ``thread_id`` 且编译时有 checkpointer，
+              每个超级步后存快照
+            - ``input=None`` 表示**续跑**：从该 thread 的最新检查点恢复
 
         Args:
-            input: 初始状态（会被复制）。
+            input: 初始状态；``None`` 表示从检查点续跑。
             recursion_limit: 最大超级步数。
+            config: ``{"configurable": {"thread_id": "..."}}``。
 
         Yields:
             每个超级步的执行事件 dict。
         """
-        state = dict(input)
-        pending: set[str] = {self._entry_point}
-        step = 0
+        thread_id = self._get_thread_id(config)
+
+        if input is None and self._checkpointer and thread_id:
+            cp = self._checkpointer.get(thread_id)
+            if cp is None:
+                raise ValueError(f"thread '{thread_id}' 没有检查点，无法续跑")
+            state = dict(cp["state"])
+            pending = set(cp["pending"])
+            step = cp["step"] + 1
+        else:
+            state = dict(input) if input else {}
+            pending: set[str] = {self._entry_point}
+            step = 0
+
         while pending:
             if step >= recursion_limit:
                 raise RecursionError(
@@ -347,31 +362,57 @@ class CompiledStateGraph:
                 updates.append(update)
             for update in updates:
                 self._merge(state, update)
+            if self._checkpointer and thread_id:
+                self._checkpointer.put(thread_id, step, dict(state), pending)
             yield {"nodes": pending, "state": dict(state), "step": step}
             pending = self._next_nodes(pending, state)
             step += 1
 
     def invoke(
         self,
-        input: dict[str, Any],
+        input: dict[str, Any] | None,
         *,
         recursion_limit: int = DEFAULT_RECURSION_LIMIT,
+        config: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         """从初始状态 ``input`` 开始执行图，返回最终状态。
 
-        内部委托给 :meth:`stream`，取最后一个事件的状态。
-
         Args:
-            input: 初始状态（会被复制，不修改原 dict）。
-            recursion_limit: 最大执行步数，防止死循环。默认 25。
+            input: 初始状态；``None`` 表示从检查点续跑。
+            recursion_limit: 最大执行步数。
+            config: 含 ``thread_id`` 的配置，用于检查点。
 
         Returns:
             执行完后的最终状态。
         """
-        final_state = dict(input)
-        for event in self.stream(input, recursion_limit=recursion_limit):
+        final_state = dict(input) if input else {}
+        for event in self.stream(
+            input, recursion_limit=recursion_limit, config=config
+        ):
             final_state = event["state"]
         return final_state
+
+    def get_state_history(
+        self, config: dict[str, Any]
+    ) -> list[dict[str, Any]]:
+        """列出该 thread 的所有检查点（按步数升序）。
+
+        Args:
+            config: 含 ``thread_id`` 的配置。
+
+        Returns:
+            检查点列表，每个是 ``{"thread_id", "step", "state", "pending"}``。
+        """
+        thread_id = self._get_thread_id(config)
+        if not self._checkpointer or not thread_id:
+            return []
+        return list(self._checkpointer.list(thread_id))
+
+    @staticmethod
+    def _get_thread_id(config: dict[str, Any] | None) -> str | None:
+        if not config:
+            return None
+        return config.get("configurable", {}).get("thread_id")
 
     def _next_nodes(self, pending: set[str], state: dict[str, Any]) -> set[str]:
         """收集所有 pending 节点的后继，构成下一个超级步。
