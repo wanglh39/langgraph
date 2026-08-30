@@ -1,4 +1,4 @@
-"""图执行引擎核心 - 阶段 1-2：DAG 执行器 + 共享状态。
+"""图执行引擎核心 - 阶段 1-3：DAG 执行器 + 共享状态 + 条件边。
 
 阶段 1：无状态函数链
     - 节点 = ``Callable[[Any], Any]``，接收上一步输出，返回自己的输出
@@ -6,13 +6,13 @@
 
 阶段 2：共享状态
     - 节点 = ``Callable[[State], StateUpdate]``，接收整个状态，返回更新片段
-    - 引擎负责把更新片段合并回完整状态（本阶段：覆盖合并）
+    - 引擎负责把更新片段合并回完整状态（覆盖合并）
     - :class:`StateGraph` / :class:`CompiledStateGraph`
 
-为什么分两步
-------------
-先立"图怎么存、怎么校验、怎么编译"的骨架（阶段 1），再换节点签名引入状态
-（阶段 2）。这样状态的合并逻辑不会和图的骨架逻辑纠缠在一起。
+阶段 3：条件边
+    - :meth:`StateGraph.add_conditional_edges`：执行完节点后，根据状态决定跳哪
+    - 执行模型从"预编译顺序"改为"运行时动态遍历"（while 循环）
+    - 这就是 ``if/else`` 在图里的表达
 """
 
 from __future__ import annotations
@@ -32,12 +32,13 @@ __all__ = [
 START = "__start__"
 END = "__end__"
 
+DEFAULT_RECURSION_LIMIT = 25
+
 
 class Graph:
-    """有向无环图（线性链形态）。
+    """有向无环图（线性链形态） - 阶段 1。
 
-    阶段 1 限制为**线性链**：每个节点最多一条出边。这对应"无状态函数链"，
-    节点接收上一步的输出值，返回自己的输出值。
+    无状态函数链：节点签名 ``Callable[[Any], Any]``，接收上一步输出，返回自己的输出。
 
     用法::
 
@@ -49,7 +50,7 @@ class Graph:
         graph.add_edge("b", END)
 
         app = graph.compile()
-        app.invoke(3)  # 3 -> a:4 -> b:8 -> 返回 8
+        app.invoke(3)  # 3 -> a:4 -> b:8
     """
 
     def __init__(self) -> None:
@@ -58,12 +59,6 @@ class Graph:
         self._entry_point: str | None = None
 
     def add_node(self, name: str, func: Callable[[Any], Any]) -> None:
-        """添加一个节点。
-
-        Args:
-            name: 节点名（唯一标识，不能用 ``START`` / ``END``）。
-            func: 节点函数，签名 ``func(prev_output) -> this_output``。
-        """
         if name in (START, END):
             raise ValueError(f"节点名 '{name}' 是保留字，不能用作节点名")
         if name in self._nodes:
@@ -71,14 +66,6 @@ class Graph:
         self._nodes[name] = func
 
     def add_edge(self, source: str, target: str) -> None:
-        """添加一条静态边：执行完 ``source`` 后跳到 ``target``。
-
-        特殊用法：
-            - ``add_edge(START, "a")``：设置入口节点为 ``a``
-            - ``add_edge("c", END)``：设置 ``c`` 为结束节点
-
-        阶段 1 限制：每个节点最多一条出边（线性链）。
-        """
         if source == START:
             if target not in self._nodes:
                 raise ValueError(f"目标节点 '{target}' 不存在")
@@ -95,25 +82,14 @@ class Graph:
         self._edges[source] = target
 
     def set_entry_point(self, name: str) -> None:
-        """设置入口节点（等价于 ``add_edge(START, name)``）。"""
         if name not in self._nodes:
             raise ValueError(f"节点 '{name}' 不存在")
         self._entry_point = name
 
     def set_finish_point(self, name: str) -> None:
-        """设置结束节点（等价于 ``add_edge(name, END)``）。"""
         self.add_edge(name, END)
 
     def compile(self) -> CompiledGraph:
-        """校验图结构并编译为可执行物。
-
-        compile 做两件事：
-            1. 校验：有入口、边指向的节点都存在、无环
-            2. 构建执行顺序：从入口顺着边走，收集节点序列
-
-        Returns:
-            编译后的 :class:`CompiledGraph`，可调用其 ``invoke`` 方法执行。
-        """
         if self._entry_point is None:
             raise ValueError(
                 "未设置入口节点（用 add_edge(START, ...) 或 set_entry_point(...)）"
@@ -122,7 +98,6 @@ class Graph:
         return CompiledGraph(nodes=self._nodes, order=order)
 
     def _build_execution_order(self) -> list[str]:
-        """从入口顺着边走，构建线性执行顺序；同时检测环。"""
         order: list[str] = []
         current: str | None = self._entry_point
         while current is not None and current != END:
@@ -136,10 +111,7 @@ class Graph:
 
 
 class CompiledGraph:
-    """编译后的可执行图。
-
-    由 :meth:`Graph.compile` 产生，不可变。调用 :meth:`invoke` 执行图。
-    """
+    """编译后的可执行图（无状态）。"""
 
     def __init__(
         self, nodes: dict[str, Callable[[Any], Any]], order: list[str]
@@ -148,14 +120,6 @@ class CompiledGraph:
         self._order = order
 
     def invoke(self, input: Any) -> Any:
-        """从 ``input`` 开始，按编译好的顺序依次执行节点，返回最终输出。
-
-        Args:
-            input: 传给入口节点的初始值。
-
-        Returns:
-            最后一个节点的输出（若图为空则返回 ``input`` 本身）。
-        """
         result = input
         for name in self._order:
             result = self._nodes[name](result)
@@ -163,14 +127,13 @@ class CompiledGraph:
 
 
 class StateGraph:
-    """有状态的有向图（线性链形态） - 阶段 2。
+    """有状态的有向图 - 阶段 2-3。
 
-    与 :class:`Graph` 的区别：节点不再接收"上一步的输出值"，而是接收
-    **整个状态字典**，返回一个**更新片段**（只含要改的字段）。引擎负责把
-    更新片段合并回完整状态。
+    节点签名 ``Callable[[State], StateUpdate]``：接收整个状态，返回更新片段。
+    引擎用覆盖合并：``state.update(update)``。
 
-    本阶段合并策略为**覆盖**：``state.update(update)``。
-    阶段 5 会引入 Reducer，让某些字段能追加（如消息列表）。
+    阶段 3 新增 :meth:`add_conditional_edges`：执行完节点后，根据状态路由到
+    不同节点。这让图能做 ``if/else`` 分支。
 
     用法::
 
@@ -178,24 +141,33 @@ class StateGraph:
 
         class State(TypedDict):
             count: int
-            messages: list
 
         graph = StateGraph(State)
-        graph.add_node("a", lambda s: {"count": s["count"] + 1})
-        graph.add_node("b", lambda s: {"messages": s["messages"] + ["b"]})
-        graph.add_edge(START, "a")
-        graph.add_edge("a", "b")
-        graph.add_edge("b", END)
+        graph.add_node("inc", lambda s: {"count": s["count"] + 1})
+        graph.add_node("done", lambda s: {})
+
+        def router(s) -> str:
+            return "inc" if s["count"] < 3 else "done"
+
+        graph.add_edge(START, "inc")
+        graph.add_conditional_edges("inc", router, {"inc": "inc", "done": "done"})
+        graph.add_edge("done", END)
 
         app = graph.compile()
-        app.invoke({"count": 0, "messages": []})
-        # {"count": 1, "messages": ["b"]}
+        app.invoke({"count": 0})  # count: 0->1->2->3
     """
 
     def __init__(self, state_type: type) -> None:
         self._state_type = state_type
         self._nodes: dict[str, Callable[[dict[str, Any]], dict[str, Any]]] = {}
         self._edges: dict[str, str] = {}
+        self._conditional_edges: dict[
+            str,
+            tuple[
+                Callable[[dict[str, Any]], str],
+                dict[str, str],
+            ],
+        ] = {}
         self._entry_point: str | None = None
 
     def add_node(
@@ -205,9 +177,7 @@ class StateGraph:
 
         Args:
             name: 节点名。
-            func: 节点函数，签名 ``func(state) -> update``。
-                  ``state`` 是当前完整状态（只读）；返回值是**更新片段**，
-                  只需包含要修改的字段。
+            func: ``func(state) -> update``，返回**更新片段**。
         """
         if name in (START, END):
             raise ValueError(f"节点名 '{name}' 是保留字，不能用作节点名")
@@ -216,7 +186,7 @@ class StateGraph:
         self._nodes[name] = func
 
     def add_edge(self, source: str, target: str) -> None:
-        """添加一条静态边。语义同 :meth:`Graph.add_edge`。"""
+        """添加一条静态边：执行完 ``source`` 后无条件跳 ``target``。"""
         if source == START:
             if target not in self._nodes:
                 raise ValueError(f"目标节点 '{target}' 不存在")
@@ -227,71 +197,124 @@ class StateGraph:
         if target != END and target not in self._nodes:
             raise ValueError(f"目标节点 '{target}' 不存在")
         if source in self._edges:
-            raise ValueError(
-                f"节点 '{source}' 已有出边（阶段 2 为线性链：每节点最多一条出边）"
-            )
+            raise ValueError(f"节点 '{source}' 已有静态出边")
+        if source in self._conditional_edges:
+            raise ValueError(f"节点 '{source}' 已有条件出边，不能再加静态边")
         self._edges[source] = target
 
+    def add_conditional_edges(
+        self,
+        source: str,
+        router: Callable[[dict[str, Any]], str],
+        mapping: dict[str, str],
+    ) -> None:
+        """添加条件边：执行完 ``source`` 后，调用 ``router(state)`` 决定跳哪。
+
+        Args:
+            source: 源节点名。
+            router: ``router(state) -> label``，返回路由标签。
+            mapping: ``{label: target_node}``，标签到目标节点的映射。
+                     目标可以是节点名或 :data:`END`。
+        """
+        if source not in self._nodes:
+            raise ValueError(f"源节点 '{source}' 不存在")
+        if source in self._edges:
+            raise ValueError(f"节点 '{source}' 已有静态出边，不能再加条件边")
+        if source in self._conditional_edges:
+            raise ValueError(f"节点 '{source}' 已有条件出边")
+        for label, target in mapping.items():
+            if target != END and target not in self._nodes:
+                raise ValueError(
+                    f"条件边标签 '{label}' 指向不存在的节点 '{target}'"
+                )
+        self._conditional_edges[source] = (router, mapping)
+
     def set_entry_point(self, name: str) -> None:
-        """设置入口节点。"""
         if name not in self._nodes:
             raise ValueError(f"节点 '{name}' 不存在")
         self._entry_point = name
 
     def set_finish_point(self, name: str) -> None:
-        """设置结束节点。"""
         self.add_edge(name, END)
 
     def compile(self) -> CompiledStateGraph:
-        """校验图结构并编译为可执行物。"""
+        """校验图结构并编译为可执行物。
+
+        阶段 3 起，因条件边让执行顺序依赖运行时状态，compile 不再预构建
+        执行顺序，而是把图结构原样传给 :class:`CompiledStateGraph`，
+        由 invoke 在运行时动态遍历。
+        """
         if self._entry_point is None:
             raise ValueError(
                 "未设置入口节点（用 add_edge(START, ...) 或 set_entry_point(...)）"
             )
-        order = self._build_execution_order()
-        return CompiledStateGraph(nodes=self._nodes, order=order)
-
-    def _build_execution_order(self) -> list[str]:
-        order: list[str] = []
-        current: str | None = self._entry_point
-        while current is not None and current != END:
-            if current not in self._nodes:
-                raise ValueError(f"边指向不存在的节点 '{current}'")
-            if current in order:
-                raise ValueError(f"检测到环：节点 '{current}' 被二次访问")
-            order.append(current)
-            current = self._edges.get(current)
-        return order
+        return CompiledStateGraph(
+            nodes=self._nodes,
+            edges=self._edges,
+            conditional_edges=self._conditional_edges,
+            entry_point=self._entry_point,
+        )
 
 
 class CompiledStateGraph:
     """编译后的有状态可执行图。
 
-    由 :meth:`StateGraph.compile` 产生。调用 :meth:`invoke` 执行图。
+    执行模型（阶段 3 起）：从入口节点开始，while 循环动态遍历——
+    每步执行当前节点、合并状态、决定下一个节点（静态边 or 条件边）。
     """
 
     def __init__(
         self,
         nodes: dict[str, Callable[[dict[str, Any]], dict[str, Any]]],
-        order: list[str],
+        edges: dict[str, str],
+        conditional_edges: dict[
+            str,
+            tuple[Callable[[dict[str, Any]], str], dict[str, str]],
+        ],
+        entry_point: str,
     ) -> None:
         self._nodes = nodes
-        self._order = order
+        self._edges = edges
+        self._conditional_edges = conditional_edges
+        self._entry_point = entry_point
 
-    def invoke(self, input: dict[str, Any]) -> dict[str, Any]:
+    def invoke(
+        self,
+        input: dict[str, Any],
+        *,
+        recursion_limit: int = DEFAULT_RECURSION_LIMIT,
+    ) -> dict[str, Any]:
         """从初始状态 ``input`` 开始执行图，返回最终状态。
-
-        每个节点接收当前完整状态，返回更新片段；引擎用**覆盖**合并：
-        ``state.update(update)``。
 
         Args:
             input: 初始状态（会被复制，不修改原 dict）。
+            recursion_limit: 最大执行步数，防止死循环。默认 25。
 
         Returns:
-            执行完所有节点后的最终状态。
+            执行完后的最终状态。
         """
         state = dict(input)
-        for name in self._order:
-            update = self._nodes[name](state)
+        current = self._entry_point
+        step = 0
+        while current != END:
+            if step >= recursion_limit:
+                raise RecursionError(
+                    f"执行超过 recursion_limit ({recursion_limit}) 步，疑似死循环"
+                )
+            update = self._nodes[current](state)
             state.update(update)
+            current = self._next_node(current, state)
+            step += 1
         return state
+
+    def _next_node(self, current: str, state: dict[str, Any]) -> str:
+        """决定下一个节点：条件边优先，否则静态边，否则 END。"""
+        if current in self._conditional_edges:
+            router, mapping = self._conditional_edges[current]
+            label = router(state)
+            if label not in mapping:
+                raise ValueError(
+                    f"节点 '{current}' 的路由返回了未知标签 '{label}'"
+                )
+            return mapping[label]
+        return self._edges.get(current, END)
