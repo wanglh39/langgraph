@@ -1,6 +1,6 @@
 """tiny_langgraph - 从零渐进式实现 LangGraph。
 
-当前阶段：8（Interrupt 人机协作 + 流式）
+当前阶段：9（完整 Tool-calling Agent）
 """
 
 from tiny_langgraph.checkpoint import BaseCheckpointSaver, MemorySaver, SqliteSaver
@@ -12,9 +12,10 @@ from tiny_langgraph.graph import (
     Graph,
     StateGraph,
 )
+from tiny_langgraph.prebuilt import AgentState, Tool, create_react_agent
 from tiny_langgraph.reducers import add_messages
 
-__version__ = "0.8.0"
+__version__ = "0.9.0"
 __all__ = [
     "START",
     "END",
@@ -26,5 +27,8 @@ __all__ = [
     "BaseCheckpointSaver",
     "MemorySaver",
     "SqliteSaver",
+    "Tool",
+    "AgentState",
+    "create_react_agent",
     "__version__",
 ]

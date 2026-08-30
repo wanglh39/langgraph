@@ -1,6 +1,6 @@
 # API 参考
 
-当前阶段（0）尚无可公开的 API。随阶段推进，此处自动生成。
+当前阶段（9）的公开 API。
 
 ---
 
@@ -11,3 +11,15 @@
 ## `tiny_langgraph.graph`
 
 ::: tiny_langgraph.graph
+
+## `tiny_langgraph.prebuilt`
+
+::: tiny_langgraph.prebuilt
+
+## `tiny_langgraph.checkpoint`
+
+::: tiny_langgraph.checkpoint
+
+## `tiny_langgraph.reducers`
+
+::: tiny_langgraph.reducers
