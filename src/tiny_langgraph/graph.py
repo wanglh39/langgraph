@@ -1,4 +1,4 @@
-"""图执行引擎核心 - 阶段 1-4：DAG + 状态 + 条件边 + 循环。
+"""图执行引擎核心 - 阶段 1-6：DAG + 状态 + 条件边 + 循环 + Reducer + Pregel。
 
 阶段 1：无状态函数链
     - 节点 = ``Callable[[Any], Any]``，接收上一步输出，返回自己的输出
@@ -17,7 +17,18 @@
 阶段 4：循环图 + stream
     - 回边 + 条件边构成循环（Agent 的 ReAct 循环）
     - :meth:`CompiledStateGraph.stream`：流式 yield 每步事件
-    - ``invoke`` 委托给 ``stream``，为阶段 7 检查点和阶段 8 流式铺路
+    - ``invoke`` 委托给 ``stream``
+
+阶段 5：Reducer
+    - ``Annotated[T, reducer]`` 声明字段合并策略
+    - :func:`add_messages` 智能合并消息（按 id 覆盖）
+    - 合并从 ``state.update`` 改为 :meth:`_merge`（有 Reducer 用 Reducer，否则覆盖）
+
+阶段 6：Pregel 超级步
+    - 执行模型从"单节点遍历"升级为"超级步并行层"
+    - 同一超级步的多个节点读同一状态快照、各自计算、最后合并
+    - 静态边支持 fan-out（一个节点多条出边 → 多个后继并行）
+    - 通道 = 字段 + Reducer（概念统一）
 """
 
 from __future__ import annotations
@@ -204,11 +215,9 @@ class StateGraph:
             raise ValueError(f"源节点 '{source}' 不存在")
         if target != END and target not in self._nodes:
             raise ValueError(f"目标节点 '{target}' 不存在")
-        if source in self._edges:
-            raise ValueError(f"节点 '{source}' 已有静态出边")
         if source in self._conditional_edges:
             raise ValueError(f"节点 '{source}' 已有条件出边，不能再加静态边")
-        self._edges[source] = target
+        self._edges.setdefault(source, []).append(target)
 
     def add_conditional_edges(
         self,
@@ -303,32 +312,43 @@ class CompiledStateGraph:
         *,
         recursion_limit: int = DEFAULT_RECURSION_LIMIT,
     ):
-        """流式执行图，逐步 yield 执行事件。
+        """流式执行图，按 Pregel 超级步逐步 yield 事件。
 
-        每个事件是一个 dict：``{"node": str, "state": dict, "step": int}``。
+        每个事件：``{"nodes": set[str], "state": dict, "step": int}``。
 
-        这是阶段 4 的核心：把执行循环从 ``invoke`` 提取出来，让调用方能
-        逐步观察执行过程（调试、前端流式展示、阶段 7 检查点）。
+        Pregel 超级步模型（阶段 6）：
+            1. 超级步 0：执行入口节点
+            2. 每个超级步：**同一层**的所有 pending 节点读同一个状态快照，
+               各自计算（概念上并行），然后合并所有更新
+            3. 下一超级步：收集所有后继节点
+            4. 直到没有 pending 节点
+
+        同层节点串行执行但**读同一个快照**，保证 Pregel 语义（互不影响）。
 
         Args:
             input: 初始状态（会被复制）。
-            recursion_limit: 最大执行步数。
+            recursion_limit: 最大超级步数。
 
         Yields:
-            每步的执行事件 dict。
+            每个超级步的执行事件 dict。
         """
         state = dict(input)
-        current = self._entry_point
+        pending: set[str] = {self._entry_point}
         step = 0
-        while current != END:
+        while pending:
             if step >= recursion_limit:
                 raise RecursionError(
                     f"执行超过 recursion_limit ({recursion_limit}) 步，疑似死循环"
                 )
-            update = self._nodes[current](state)
-            self._merge(state, update)
-            yield {"node": current, "state": dict(state), "step": step}
-            current = self._next_node(current, state)
+            step_state = dict(state)
+            updates: list[dict[str, Any]] = []
+            for node_name in sorted(pending):
+                update = self._nodes[node_name](step_state)
+                updates.append(update)
+            for update in updates:
+                self._merge(state, update)
+            yield {"nodes": pending, "state": dict(state), "step": step}
+            pending = self._next_nodes(pending, state)
             step += 1
 
     def invoke(
@@ -353,14 +373,27 @@ class CompiledStateGraph:
             final_state = event["state"]
         return final_state
 
-    def _next_node(self, current: str, state: dict[str, Any]) -> str:
-        """决定下一个节点：条件边优先，否则静态边，否则 END。"""
-        if current in self._conditional_edges:
-            router, mapping = self._conditional_edges[current]
-            label = router(state)
-            if label not in mapping:
-                raise ValueError(
-                    f"节点 '{current}' 的路由返回了未知标签 '{label}'"
-                )
-            return mapping[label]
-        return self._edges.get(current, END)
+    def _next_nodes(self, pending: set[str], state: dict[str, Any]) -> set[str]:
+        """收集所有 pending 节点的后继，构成下一个超级步。
+
+        - 条件边：路由选一个目标
+        - 静态边：所有出边目标都走（fan-out）
+        - END 被过滤掉
+        """
+        next_set: set[str] = set()
+        for node in pending:
+            if node in self._conditional_edges:
+                router, mapping = self._conditional_edges[node]
+                label = router(state)
+                if label not in mapping:
+                    raise ValueError(
+                        f"节点 '{node}' 的路由返回了未知标签 '{label}'"
+                    )
+                target = mapping[label]
+                if target != END:
+                    next_set.add(target)
+            else:
+                for target in self._edges.get(node, []):
+                    if target != END:
+                        next_set.add(target)
+        return next_set

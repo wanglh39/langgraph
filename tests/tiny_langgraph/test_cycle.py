@@ -34,14 +34,14 @@ class TestStream:
         app = _make_counter_graph().compile()
         events = list(app.stream({"count": 0, "log": []}))
         assert len(events) == 5
-        assert events[0] == {"node": "loop", "state": {"count": 1, "log": [1]}, "step": 0}
+        assert events[0] == {"nodes": {"loop"}, "state": {"count": 1, "log": [1]}, "step": 0}
         assert events[-1]["step"] == 4
         assert events[-1]["state"]["count"] == 5
 
     def test_stream_event_keys(self) -> None:
         app = _make_counter_graph().compile()
         event = next(app.stream({"count": 0, "log": []}))
-        assert set(event.keys()) == {"node", "state", "step"}
+        assert set(event.keys()) == {"nodes", "state", "step"}
 
     def test_invoke_matches_stream(self) -> None:
         app = _make_counter_graph().compile()
