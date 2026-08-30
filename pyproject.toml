@@ -1,0 +1,81 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tiny-langgraph"
+version = "0.0.0"
+description = "从零渐进式实现 LangGraph，理解图执行引擎的底层原理与设计原则"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "tiny-langgraph" },
+]
+keywords = ["langgraph", "agent", "graph", "llm", "tutorial", "pregel"]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+llm = [
+    "openai>=1.0.0",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.6",
+    "mypy>=1.10",
+]
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.26",
+    "pymdown-extensions>=10.7",
+]
+
+[project.urls]
+Documentation = "https://tiny-langgraph.github.io/langgraph/"
+Source = "https://github.com/tiny-langgraph/langgraph"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tiny_langgraph"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "stage1: 阶段 1 - DAG 执行器",
+    "stage2: 阶段 2 - 共享状态",
+    "stage3: 阶段 3 - 条件边",
+    "stage4: 阶段 4 - 循环图",
+    "stage5: 阶段 5 - Reducer",
+    "stage6: 阶段 6 - Pregel 超级步",
+    "stage7: 阶段 7 - Checkpoint",
+    "stage8: 阶段 8 - Interrupt + 流式",
+    "stage9: 阶段 9 - 完整 Agent",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_type = true
+warn_unused_configs = true

@@ -1,0 +1,127 @@
+site_name: 从零实现 LangGraph
+site_description: 渐进式理解图执行引擎的底层原理与设计原则
+site_url: https://tiny-langgraph.github.io/langgraph/
+repo_url: https://github.com/tiny-langgraph/langgraph
+repo_name: tiny-langgraph/langgraph
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
+  icon:
+    logo: material/graph-outline
+
+nav:
+  - 首页: index.md
+  - 快速上手: getting_started.md
+  - 核心原理:
+      - 概览: principles/index.md
+      - 图即程序: principles/graph_as_program.md
+      - 状态与 Reducer: principles/state_and_reducer.md
+      - Pregel 超级步: principles/pregel.md
+      - 检查点与时间旅行: principles/checkpoint.md
+  - 渐进式实现:
+      - 阶段 0 - 项目骨架: stages/stage_0_skeleton.md
+      - 阶段 1 - DAG 执行器: stages/stage_1_dag.md
+      - 阶段 2 - 共享状态: stages/stage_2_state.md
+      - 阶段 3 - 条件边: stages/stage_3_conditional.md
+      - 阶段 4 - 循环图: stages/stage_4_cycle.md
+      - 阶段 5 - Reducer: stages/stage_5_reducer.md
+      - 阶段 6 - Pregel 引擎: stages/stage_6_pregel.md
+      - 阶段 7 - Checkpoint: stages/stage_7_checkpoint.md
+      - 阶段 8 - 人机协作: stages/stage_8_interrupt.md
+      - 阶段 9 - 完整 Agent: stages/stage_9_agent.md
+  - API 参考: api.md
+
+plugins:
+  - search:
+      lang:
+        - ja
+        - en
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - src
+          options:
+            show_source: true
+            show_root_heading: true
+            heading_level: 2
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tiny-langgraph/langgraph
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
