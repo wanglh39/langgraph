@@ -33,7 +33,7 @@
 
 from __future__ import annotations
 
-from collections.abc import Callable
+from collections.abc import Callable, Generator
 from typing import Any
 
 from tiny_langgraph.checkpoint import BaseCheckpointSaver
@@ -180,7 +180,7 @@ class StateGraph:
         self._state_type = state_type
         self._reducers = extract_reducers(state_type)
         self._nodes: dict[str, Callable[[dict[str, Any]], dict[str, Any]]] = {}
-        self._edges: dict[str, str] = {}
+        self._edges: dict[str, list[str]] = {}
         self._conditional_edges: dict[
             str,
             tuple[
@@ -256,13 +256,18 @@ class StateGraph:
         self.add_edge(name, END)
 
     def compile(
-        self, checkpointer: BaseCheckpointSaver | None = None
+        self,
+        checkpointer: BaseCheckpointSaver | None = None,
+        *,
+        interrupt_before: list[str] | None = None,
+        interrupt_after: list[str] | None = None,
     ) -> CompiledStateGraph:
         """校验图结构并编译为可执行物。
 
         Args:
-            checkpointer: 检查点存储（阶段 7）。传入后，invoke/stream 会
-                在每个超级步存快照，支持断点续跑和时间旅行。
+            checkpointer: 检查点存储（阶段 7）。
+            interrupt_before: 在这些节点**之前**暂停（阶段 8）。需配合 checkpointer。
+            interrupt_after: 在这些节点**之后**暂停（阶段 8）。需配合 checkpointer。
         """
         if self._entry_point is None:
             raise ValueError(
@@ -275,6 +280,8 @@ class StateGraph:
             entry_point=self._entry_point,
             reducers=self._reducers,
             checkpointer=checkpointer,
+            interrupt_before=set(interrupt_before or []),
+            interrupt_after=set(interrupt_after or []),
         )
 
 
@@ -288,7 +295,7 @@ class CompiledStateGraph:
     def __init__(
         self,
         nodes: dict[str, Callable[[dict[str, Any]], dict[str, Any]]],
-        edges: dict[str, str],
+        edges: dict[str, list[str]],
         conditional_edges: dict[
             str,
             tuple[Callable[[dict[str, Any]], str], dict[str, str]],
@@ -296,6 +303,8 @@ class CompiledStateGraph:
         entry_point: str,
         reducers: dict[str, Callable[[Any, Any], Any]] | None = None,
         checkpointer: BaseCheckpointSaver | None = None,
+        interrupt_before: set[str] | None = None,
+        interrupt_after: set[str] | None = None,
     ) -> None:
         self._nodes = nodes
         self._edges = edges
@@ -303,6 +312,8 @@ class CompiledStateGraph:
         self._entry_point = entry_point
         self._reducers = reducers or {}
         self._checkpointer = checkpointer
+        self._interrupt_before = interrupt_before or set()
+        self._interrupt_after = interrupt_after or set()
 
     def _merge(self, state: dict[str, Any], update: dict[str, Any]) -> None:
         """把更新片段合并进状态：有 Reducer 用 Reducer，否则覆盖。"""
@@ -318,7 +329,7 @@ class CompiledStateGraph:
         *,
         recursion_limit: int = DEFAULT_RECURSION_LIMIT,
         config: dict[str, Any] | None = None,
-    ):
+    ) -> Generator[dict[str, Any], None, None]:
         """流式执行图，按 Pregel 超级步逐步 yield 事件。
 
         每个事件：``{"nodes": set[str], "state": dict, "step": int}``。
@@ -345,16 +356,33 @@ class CompiledStateGraph:
             state = dict(cp["state"])
             pending = set(cp["pending"])
             step = cp["step"] + 1
+            resuming = True
         else:
             state = dict(input) if input else {}
-            pending: set[str] = {self._entry_point}
+            pending = {self._entry_point}
             step = 0
+            resuming = False
 
         while pending:
             if step >= recursion_limit:
                 raise RecursionError(
                     f"执行超过 recursion_limit ({recursion_limit}) 步，疑似死循环"
                 )
+
+            if not resuming and self._interrupt_before and (
+                pending & self._interrupt_before
+            ):
+                if self._checkpointer and thread_id:
+                    self._checkpointer.put(thread_id, step, dict(state), pending)
+                yield {
+                    "nodes": pending,
+                    "state": dict(state),
+                    "step": step,
+                    "interrupt": "before",
+                }
+                return
+            resuming = False
+
             step_state = dict(state)
             updates: list[dict[str, Any]] = []
             for node_name in sorted(pending):
@@ -362,6 +390,19 @@ class CompiledStateGraph:
                 updates.append(update)
             for update in updates:
                 self._merge(state, update)
+
+            if self._interrupt_after and (pending & self._interrupt_after):
+                next_pending = self._next_nodes(pending, state)
+                if self._checkpointer and thread_id:
+                    self._checkpointer.put(thread_id, step, dict(state), next_pending)
+                yield {
+                    "nodes": pending,
+                    "state": dict(state),
+                    "step": step,
+                    "interrupt": "after",
+                }
+                return
+
             if self._checkpointer and thread_id:
                 self._checkpointer.put(thread_id, step, dict(state), pending)
             yield {"nodes": pending, "state": dict(state), "step": step}
@@ -408,11 +449,33 @@ class CompiledStateGraph:
             return []
         return list(self._checkpointer.list(thread_id))
 
+    def update_state(
+        self, config: dict[str, Any], values: dict[str, Any]
+    ) -> None:
+        """更新最新检查点的状态（人类输入，阶段 8）。
+
+        在 interrupt 暂停后，调用方用此方法写入人类决策，再 ``invoke(None, config)`` 续跑。
+
+        Args:
+            config: 含 ``thread_id`` 的配置。
+            values: 要合并进状态更新片段（用 Reducer 合并）。
+        """
+        thread_id = self._get_thread_id(config)
+        if not self._checkpointer or not thread_id:
+            raise ValueError("需要 checkpointer 和 thread_id 才能 update_state")
+        cp = self._checkpointer.get(thread_id)
+        if cp is None:
+            raise ValueError(f"thread '{thread_id}' 没有检查点")
+        new_state = dict(cp["state"])
+        self._merge(new_state, values)
+        self._checkpointer.put(thread_id, cp["step"], new_state, cp["pending"])
+
     @staticmethod
     def _get_thread_id(config: dict[str, Any] | None) -> str | None:
         if not config:
             return None
-        return config.get("configurable", {}).get("thread_id")
+        thread_id = config.get("configurable", {}).get("thread_id")
+        return thread_id if isinstance(thread_id, str) else None
 
     def _next_nodes(self, pending: set[str], state: dict[str, Any]) -> set[str]:
         """收集所有 pending 节点的后继，构成下一个超级步。
