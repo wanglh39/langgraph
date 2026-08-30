@@ -1,9 +1,22 @@
 """tiny_langgraph - 从零渐进式实现 LangGraph。
 
-当前阶段：0（项目骨架）
+当前阶段：1（最小 DAG 执行器）
+
+可用 API::
+
+    from tiny_langgraph import Graph, START, END
+
+    graph = Graph()
+    graph.add_node("a", lambda x: x + 1)
+    graph.add_node("b", lambda x: x * 2)
+    graph.add_edge(START, "a")
+    graph.add_edge("a", "b")
+    graph.add_edge("b", END)
+
+    app = graph.compile()
+    app.invoke(3)  # 8
 
 后续阶段将逐步引入：
-    - 阶段 1：DAG 执行器（Node + 拓扑排序）
     - 阶段 2：共享状态 StateGraph
     - 阶段 3：条件边与路由
     - 阶段 4：循环图
@@ -14,5 +27,7 @@
     - 阶段 9：完整 Tool-calling Agent
 """
 
-__version__ = "0.0.0"
-__all__ = ["__version__"]
+from tiny_langgraph.graph import END, START, CompiledGraph, Graph
+
+__version__ = "0.1.0"
+__all__ = ["START", "END", "Graph", "CompiledGraph", "__version__"]
