@@ -1,8 +1,8 @@
 site_name: 从零实现 LangGraph
 site_description: 渐进式理解图执行引擎的底层原理与设计原则
-site_url: https://tiny-langgraph.github.io/langgraph/
-repo_url: https://github.com/tiny-langgraph/langgraph
-repo_name: tiny-langgraph/langgraph
+site_url: https://wanglh39.github.io/langgraph/
+repo_url: https://github.com/wanglh39/langgraph
+repo_name: wanglh39/langgraph
 
 docs_dir: docs
 site_dir: site
@@ -121,7 +121,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/tiny-langgraph/langgraph
+      link: https://github.com/wanglh39/langgraph
 
 extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js

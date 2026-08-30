@@ -45,8 +45,8 @@ docs = [
 ]
 
 [project.urls]
-Documentation = "https://tiny-langgraph.github.io/langgraph/"
-Source = "https://github.com/tiny-langgraph/langgraph"
+Documentation = "https://wanglh39.github.io/langgraph/"
+Source = "https://github.com/wanglh39/langgraph"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/tiny_langgraph"]
