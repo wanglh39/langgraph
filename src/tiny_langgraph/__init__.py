@@ -1,33 +1,38 @@
 """tiny_langgraph - 从零渐进式实现 LangGraph。
 
-当前阶段：1（最小 DAG 执行器）
+当前阶段：2（共享状态 StateGraph）
 
 可用 API::
 
-    from tiny_langgraph import Graph, START, END
+    from typing import TypedDict
+    from tiny_langgraph import StateGraph, START, END
 
-    graph = Graph()
-    graph.add_node("a", lambda x: x + 1)
-    graph.add_node("b", lambda x: x * 2)
+    class State(TypedDict):
+        count: int
+
+    graph = StateGraph(State)
+    graph.add_node("a", lambda s: {"count": s["count"] + 1})
     graph.add_edge(START, "a")
-    graph.add_edge("a", "b")
-    graph.add_edge("b", END)
-
-    app = graph.compile()
-    app.invoke(3)  # 8
-
-后续阶段将逐步引入：
-    - 阶段 2：共享状态 StateGraph
-    - 阶段 3：条件边与路由
-    - 阶段 4：循环图
-    - 阶段 5：Reducer 机制
-    - 阶段 6：Pregel 超级步引擎
-    - 阶段 7：Checkpoint 持久化
-    - 阶段 8：Interrupt + 流式
-    - 阶段 9：完整 Tool-calling Agent
+    graph.add_edge("a", END)
+    graph.compile().invoke({"count": 0})  # {"count": 1}
 """
 
-from tiny_langgraph.graph import END, START, CompiledGraph, Graph
+from tiny_langgraph.graph import (
+    END,
+    START,
+    CompiledGraph,
+    CompiledStateGraph,
+    Graph,
+    StateGraph,
+)
 
-__version__ = "0.1.0"
-__all__ = ["START", "END", "Graph", "CompiledGraph", "__version__"]
+__version__ = "0.2.0"
+__all__ = [
+    "START",
+    "END",
+    "Graph",
+    "CompiledGraph",
+    "StateGraph",
+    "CompiledStateGraph",
+    "__version__",
+]
