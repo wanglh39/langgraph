@@ -25,6 +25,8 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Any
 
+from tiny_langgraph.reducers import extract_reducers
+
 __all__ = [
     "START",
     "END",
@@ -164,6 +166,7 @@ class StateGraph:
 
     def __init__(self, state_type: type) -> None:
         self._state_type = state_type
+        self._reducers = extract_reducers(state_type)
         self._nodes: dict[str, Callable[[dict[str, Any]], dict[str, Any]]] = {}
         self._edges: dict[str, str] = {}
         self._conditional_edges: dict[
@@ -258,6 +261,7 @@ class StateGraph:
             edges=self._edges,
             conditional_edges=self._conditional_edges,
             entry_point=self._entry_point,
+            reducers=self._reducers,
         )
 
 
@@ -277,11 +281,21 @@ class CompiledStateGraph:
             tuple[Callable[[dict[str, Any]], str], dict[str, str]],
         ],
         entry_point: str,
+        reducers: dict[str, Callable[[Any, Any], Any]] | None = None,
     ) -> None:
         self._nodes = nodes
         self._edges = edges
         self._conditional_edges = conditional_edges
         self._entry_point = entry_point
+        self._reducers = reducers or {}
+
+    def _merge(self, state: dict[str, Any], update: dict[str, Any]) -> None:
+        """把更新片段合并进状态：有 Reducer 用 Reducer，否则覆盖。"""
+        for key, value in update.items():
+            if key in self._reducers:
+                state[key] = self._reducers[key](state.get(key), value)
+            else:
+                state[key] = value
 
     def stream(
         self,
@@ -312,7 +326,7 @@ class CompiledStateGraph:
                     f"执行超过 recursion_limit ({recursion_limit}) 步，疑似死循环"
                 )
             update = self._nodes[current](state)
-            state.update(update)
+            self._merge(state, update)
             yield {"node": current, "state": dict(state), "step": step}
             current = self._next_node(current, state)
             step += 1
