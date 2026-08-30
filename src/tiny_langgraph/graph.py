@@ -1,4 +1,4 @@
-"""图执行引擎核心 - 阶段 1-3：DAG 执行器 + 共享状态 + 条件边。
+"""图执行引擎核心 - 阶段 1-4：DAG + 状态 + 条件边 + 循环。
 
 阶段 1：无状态函数链
     - 节点 = ``Callable[[Any], Any]``，接收上一步输出，返回自己的输出
@@ -13,6 +13,11 @@
     - :meth:`StateGraph.add_conditional_edges`：执行完节点后，根据状态决定跳哪
     - 执行模型从"预编译顺序"改为"运行时动态遍历"（while 循环）
     - 这就是 ``if/else`` 在图里的表达
+
+阶段 4：循环图 + stream
+    - 回边 + 条件边构成循环（Agent 的 ReAct 循环）
+    - :meth:`CompiledStateGraph.stream`：流式 yield 每步事件
+    - ``invoke`` 委托给 ``stream``，为阶段 7 检查点和阶段 8 流式铺路
 """
 
 from __future__ import annotations
@@ -278,20 +283,25 @@ class CompiledStateGraph:
         self._conditional_edges = conditional_edges
         self._entry_point = entry_point
 
-    def invoke(
+    def stream(
         self,
         input: dict[str, Any],
         *,
         recursion_limit: int = DEFAULT_RECURSION_LIMIT,
-    ) -> dict[str, Any]:
-        """从初始状态 ``input`` 开始执行图，返回最终状态。
+    ):
+        """流式执行图，逐步 yield 执行事件。
+
+        每个事件是一个 dict：``{"node": str, "state": dict, "step": int}``。
+
+        这是阶段 4 的核心：把执行循环从 ``invoke`` 提取出来，让调用方能
+        逐步观察执行过程（调试、前端流式展示、阶段 7 检查点）。
 
         Args:
-            input: 初始状态（会被复制，不修改原 dict）。
-            recursion_limit: 最大执行步数，防止死循环。默认 25。
+            input: 初始状态（会被复制）。
+            recursion_limit: 最大执行步数。
 
-        Returns:
-            执行完后的最终状态。
+        Yields:
+            每步的执行事件 dict。
         """
         state = dict(input)
         current = self._entry_point
@@ -303,9 +313,31 @@ class CompiledStateGraph:
                 )
             update = self._nodes[current](state)
             state.update(update)
+            yield {"node": current, "state": dict(state), "step": step}
             current = self._next_node(current, state)
             step += 1
-        return state
+
+    def invoke(
+        self,
+        input: dict[str, Any],
+        *,
+        recursion_limit: int = DEFAULT_RECURSION_LIMIT,
+    ) -> dict[str, Any]:
+        """从初始状态 ``input`` 开始执行图，返回最终状态。
+
+        内部委托给 :meth:`stream`，取最后一个事件的状态。
+
+        Args:
+            input: 初始状态（会被复制，不修改原 dict）。
+            recursion_limit: 最大执行步数，防止死循环。默认 25。
+
+        Returns:
+            执行完后的最终状态。
+        """
+        final_state = dict(input)
+        for event in self.stream(input, recursion_limit=recursion_limit):
+            final_state = event["state"]
+        return final_state
 
     def _next_node(self, current: str, state: dict[str, Any]) -> str:
         """决定下一个节点：条件边优先，否则静态边，否则 END。"""
