@@ -2,6 +2,18 @@
 
 > 渐进式理解图执行引擎的底层原理与设计原则
 
+<p align="center">
+  <a href="https://wanglh39.github.io/langgraph/"><strong>📖 在线文档</strong></a>
+  &nbsp;|&nbsp;
+  <a href="https://github.com/wanglh39/langgraph">GitHub 仓库</a>
+  &nbsp;|&nbsp;
+  <a href="https://wanglh39.github.io/langgraph/principles/">核心原理</a>
+  &nbsp;|&nbsp;
+  <a href="https://wanglh39.github.io/langgraph/stages/stage_9_agent/">阶段 9：完整 Agent</a>
+</p>
+
+---
+
 本项目通过 **10 个阶段**，从零手写一个 LangGraph，把"写 Agent"这件事从一坨 prompt 拼接，变成"画一张状态机"，再用一个通用的 Pregel 引擎去跑这张图。
 
 ## 为什么做这个
