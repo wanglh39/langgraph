@@ -629,7 +629,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        从"一条线执行"到"一层一层执行"
+        概述
       
     </span>
   </a>
@@ -637,10 +637,930 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pregel-dfs" class="md-nav__link">
+  <a href="#1-google-pregel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么是 Pregel 而不是 DFS
+        1. Google Pregel 论文背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Google Pregel 论文背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 论文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Pregel 的解法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Pregel 的遗产
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-bspbulk-synchronous-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. BSP（Bulk Synchronous Parallel）模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. BSP（Bulk Synchronous Parallel）模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-bsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 BSP 是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-bsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 BSP 的特点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-bsp-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 BSP vs 其他并行模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-compute-exchange-messages-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 超级步：compute → exchange messages → sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 超级步：compute → exchange messages → sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Pregel 超级步的三步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-pagerank" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 例子：PageRank
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 超级步的"同步"意味着什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-langgraph-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. LangGraph 如何借鉴 Pregel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. LangGraph 如何借鉴 Pregel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 从图计算到图执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 借鉴了什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 没借鉴什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 超级步在 LangGraph 中的具体含义
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 超级步在 LangGraph 中的具体含义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-pending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 超级步 = 一个 pending 集合的执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-pending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 pending 是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-next_nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 next_nodes 怎么算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 超级步的执行步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 超级步的终止
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fan-out-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. fan-out 和 fan-in
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. fan-out 和 fan-in">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 fan-out：一个节点多条出边
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 fan-out 的例子：并行工具调用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 fan-in：多个节点到一个节点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-fan-out-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 fan-out + fan-in 的完整流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 fan-in 的合并问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 同层并行 vs 顺序执行
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 同层并行 vs 顺序执行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 概念上的并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 我们的实现：顺序执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 为什么顺序执行也正确
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 为什么不用真并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 真 LangGraph 的并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 什么时候真并行重要
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-reducer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 通道 = 字段 + Reducer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 通道 = 字段 + Reducer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Pregel 的通道
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 LangGraph 的通道
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 通道的读写
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 通道的合并
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 通道 vs 字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 检查点对齐：每个超级步后存快照
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 检查点对齐：每个超级步后存快照">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 对齐到超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 为什么对齐到超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 检查点的内容
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 续跑时恢复
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 时间旅行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 为什么不是真并行：教学简化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 为什么不是真并行：教学简化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 真 Pregel 的并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 真 LangGraph 的并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 我们的实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 为什么简化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 怎么加真并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-langgraph-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 对照真 LangGraph 的 Pregel 实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 对照真 LangGraph 的 Pregel 实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 相同点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 不同点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-langgraph-pregelscheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 真 LangGraph 的 PregelScheduler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-pregel-agent-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 从 Pregel 到 Agent：超级步如何驱动 ReAct 循环
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 从 Pregel 到 Agent：超级步如何驱动 ReAct 循环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 ReAct 图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 超级步视角
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 ReAct 是线性的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 什么时候用上并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.5 超级步如何驱动循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. 实际代码示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. 实际代码示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 最简单的超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 fan-out 超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 循环超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 带检查点的超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 续跑
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. 超级步的常见误解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. 超级步的常见误解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 误解 1：超级步 = 一个节点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-2-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 误解 2：超级步 = 一次 LLM 调用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 误解 3：超级步内节点能互相看到结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 误解 4：超级步越多越慢
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145-5pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 误解 5：Pregel 要分布式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. 在哪个阶段实现
       
     </span>
   </a>
@@ -648,10 +1568,337 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#channel" class="md-nav__link">
+  <a href="#16-pregel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        通道（Channel）
+        16. Pregel 在其他系统的应用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Pregel 在其他系统的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-apache-giraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 Apache Giraph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-spark-graphx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 Spark GraphX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-flink-gelly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3 Flink Gelly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#164-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4 LangGraph 的独特之处
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. 超级步的数学视角
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. 超级步的数学视角">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.1 超级步作为不动点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.2 超级步作为代数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#173" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3 超级步作为偏序
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. 超级步的工程考量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. 超级步的工程考量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1 超级步粒度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.2 超级步开销
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#183" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.3 超级步和流式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#184" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4 超级步和错误处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. 超级步的边界情况
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. 超级步的边界情况">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#191" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1 空图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#192" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2 单节点图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#193" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.3 死循环图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#194-resuming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.4 中断后续跑的 resuming 标志
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#195-fan-out-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.5 fan-out 后的 fan-in 合并
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#196" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.6 条件边返回未定义标签
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. 超级步的调试技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20. 超级步的调试技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#201-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.1 用 stream 看每步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#202-get_state_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.2 用 get_state_history 看历史
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#203-recursion_limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.3 用 recursion_limit 防死循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#204" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.4 检查图结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. 常见问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. 小结
       
     </span>
   </a>
@@ -662,18 +1909,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        简化执行循环
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        在哪个阶段实现
+        相关链接
       
     </span>
   </a>
@@ -1144,7 +2380,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        从"一条线执行"到"一层一层执行"
+        概述
       
     </span>
   </a>
@@ -1152,10 +2388,930 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pregel-dfs" class="md-nav__link">
+  <a href="#1-google-pregel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么是 Pregel 而不是 DFS
+        1. Google Pregel 论文背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Google Pregel 论文背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 论文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Pregel 的解法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Pregel 的遗产
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-bspbulk-synchronous-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. BSP（Bulk Synchronous Parallel）模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. BSP（Bulk Synchronous Parallel）模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-bsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 BSP 是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-bsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 BSP 的特点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-bsp-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 BSP vs 其他并行模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-compute-exchange-messages-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 超级步：compute → exchange messages → sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 超级步：compute → exchange messages → sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Pregel 超级步的三步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-pagerank" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 例子：PageRank
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 超级步的"同步"意味着什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-langgraph-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. LangGraph 如何借鉴 Pregel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. LangGraph 如何借鉴 Pregel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 从图计算到图执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 借鉴了什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 没借鉴什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 超级步在 LangGraph 中的具体含义
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 超级步在 LangGraph 中的具体含义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-pending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 超级步 = 一个 pending 集合的执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-pending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 pending 是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-next_nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 next_nodes 怎么算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 超级步的执行步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 超级步的终止
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fan-out-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. fan-out 和 fan-in
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. fan-out 和 fan-in">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 fan-out：一个节点多条出边
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 fan-out 的例子：并行工具调用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 fan-in：多个节点到一个节点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-fan-out-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 fan-out + fan-in 的完整流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 fan-in 的合并问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 同层并行 vs 顺序执行
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 同层并行 vs 顺序执行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 概念上的并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 我们的实现：顺序执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 为什么顺序执行也正确
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 为什么不用真并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 真 LangGraph 的并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 什么时候真并行重要
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-reducer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 通道 = 字段 + Reducer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 通道 = 字段 + Reducer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Pregel 的通道
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 LangGraph 的通道
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 通道的读写
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 通道的合并
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 通道 vs 字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 检查点对齐：每个超级步后存快照
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 检查点对齐：每个超级步后存快照">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 对齐到超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 为什么对齐到超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 检查点的内容
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 续跑时恢复
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 时间旅行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 为什么不是真并行：教学简化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 为什么不是真并行：教学简化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 真 Pregel 的并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 真 LangGraph 的并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 我们的实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 为什么简化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 怎么加真并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-langgraph-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 对照真 LangGraph 的 Pregel 实现
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 对照真 LangGraph 的 Pregel 实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 相同点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 不同点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-langgraph-pregelscheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 真 LangGraph 的 PregelScheduler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-pregel-agent-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 从 Pregel 到 Agent：超级步如何驱动 ReAct 循环
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 从 Pregel 到 Agent：超级步如何驱动 ReAct 循环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 ReAct 图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 超级步视角
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 ReAct 是线性的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 什么时候用上并行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.5 超级步如何驱动循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. 实际代码示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. 实际代码示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 最简单的超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 fan-out 超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 循环超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 带检查点的超级步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 续跑
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. 超级步的常见误解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. 超级步的常见误解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 误解 1：超级步 = 一个节点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-2-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 误解 2：超级步 = 一次 LLM 调用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 误解 3：超级步内节点能互相看到结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 误解 4：超级步越多越慢
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145-5pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 误解 5：Pregel 要分布式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. 在哪个阶段实现
       
     </span>
   </a>
@@ -1163,10 +3319,337 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#channel" class="md-nav__link">
+  <a href="#16-pregel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        通道（Channel）
+        16. Pregel 在其他系统的应用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Pregel 在其他系统的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-apache-giraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 Apache Giraph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-spark-graphx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 Spark GraphX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-flink-gelly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3 Flink Gelly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#164-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4 LangGraph 的独特之处
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. 超级步的数学视角
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. 超级步的数学视角">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.1 超级步作为不动点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.2 超级步作为代数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#173" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3 超级步作为偏序
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. 超级步的工程考量
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. 超级步的工程考量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1 超级步粒度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.2 超级步开销
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#183" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.3 超级步和流式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#184" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4 超级步和错误处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. 超级步的边界情况
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. 超级步的边界情况">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#191" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1 空图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#192" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2 单节点图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#193" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.3 死循环图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#194-resuming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.4 中断后续跑的 resuming 标志
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#195-fan-out-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.5 fan-out 后的 fan-in 合并
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#196" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.6 条件边返回未定义标签
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. 超级步的调试技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20. 超级步的调试技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#201-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.1 用 stream 看每步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#202-get_state_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.2 用 get_state_history 看历史
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#203-recursion_limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.3 用 recursion_limit 防死循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#204" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.4 检查图结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. 常见问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. 小结
       
     </span>
   </a>
@@ -1177,18 +3660,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        简化执行循环
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        在哪个阶段实现
+        相关链接
       
     </span>
   </a>
@@ -1217,102 +3689,929 @@
 
 <h1 id="pregel">Pregel 超级步<a class="headerlink" href="#pregel" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>在阶段 6 亲手实现。</strong></p>
+<p><strong>图执行的并行模型。在阶段 6 亲手实现。</strong></p>
 </blockquote>
-<h2 id="_1">从"一条线执行"到"一层一层执行"<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>朴素跑图：从入口节点开始，执行完跳下一个，DFS 一路走到底。</p>
-<p>这有个问题：<strong>同层的多个节点没法并行</strong>，而且**检查点没法对齐**。</p>
-<p>LangGraph 借鉴 Google <a href="https://research.google/pubs/pregel-a-system-for-large-scale-graph-processing/">Pregel</a> 的**超级步（superstep）**模型：</p>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本篇讲 tiny-langgraph 的**执行模型**——图是怎么一步步跑的，为什么是这样跑的。</p>
+<p>执行模型听起来抽象，但它决定了图能做什么、不能做什么：</p>
+<ul>
+<li>能不能并行？（Pregel 能，DFS 不能）</li>
+<li>检查点对齐到哪？（Pregel 对齐到超级步，DFS 难对齐）</li>
+<li>循环怎么处理？（Pregel 天然循环，DFS 要特殊处理）</li>
+<li>中断后续跑怎么恢复？（Pregel 快照对齐，DFS 难）</li>
+</ul>
+<p>tiny-langgraph 的执行模型叫 <strong>Pregel 超级步</strong>，借鉴自 Google 2010 年的 Pregel 论文。
+Pregel 是为大规模图计算设计的，但它的核心思想——<strong>批量同步并行（BSP）</strong>——恰好适合
+图执行引擎：同层节点并行、超级步间同步、检查点对齐。</p>
+<p>本篇会讲清楚：</p>
+<ol>
+<li><strong>Pregel 论文背景</strong>——Google 为什么造 Pregel，解决什么问题。</li>
+<li><strong>BSP 模型</strong>——批量同步并行，Pregel 的理论基础。</li>
+<li><strong>超级步</strong>——compute → exchange messages → sync，三步循环。</li>
+<li><strong>LangGraph 如何借鉴 Pregel</strong>——从图计算到图执行，概念怎么映射。</li>
+<li><strong>超级步在 LangGraph 中的具体含义</strong>——pending 集合、状态合并、检查点。</li>
+<li><strong>fan-out 和 fan-in</strong>——一个节点多条出边 → 并行；多个节点到一个节点 → 合并。</li>
+<li><strong>同层并行 vs 顺序执行</strong>——我们为什么用顺序模拟并行。</li>
+<li><strong>通道 = 字段 + Reducer</strong>——Pregel 通道在 LangGraph 的落地。</li>
+<li><strong>检查点对齐</strong>——每个超级步后存快照，为什么这样对齐。</li>
+<li><strong>从 Pregel 到 Agent</strong>——超级步如何驱动 ReAct 循环。</li>
+</ol>
+<p>读完本篇你会理解：<strong>Pregel 不是高深的理论，就是一个 while 循环 + 状态合并 + 检查点。
+但它背后的 BSP 模型让并行、循环、持久化、中断统一处理——这是图引擎的核心。</strong></p>
+<div class="admonition info">
+<p class="admonition-title">本篇定位</p>
+<p>本篇是执行模型的原理文档。具体实现看阶段 6 文档。本篇要回答：
+<strong>为什么用 Pregel 超级步而不是 DFS？超级步到底意味着什么？</strong></p>
+</div>
+<hr />
+<h2 id="1-google-pregel">1. Google Pregel 论文背景<a class="headerlink" href="#1-google-pregel" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 论文<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p><strong>Pregel: A System for Large-Scale Graph Processing</strong>，Google 2010 年发表。
+作者 Grzegorz Malewicz 等。论文讲 Google 内部用于大规模图计算的系统 Pregel。</p>
+<h3 id="12">1.2 解决什么问题<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>很多图算法（PageRank、最短路径、连通分量）要在**数十亿节点的图**上跑。单机存不下，
+要分布式。但分布式图计算难：</p>
+<ul>
+<li><strong>图天然不均匀</strong>：有的节点邻居多（热门），有的少。按节点分片，负载不均。</li>
+<li><strong>消息传递复杂</strong>：节点要给邻居发消息，邻居可能在别的机器。跨机器通信开销大。</li>
+<li><strong>同步难</strong>：什么时候所有节点都算完了？怎么对齐？</li>
+</ul>
+<p>传统 MapReduce 不适合图计算——每轮迭代是一个 MapReduce job，开销大，且不天然表达
+"节点给邻居发消息"。</p>
+<h3 id="13-pregel">1.3 Pregel 的解法<a class="headerlink" href="#13-pregel" title="Permanent link">&para;</a></h3>
+<p>Pregel 用 <strong>BSP（Bulk Synchronous Parallel）</strong> 模型：</p>
+<ol>
+<li>把图分片到多台机器。</li>
+<li>**超级步**循环：</li>
+<li>每个活跃节点执行 <code>compute()</code>，处理收到的消息，给邻居发新消息。</li>
+<li>所有节点 <code>compute()</code> 完成后，<strong>同步</strong>（barrier）。</li>
+<li>发出的消息在同步后**送达**。</li>
+<li>没有活跃节点了，结束。</li>
+</ol>
+<p><strong>关键</strong>：超级步内并行（所有节点同时 compute），超级步间同步（barrier）。这避免了
+复杂的锁和一致性——每个超级步是一个"干净的"计算单元。</p>
+<h3 id="14-pregel">1.4 Pregel 的遗产<a class="headerlink" href="#14-pregel" title="Permanent link">&para;</a></h3>
+<p>Pregel 的 BSP 模型影响了后来很多系统：Apache Giraph、GraphX、Flink Gelly。也影响了
+<strong>LangGraph</strong>——虽然 LangGraph 不是分布式图计算，但它借用了 Pregel 的"超级步"概念
+作为图执行引擎的执行模型。</p>
+<hr />
+<h2 id="2-bspbulk-synchronous-parallel">2. BSP（Bulk Synchronous Parallel）模型<a class="headerlink" href="#2-bspbulk-synchronous-parallel" title="Permanent link">&para;</a></h2>
+<h3 id="21-bsp">2.1 BSP 是什么<a class="headerlink" href="#21-bsp" title="Permanent link">&para;</a></h3>
+<p><strong>BSP = 批量同步并行</strong>，是 Leslie Valiant 1990 年提出的并行计算模型。</p>
+<p>BSP 程序的结构：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>超级步 0: 并行 compute → 同步
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>超级步 1: 并行 compute → 同步
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>超级步 2: 并行 compute → 同步
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>...
+</span></code></pre></div>
+<p>每个超级步内：</p>
+<ol>
+<li><strong>并行 compute</strong>：所有处理器并行执行自己的计算，互不通信。</li>
+<li><strong>通信</strong>：compute 结束后，处理器间交换消息（通过通道）。</li>
+<li><strong>同步</strong>：所有处理器到达 barrier，消息送达，进入下一超级步。</li>
+</ol>
+<h3 id="22-bsp">2.2 BSP 的特点<a class="headerlink" href="#22-bsp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>特点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>超级步内并行</td>
+<td>处理器同时算，互不干扰</td>
+</tr>
+<tr>
+<td>超级步间同步</td>
+<td>barrier 对齐，消息送达</td>
+</tr>
+<tr>
+<td>通信延迟隐藏</td>
+<td>compute 时不算通信，同步时统一处理</td>
+</tr>
+<tr>
+<td>确定性</td>
+<td>同样的输入，超级步划分一样</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-bsp-vs">2.3 BSP vs 其他并行模型<a class="headerlink" href="#23-bsp-vs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>同步方式</th>
+<th>通信</th>
+<th>适合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BSP</td>
+<td>超级步 barrier</td>
+<td>批量</td>
+<td>图计算、图执行</td>
+</tr>
+<tr>
+<td>共享内存</td>
+<td>锁/原子</td>
+<td>直接</td>
+<td>多线程</td>
+</tr>
+<tr>
+<td>消息传递 (MPI)</td>
+<td>点对点</td>
+<td>显式</td>
+<td>科学计算</td>
+</tr>
+<tr>
+<td>Actor</td>
+<td>异步</td>
+<td>消息</td>
+<td>事件驱动</td>
+</tr>
+<tr>
+<td>数据流</td>
+<td>静态</td>
+<td>边</td>
+<td>计算图 (TensorFlow)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BSP 的优势</strong>：简单（不用锁）、确定性（超级步划分固定）、易检查点（barrier 处存）。
+<strong>BSP 的劣势</strong>：同步开销（barrier 等最慢的）、不灵活（不能细粒度通信）。</p>
+<p>对图执行引擎，BSP 的简单和确定性更重要——图执行要可检查点、可中断、可续跑，BSP 天然支持。</p>
+<hr />
+<h2 id="3-compute-exchange-messages-sync">3. 超级步：compute → exchange messages → sync<a class="headerlink" href="#3-compute-exchange-messages-sync" title="Permanent link">&para;</a></h2>
+<h3 id="31-pregel">3.1 Pregel 超级步的三步<a class="headerlink" href="#31-pregel" title="Permanent link">&para;</a></h3>
+<p>每个超级步：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1. compute: 每个活跃节点执行 compute()，处理上一轮收到的消息，决定给谁发什么
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>2. exchange: 节点发出的消息路由到目标节点
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>3. sync: 所有节点到达 barrier，消息送达，进入下一超级步
+</span></code></pre></div>
+<h3 id="32-pagerank">3.2 例子：PageRank<a class="headerlink" href="#32-pagerank" title="Permanent link">&para;</a></h3>
+<p>PageRank 算法的 Pregel 版：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">compute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="c1"># 处理收到的消息（邻居传来的 rank）</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">incoming</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mf">0.15</span> <span class="o">/</span> <span class="n">N</span> <span class="o">+</span> <span class="mf">0.85</span> <span class="o">*</span> <span class="n">incoming</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="c1"># 给邻居发消息</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">outgoing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="p">:</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">send</span><span class="p">(</span><span class="n">neighbor</span><span class="p">,</span> <span class="n">outgoing</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="c1"># 下一轮还活跃（如果还没收敛）</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">converged</span><span class="p">:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="n">vote_to_halt</span><span class="p">()</span>  <span class="c1"># 没有消息发就停</span>
+</span></code></pre></div>
+<p>超级步 0：所有节点初始化 rank，发给邻居。
+超级步 1：收到邻居的 rank，算新 rank，发给邻居。
+...直到收敛。</p>
+<h3 id="33">3.3 超级步的"同步"意味着什么<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>同步 = <strong>所有节点的 compute 都完成了，消息都送达了，才能进下一轮</strong>。</p>
+<ul>
+<li>如果节点 A 快、节点 B 慢，A 要等 B。</li>
+<li>A 在超级步 N 发的消息，B 在超级步 N+1 才收到（不是 N 内实时）。</li>
+</ul>
+<p>这看起来低效（要等最慢的），但**保证确定性**——不管快慢，超级步划分一样，结果一样。
+对检查点和调试至关重要。</p>
+<hr />
+<h2 id="4-langgraph-pregel">4. LangGraph 如何借鉴 Pregel<a class="headerlink" href="#4-langgraph-pregel" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 从图计算到图执行<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>Pregel 是**图计算**系统——在一张大图上跑算法（PageRank 等），图的节点是数据。
+LangGraph 是**图执行**系统——用图描述程序的控制流，图的节点是函数。</p>
+<p>两者都是"图"，但含义不同：</p>
+<table>
+<thead>
+<tr>
+<th>方面</th>
+<th>Pregel 图计算</th>
+<th>LangGraph 图执行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图的节点</td>
+<td>数据节点（如网页）</td>
+<td>函数节点（如 agent_node）</td>
+</tr>
+<tr>
+<td>图的边</td>
+<td>数据关系（如链接）</td>
+<td>控制流（如 agent → tools）</td>
+</tr>
+<tr>
+<td>跑什么</td>
+<td>在每个数据节点上跑 compute</td>
+<td>在函数节点上执行函数</td>
+</tr>
+<tr>
+<td>超级步</td>
+<td>所有活跃数据节点并行</td>
+<td>所有 pending 函数节点并行</td>
+</tr>
+<tr>
+<td>终止</td>
+<td>所有节点 halt</td>
+<td>pending 为空</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42">4.2 借鉴了什么<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>LangGraph 借鉴 Pregel 的**执行模型**，不是图计算：</p>
+<ol>
+<li><strong>超级步</strong>：执行分轮次，每轮一个超级步。</li>
+<li><strong>并行</strong>：同一超级步的多个节点并行（概念上）。</li>
+<li><strong>同步</strong>：超级步间同步，状态合并后进下一轮。</li>
+<li><strong>通道</strong>：节点间通过通道通信，通道有合并策略（Reducer）。</li>
+<li><strong>检查点对齐</strong>：每个超级步后存快照。</li>
+</ol>
+<h3 id="43">4.3 没借鉴什么<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>LangGraph **没**借鉴 Pregel 的：</p>
+<ol>
+<li><strong>分布式</strong>：Pregel 是多机分布式，LangGraph 是单机（教学）。</li>
+<li><strong>图数据</strong>：Pregel 在图数据上跑算法，LangGraph 用图描述程序。</li>
+<li><strong>vote_to_halt</strong>：Pregel 节点主动 halt，LangGraph 用 pending 为空判断结束。</li>
+<li><strong>消息传递</strong>：Pregel 节点给特定邻居发消息，LangGraph 用共享状态 + Reducer。</li>
+</ol>
+<p><strong>核心借鉴</strong>：超级步 + BSP 同步 + 通道。这三个让 LangGraph 的执行模型有 Pregel 的
+好处（并行、确定性、检查点对齐），不需要 Pregel 的复杂（分布式、消息路由）。</p>
+<hr />
+<h2 id="5-langgraph">5. 超级步在 LangGraph 中的具体含义<a class="headerlink" href="#5-langgraph" title="Permanent link">&para;</a></h2>
+<h3 id="51-pending">5.1 超级步 = 一个 pending 集合的执行<a class="headerlink" href="#51-pending" title="Permanent link">&para;</a></h3>
+<p>在 LangGraph 里，<strong>超级步 = 执行 pending 集合里的所有节点</strong>。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pending</span> <span class="o">=</span> <span class="p">{</span><span class="n">entry_point</span><span class="p">}</span>      <span class="c1"># 超级步 0 的 pending</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">while</span> <span class="n">pending</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="c1"># 执行 pending 里的所有节点（这一轮就是超级步 N）</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">updates</span> <span class="o">=</span> <span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">](</span><span class="n">state</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">pending</span><span class="p">]</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="c1"># 合并</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">updates</span><span class="p">:</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">merge</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="c1"># 算下一轮的 pending</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">pending</span> <span class="o">=</span> <span class="n">next_nodes</span><span class="p">(</span><span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></code></pre></div>
+<ul>
+<li>超级步 0：<code>pending = {entry}</code>，执行入口节点。</li>
+<li>超级步 1：<code>pending = next_nodes({entry}, state)</code>，执行入口的后继。</li>
+<li>...直到 <code>pending</code> 为空。</li>
+</ul>
+<h3 id="52-pending">5.2 pending 是什么<a class="headerlink" href="#52-pending" title="Permanent link">&para;</a></h3>
+<p><strong>pending = 这一超级步要执行的节点集合。</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pending</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>  <span class="c1"># 如 {"agent"} 或 {"tool_a", "tool_b"}</span>
+</span></code></pre></div>
+<ul>
+<li>单节点图：<code>pending</code> 始终是单元素集。</li>
+<li>fan-out 图：<code>pending</code> 可以多元素（一个节点的多个后继）。</li>
+<li>续跑时：<code>pending</code> 从检查点恢复。</li>
+</ul>
+<h3 id="53-next_nodes">5.3 next_nodes 怎么算<a class="headerlink" href="#53-next_nodes" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">next_nodes</span><span class="p">(</span><span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">next_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">pending</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">conditional_edges</span><span class="p">:</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>            <span class="c1"># 条件边：路由选一个目标</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>            <span class="n">router</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="n">conditional_edges</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>            <span class="n">label</span> <span class="o">=</span> <span class="n">router</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>            <span class="n">target</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>            <span class="k">if</span> <span class="n">target</span> <span class="o">!=</span> <span class="n">END</span><span class="p">:</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>                <span class="n">next_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            <span class="c1"># 静态边：所有出边目标都走（fan-out）</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">edges</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="p">[]):</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>                <span class="k">if</span> <span class="n">target</span> <span class="o">!=</span> <span class="n">END</span><span class="p">:</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>                    <span class="n">next_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="k">return</span> <span class="n">next_set</span>
+</span></code></pre></div>
+<ul>
+<li>条件边：调 <code>router(state)</code> 选一个目标。</li>
+<li>静态边：所有出边目标都加入（fan-out）。</li>
+<li><code>END</code> 被过滤掉（到了 END 就不进 pending）。</li>
+</ul>
+<h3 id="54">5.4 超级步的执行步骤<a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>
+<p>每个超级步：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1. 读快照: step_state = dict(state)
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>2. 并行执行: updates = [nodes[n](step_state) for n in pending]
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>3. 合并: for u in updates: merge(state, u)
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>4. 检查点: checkpoint.save(step, state, pending)
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>5. 算下一轮: pending = next_nodes(pending, state)
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>6. step += 1
+</span></code></pre></div>
+<p>对照 Pregel 的三步：</p>
+<table>
+<thead>
+<tr>
+<th>Pregel</th>
+<th>LangGraph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compute</td>
+<td>执行 pending 节点（读快照）</td>
+</tr>
+<tr>
+<td>exchange messages</td>
+<td>合并 updates 到 state（用 Reducer）</td>
+</tr>
+<tr>
+<td>sync</td>
+<td>检查点 + 算 next_nodes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="55">5.5 超级步的终止<a class="headerlink" href="#55" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">while</span> <span class="n">pending</span><span class="p">:</span>  <span class="c1"># pending 为空就结束</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="o">...</span>
+</span></code></pre></div>
+<p><code>pending</code> 为空的情况：</p>
+<ul>
+<li>所有节点的后继都是 <code>END</code>（正常结束）。</li>
+<li>条件边路由返回 <code>END</code>（Agent 决定不调工具了）。</li>
+<li>超过 <code>recursion_limit</code>（防死循环，抛 <code>RecursionError</code>）。</li>
+</ul>
+<hr />
+<h2 id="6-fan-out-fan-in">6. fan-out 和 fan-in<a class="headerlink" href="#6-fan-out-fan-in" title="Permanent link">&para;</a></h2>
+<h3 id="61-fan-out">6.1 fan-out：一个节点多条出边<a class="headerlink" href="#61-fan-out" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">)</span>  <span class="c1"># a 有两条出边</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>graph LR
+    A --&gt; B
+    A --&gt; C</code></pre>
+<p>执行完 <code>a</code>，<code>next_nodes</code> 把 <code>b</code> 和 <code>c</code> 都加入 pending。下一超级步 <code>b</code> 和 <code>c</code> **并行**执行。</p>
+<p>这就是 fan-out——一个节点的结果扇出到多个后继。</p>
+<h3 id="62-fan-out">6.2 fan-out 的例子：并行工具调用<a class="headerlink" href="#62-fan-out" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># agent 节点决定调两个工具</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"agent"</span><span class="p">,</span> <span class="n">agent_node</span><span class="p">)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"search"</span><span class="p">,</span> <span class="n">search_tool</span><span class="p">)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"calculator"</span><span class="p">,</span> <span class="n">calc_tool</span><span class="p">)</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span><span class="s2">"agent"</span><span class="p">,</span> <span class="n">router</span><span class="p">,</span> <span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="s2">"search"</span><span class="p">:</span> <span class="s2">"search"</span><span class="p">,</span> <span class="s2">"calc"</span><span class="p">:</span> <span class="s2">"calculator"</span><span class="p">,</span> <span class="s2">"both"</span><span class="p">:</span> <span class="s2">"both"</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">})</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># 假设 router 返回 "both"，且 "both" 映射到两个节点</span>
+</span></code></pre></div>
+<p>（注：当前实现的条件边只选一个目标。真 fan-out 要用静态边或多条条件边。教学简化。）</p>
+<h3 id="63-fan-in">6.3 fan-in：多个节点到一个节点<a class="headerlink" href="#63-fan-in" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"c"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">)</span>  <span class="c1"># b 和 c 都指向 d</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>graph LR
+    A --&gt; B
+    A --&gt; C
+    B --&gt; D
+    C --&gt; D</code></pre>
+<p><code>b</code> 和 <code>c</code> 并行执行完，<code>next_nodes</code> 把 <code>d</code> 加入 pending（<code>set</code> 去重，<code>d</code> 只出现一次）。
+<code>d</code> 在下一超级步执行，看到的是 <code>b</code> 和 <code>c</code> **合并后**的状态。</p>
+<p>这就是 fan-in——多个节点的结果扇入到一个后继，由 Reducer 合并。</p>
+<h3 id="64-fan-out-fan-in">6.4 fan-out + fan-in 的完整流程<a class="headerlink" href="#64-fan-out-fan-in" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>graph TB
     subgraph 超级步 0
-        A[入口节点]
+        A
     end
     subgraph 超级步 1
-        B[节点 b]
-        C[节点 c]
+        B
+        C
     end
     subgraph 超级步 2
-        D[节点 d]
+        D
     end
     A --&gt; B
     A --&gt; C
     B --&gt; D
     C --&gt; D</code></pre>
-<p>执行规则：</p>
-<ol>
-<li><strong>超级步 0</strong>：执行入口节点</li>
-<li><strong>超级步 1</strong>：执行所有"上一步激活的"节点（b 和 c <strong>可以并行</strong>）</li>
-<li><strong>超级步 2</strong>：合并超级步 1 的所有输出，执行下一层</li>
-<li>...直到没有节点要执行</li>
-</ol>
-<p><strong>关键</strong>：同一超级步内的节点并行执行，<strong>超级步之间做状态合并和检查点对齐</strong>。</p>
-<h2 id="pregel-dfs">为什么是 Pregel 而不是 DFS<a class="headerlink" href="#pregel-dfs" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>需求</th>
-<th style="text-align: center;">DFS</th>
-<th style="text-align: center;">Pregel 超级步</th>
+<th>超级步</th>
+<th>pending</th>
+<th>执行</th>
+<th>合并</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>同层并行</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
+<td>0</td>
+<td>{a}</td>
+<td>a(state)</td>
+<td>state += a 的更新</td>
 </tr>
 <tr>
-<td>检查点对齐（每步一个快照）</td>
-<td style="text-align: center;">难</td>
-<td style="text-align: center;">天然</td>
+<td>1</td>
+<td>{b, c}</td>
+<td>b(snapshot), c(snapshot) 并行</td>
+<td>state += b 的更新 + c 的更新</td>
 </tr>
 <tr>
-<td>循环（多轮）</td>
-<td style="text-align: center;">要特殊处理</td>
-<td style="text-align: center;">超级步天然循环</td>
+<td>2</td>
+<td>{d}</td>
+<td>d(state)</td>
+<td>state += d 的更新</td>
 </tr>
 <tr>
-<td>中断/续跑</td>
-<td style="text-align: center;">难</td>
-<td style="text-align: center;">快照对齐到超级步</td>
+<td>3</td>
+<td>{}</td>
+<td>结束</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<h2 id="channel">通道（Channel）<a class="headerlink" href="#channel" title="Permanent link">&para;</a></h2>
-<p>Pregel 里节点间通信用**通道**。可以理解为"带 Reducer 的邮箱"：</p>
+<p><strong>关键</strong>：超级步 1 的 b 和 c 读**同一快照**（超级步 0 后的 state），互不影响。它们的
+更新在超级步 1 结束时合并，超级步 2 的 d 才看到合并结果。</p>
+<h3 id="65-fan-in">6.5 fan-in 的合并问题<a class="headerlink" href="#65-fan-in" title="Permanent link">&para;</a></h3>
+<p>b 和 c 都写同一字段怎么办？用 Reducer 合并：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># b 返回 {"results": ["b_result"]}</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># c 返回 {"results": ["c_result"]}</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># 合并（results 用 add Reducer）:</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># state["results"] = add(add(old, ["b_result"]), ["c_result"])</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># = old + ["b_result", "c_result"]</span>
+</span></code></pre></div>
+<p><strong>Reducer 可交换可结合</strong>，所以 b 和 c 的合并顺序无关——并行安全。</p>
+<hr />
+<h2 id="7-vs">7. 同层并行 vs 顺序执行<a class="headerlink" href="#7-vs" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1 概念上的并行<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<p>Pregel 模型里，同一超级步的节点**概念上并行**。它们读同一快照、互不通信、独立计算。</p>
+<h3 id="72">7.2 我们的实现：顺序执行<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># 阶段 6 的实现</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">step_state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">updates</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">for</span> <span class="n">node_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pending</span><span class="p">):</span>          <span class="c1"># 顺序执行，不是真并行</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">node_name</span><span class="p">](</span><span class="n">step_state</span><span class="p">)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">updates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">for</span> <span class="n">update</span> <span class="ow">in</span> <span class="n">updates</span><span class="p">:</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+</span></code></pre></div>
+<p>我们用 <code>for</code> 循环顺序执行 pending 里的节点。<strong>不是真并行</strong>。</p>
+<h3 id="73">7.3 为什么顺序执行也正确<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<p>因为节点读的是 <code>step_state</code>（快照），不是实时 state。顺序执行时：</p>
 <ul>
-<li>节点执行完，把更新**写进**通道</li>
-<li>下一个超级步开始，节点从通道**读**状态</li>
-<li>通道的 Reducer 决定多次写入怎么合</li>
+<li>节点 b 先执行，读 step_state，返回 update_b。update_b 没合并进 state，state 还是快照。</li>
+<li>节点 c 后执行，读 step_state（同一份），返回 update_c。</li>
+<li>最后统一合并 update_b 和 update_c。</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>节点 a ──写──▶ [messages 通道, reducer=add] ──读──▶ 节点 b
+<p><strong>b 和 c 读的是同一快照，执行顺序不影响结果</strong>。所以顺序执行和并行执行结果一样。</p>
+<h3 id="74">7.4 为什么不用真并行<a class="headerlink" href="#74" title="Permanent link">&para;</a></h3>
+<p><strong>教学简化</strong>。真并行要：</p>
+<ul>
+<li><code>asyncio</code> 或 <code>threading</code>——增加复杂度。</li>
+<li>节点要是 async 函数——改 API。</li>
+<li>合并要加锁——更复杂。</li>
+</ul>
+<p>顺序执行的结果和真并行一样（因为快照隔离），但实现简单。教学优先清晰。</p>
+<h3 id="75-langgraph">7.5 真 LangGraph 的并行<a class="headerlink" href="#75-langgraph" title="Permanent link">&para;</a></h3>
+<p>真 LangGraph 支持 <code>asyncio</code> 真并行：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># 真 LangGraph</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">async</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">astream</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="o">...</span>
 </span></code></pre></div>
-<p>这就是为什么阶段 5 的 Reducer 和阶段 6 的通道是同一件事的两个视角：<strong>Reducer 是通道的合并策略</strong>。</p>
-<h2 id="_2">简化执行循环<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">pregel_loop</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">):</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">state</span> <span class="o">=</span> <span class="n">initial_state</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">pending</span> <span class="o">=</span> <span class="p">{</span><span class="n">graph</span><span class="o">.</span><span class="n">entry_point</span><span class="p">}</span>   <span class="c1"># 本轮要执行的节点</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">while</span> <span class="n">pending</span> <span class="ow">and</span> <span class="n">step</span> <span class="o">&lt;</span> <span class="n">recursion_limit</span><span class="p">:</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="c1"># 1. 并行执行所有 pending 节点</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">updates</span> <span class="o">=</span> <span class="n">parallel_execute</span><span class="p">(</span><span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="c1"># 2. 用 Reducer 合并所有更新</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">group_by_channel</span><span class="p">(</span><span class="n">updates</span><span class="p">):</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            <span class="n">state</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">values</span><span class="p">)</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="c1"># 3. 检查点</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="n">checkpoint</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="c1"># 4. 算下一轮要执行哪些节点</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="n">pending</span> <span class="o">=</span> <span class="n">next_nodes</span><span class="p">(</span><span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="k">return</span> <span class="n">state</span>
+<p>同超级步的多个 async 节点用 <code>asyncio.gather</code> 并行执行。但执行模型（Pregel 超级步）
+和我们的完全一样——只是"并行"从顺序模拟变成真 asyncio。</p>
+<h3 id="76">7.6 什么时候真并行重要<a class="headerlink" href="#76" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>IO 密集</strong>：多个节点调外部 API（如多个工具同时调不同 API）。真并行能省墙钟时间。</li>
+<li><strong>CPU 密集</strong>：少见（LLM 应用通常 IO 密集）。</li>
+</ul>
+<p>对教学，顺序执行够用——理解执行模型比真并行重要。</p>
+<hr />
+<h2 id="8-reducer">8. 通道 = 字段 + Reducer<a class="headerlink" href="#8-reducer" title="Permanent link">&para;</a></h2>
+<h3 id="81-pregel">8.1 Pregel 的通道<a class="headerlink" href="#81-pregel" title="Permanent link">&para;</a></h3>
+<p>Pregel 里节点间通信用**通道**。通道是一个"带合并策略的邮箱"：</p>
+<ul>
+<li>节点 <code>compute</code> 时读通道（收消息）。</li>
+<li><code>compute</code> 结束写通道（发消息）。</li>
+<li>同步时通道用合并策略处理多次写。</li>
+</ul>
+<h3 id="82-langgraph">8.2 LangGraph 的通道<a class="headerlink" href="#82-langgraph" title="Permanent link">&para;</a></h3>
+<p>LangGraph 的通道 = <strong>状态的一个字段 + 它的 Reducer</strong>。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">AgentState</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">messages</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="n">add_messages</span><span class="p">]</span>   <span class="c1"># messages 通道</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="n">count</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">add</span><span class="p">]</span>               <span class="c1"># count 通道</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span>                              <span class="c1"># user_id 通道（覆盖）</span>
 </span></code></pre></div>
-<p>阶段 6 会把这个循环完整实现出来。</p>
-<h2 id="_3">在哪个阶段实现<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>messages</code> 通道：合并策略是 <code>add_messages</code>。</li>
+<li><code>count</code> 通道：合并策略是 <code>add</code>。</li>
+<li><code>user_id</code> 通道：合并策略是覆盖（默认）。</li>
+</ul>
+<h3 id="83">8.3 通道的读写<a class="headerlink" href="#83" title="Permanent link">&para;</a></h3>
+<p><strong>写通道</strong>：节点返回更新片段。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">agent_node</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span><span class="n">new_msg</span><span class="p">]}</span>  <span class="c1"># 写 messages 通道</span>
+</span></code></pre></div>
+<p>引擎用 Reducer 合并：<code>state["messages"] = add_messages(state["messages"], [new_msg])</code>。</p>
+<p><strong>读通道</strong>：节点读 state 的字段。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">agent_node</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="n">msgs</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">"messages"</span><span class="p">]</span>  <span class="c1"># 读 messages 通道</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="o">...</span>
+</span></code></pre></div>
+<p>读的是超级步开始时的快照（不是其他节点实时写的）。</p>
+<h3 id="84">8.4 通道的合并<a class="headerlink" href="#84" title="Permanent link">&para;</a></h3>
+<p>同一超级步多个节点写同一通道：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># 超级步 N: 节点 a 和 b 都写 messages 通道</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">update_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span><span class="n">msg_a</span><span class="p">]}</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">update_b</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span><span class="n">msg_b</span><span class="p">]}</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1"># 合并（顺序无关，因为 add_messages 可交换）</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="n">state</span><span class="p">[</span><span class="s2">"messages"</span><span class="p">]</span> <span class="o">=</span> <span class="n">add_messages</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="s2">"messages"</span><span class="p">],</span> <span class="p">[</span><span class="n">msg_a</span><span class="p">])</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">state</span><span class="p">[</span><span class="s2">"messages"</span><span class="p">]</span> <span class="o">=</span> <span class="n">add_messages</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="s2">"messages"</span><span class="p">],</span> <span class="p">[</span><span class="n">msg_b</span><span class="p">])</span>
+</span></code></pre></div>
+<p><strong>Reducer 可交换可结合</strong> → 合并顺序无关 → 并行安全。</p>
+<h3 id="85-vs">8.5 通道 vs 字段<a class="headerlink" href="#85-vs" title="Permanent link">&para;</a></h3>
+<p>为什么不直接叫"字段"？因为"字段"没合并语义，"通道"有。通道是 Pregel 的抽象，
+字段是 Python 的抽象。LangGraph 用"字段 + Reducer"落地 Pregel 的通道——
+<strong>字段是通道的存储，Reducer 是通道的合并策略</strong>。</p>
+<hr />
+<h2 id="9">9. 检查点对齐：每个超级步后存快照<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<h3 id="91">9.1 对齐到超级步<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">while</span> <span class="n">pending</span><span class="p">:</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="c1"># 执行超级步</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="o">...</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="c1"># 检查点（超级步结束后存）</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="n">checkpoint</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">thread_id</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">pending</span><span class="p">)</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="k">yield</span> <span class="p">{</span><span class="s2">"nodes"</span><span class="p">:</span> <span class="n">pending</span><span class="p">,</span> <span class="s2">"state"</span><span class="p">:</span> <span class="n">state</span><span class="p">,</span> <span class="s2">"step"</span><span class="p">:</span> <span class="n">step</span><span class="p">}</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>    <span class="c1"># 算下一轮</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    <span class="n">pending</span> <span class="o">=</span> <span class="n">next_nodes</span><span class="p">(</span><span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>    <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></code></pre></div>
+<p>每个超级步执行完、状态合并后、算下一轮 pending 之前，存检查点。</p>
+<h3 id="92">9.2 为什么对齐到超级步<a class="headerlink" href="#92" title="Permanent link">&para;</a></h3>
+<p><strong>超级步后状态是"干净的"</strong>——所有同层节点已合并，state 是一致的全局状态。
+这时存快照最自然。</p>
+<p>对比：如果在节点执行中途存快照，状态是"半成品"（部分节点已合并、部分没有），
+恢复时要处理半成品，复杂。</p>
+<h3 id="93">9.3 检查点的内容<a class="headerlink" href="#93" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="s2">"thread_id"</span><span class="p">:</span> <span class="s2">"t1"</span><span class="p">,</span>       <span class="c1"># 会话标识</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="s2">"step"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>               <span class="c1"># 超级步编号</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="s2">"state"</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span>          <span class="c1"># 超级步 5 后的完整状态</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    <span class="s2">"pending"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"agent"</span><span class="p">},</span>    <span class="c1"># 超级步 6 要执行的节点</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>state</code>：超级步 5 后的状态（干净的全局状态）。</li>
+<li><code>pending</code>：超级步 6 要执行的节点（恢复时从这开始）。</li>
+<li><code>step</code>：超级步编号（时间旅行用）。</li>
+</ul>
+<h3 id="94">9.4 续跑时恢复<a class="headerlink" href="#94" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">if</span> <span class="nb">input</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">checkpointer</span> <span class="ow">and</span> <span class="n">thread_id</span><span class="p">:</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="n">cp</span> <span class="o">=</span> <span class="n">checkpointer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">thread_id</span><span class="p">)</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="n">state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cp</span><span class="p">[</span><span class="s2">"state"</span><span class="p">])</span>           <span class="c1"># 恢复状态</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    <span class="n">pending</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">cp</span><span class="p">[</span><span class="s2">"pending"</span><span class="p">])</span>        <span class="c1"># 恢复 pending</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    <span class="n">step</span> <span class="o">=</span> <span class="n">cp</span><span class="p">[</span><span class="s2">"step"</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>               <span class="c1"># 从下一超级步开始</span>
+</span></code></pre></div>
+<p>从检查点恢复 state 和 pending，继续 while 循环。<strong>因为检查点对齐到超级步</strong>，
+恢复后 state 是干净的，直接接着跑就行——不用处理半成品。</p>
+<h3 id="95">9.5 时间旅行<a class="headerlink" href="#95" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="n">get_state_history</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">cp</span><span class="p">[</span><span class="s2">"step"</span><span class="p">],</span> <span class="n">cp</span><span class="p">[</span><span class="s2">"state"</span><span class="p">])</span>
+</span></code></pre></div>
+<p>每个超级步一个检查点，按步数升序。想"回到第 3 步"——加载 <code>step=3</code> 的检查点，
+从那接着跑。</p>
+<p><strong>因为对齐到超级步</strong>，任何一步的检查点都是"干净的"恢复点——不用找"最近的一致状态"。</p>
+<hr />
+<h2 id="10">10. 为什么不是真并行：教学简化<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<h3 id="101-pregel">10.1 真 Pregel 的并行<a class="headerlink" href="#101-pregel" title="Permanent link">&para;</a></h3>
+<p>Pregel 是多机分布式，同超级步的节点在不同机器上真并行。同步用 distributed barrier。</p>
+<h3 id="102-langgraph">10.2 真 LangGraph 的并行<a class="headerlink" href="#102-langgraph" title="Permanent link">&para;</a></h3>
+<p>真 LangGraph 单机用 <code>asyncio</code>——同超级步的 async 节点用 <code>asyncio.gather</code> 并行。
+不是多机，但是真协程并行（IO 密集场景能省墙钟时间）。</p>
+<h3 id="103">10.3 我们的实现<a class="headerlink" href="#103" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">for</span> <span class="n">node_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pending</span><span class="p">):</span>      <span class="c1"># 顺序 for 循环</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    <span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">node_name</span><span class="p">](</span><span class="n">step_state</span><span class="p">)</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    <span class="n">updates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+</span></code></pre></div>
+<p>顺序执行。<strong>结果和真并行一样</strong>（因为快照隔离），但墙钟时间没省。</p>
+<h3 id="104">10.4 为什么简化<a class="headerlink" href="#104" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>教学聚焦</strong>：讲执行模型（Pregel 超级步），不是讲 asyncio。</li>
+<li><strong>API 简单</strong>：节点是普通函数，不是 async 函数。</li>
+<li><strong>结果一致</strong>：顺序执行和真并行结果一样（快照隔离保证），只是慢。</li>
+<li><strong>可扩展</strong>：要加真并行，把 for 循环改成 <code>asyncio.gather</code>，执行模型不变。</li>
+</ol>
+<h3 id="105">10.5 怎么加真并行<a class="headerlink" href="#105" title="Permanent link">&para;</a></h3>
+<p>如果要加真并行（教学进阶）：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    <span class="k">while</span> <span class="n">pending</span><span class="p">:</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>        <span class="n">step_state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>        <span class="c1"># 真并行：asyncio.gather</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>        <span class="n">updates</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">[</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">n</span><span class="p">](</span><span class="n">step_state</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">pending</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>        <span class="p">])</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>        <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">updates</span><span class="p">:</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>        <span class="o">...</span>
+</span></code></pre></div>
+<p>节点要是 async 函数，调用方要用 <code>async for</code>。执行模型（超级步、快照、合并）不变。</p>
+<hr />
+<h2 id="11-langgraph-pregel">11. 对照真 LangGraph 的 Pregel 实现<a class="headerlink" href="#11-langgraph-pregel" title="Permanent link">&para;</a></h2>
+<h3 id="111">11.1 相同点<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>真 LangGraph</th>
+<th>tiny-langgraph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>超级步</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>pending 集合</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>快照隔离</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Reducer 合并</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>检查点对齐</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>recursion_limit</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>fan-out (静态边)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112">11.2 不同点<a class="headerlink" href="#112" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方面</th>
+<th>真 LangGraph</th>
+<th>tiny-langgraph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>并行</td>
+<td>asyncio 真并行</td>
+<td>顺序执行</td>
+</tr>
+<tr>
+<td>通道实现</td>
+<td>Channel 类层次</td>
+<td>字段 + Reducer 函数</td>
+</tr>
+<tr>
+<td>调度</td>
+<td>PregelScheduler 类</td>
+<td>while 循环</td>
+</tr>
+<tr>
+<td>错误处理</td>
+<td>丰富（重试、降级）</td>
+<td>异常传播</td>
+</tr>
+<tr>
+<td>子图</td>
+<td>支持</td>
+<td>不支持（阶段 10）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="113-langgraph-pregelscheduler">11.3 真 LangGraph 的 PregelScheduler<a class="headerlink" href="#113-langgraph-pregelscheduler" title="Permanent link">&para;</a></h3>
+<p>真 LangGraph 内部有 <code>Pregel</code> 类和 <code>PregelScheduler</code>，更抽象。它的超级步循环和我们的
+<code>while pending</code> 结构一样，但多了：</p>
+<ul>
+<li>通道版本管理（每个通道有版本号，支持时间旅行到任意版本）。</li>
+<li>优先级调度（高优先级节点先执行）。</li>
+<li>中断的细粒度控制（可以在通道级别中断）。</li>
+</ul>
+<p>这些是工程优化，不是执行模型差异。<strong>核心的超级步循环和我们的完全一样</strong>。</p>
+<hr />
+<h2 id="12-pregel-agent-react">12. 从 Pregel 到 Agent：超级步如何驱动 ReAct 循环<a class="headerlink" href="#12-pregel-agent-react" title="Permanent link">&para;</a></h2>
+<h3 id="121-react">12.1 ReAct 图<a class="headerlink" href="#121-react" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph LR
+    S([START]) --&gt; A[agent]
+    A --&gt;|"有 tool_calls"| T[tools]
+    T --&gt; A
+    A --&gt;|"无 tool_calls"| E([END])</code></pre>
+<h3 id="122">12.2 超级步视角<a class="headerlink" href="#122" title="Permanent link">&para;</a></h3>
+<p>ReAct 循环用超级步看：</p>
+<table>
+<thead>
+<tr>
+<th>超级步</th>
+<th>pending</th>
+<th>执行</th>
+<th>next_pending</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>{agent}</td>
+<td>agent_node</td>
+<td>{tools} 或 {}</td>
+<td>调 LLM</td>
+</tr>
+<tr>
+<td>1</td>
+<td>{tools}</td>
+<td>tool_node</td>
+<td>{agent}</td>
+<td>执行工具</td>
+</tr>
+<tr>
+<td>2</td>
+<td>{agent}</td>
+<td>agent_node</td>
+<td>{tools} 或 {}</td>
+<td>再调 LLM</td>
+</tr>
+<tr>
+<td>3</td>
+<td>{tools}</td>
+<td>tool_node</td>
+<td>{agent}</td>
+<td>再执行工具</td>
+</tr>
+<tr>
+<td>4</td>
+<td>{agent}</td>
+<td>agent_node</td>
+<td>{}</td>
+<td>LLM 不调工具，结束</td>
+</tr>
+</tbody>
+</table>
+<p>每轮 ReAct（agent → tools）是 2 个超级步。N 轮 ReAct 是 2N+1 个超级步（最后多一个 agent 决定结束）。</p>
+<h3 id="123-react">12.3 ReAct 是线性的<a class="headerlink" href="#123-react" title="Permanent link">&para;</a></h3>
+<p>注意：ReAct 图里**每超级步只有一个节点**（pending 始终单元素）。所以 Pregel 的并行能力
+<strong>没用上</strong>——Agent 是线性的。</p>
+<p>但执行模型是 Pregel——统一的 while pending 循环。Agent 只是 Pregel 的一个特例
+（每超级步单节点）。</p>
+<h3 id="124">12.4 什么时候用上并行<a class="headerlink" href="#124" title="Permanent link">&para;</a></h3>
+<p>并行在**多 Agent** 或**并行工具调用**时用上：</p>
+<pre class="mermaid"><code>graph LR
+    S --&gt; P[planner]
+    P --&gt; E1[executor_1]
+    P --&gt; E2[executor_2]
+    E1 --&gt; R[reviewer]
+    E2 --&gt; R
+    R --&gt; E([END])</code></pre>
+<ul>
+<li>超级步 1: {planner}</li>
+<li>超级步 2: {executor_1, executor_2}  ← 并行！</li>
+<li>超级步 3: {reviewer}</li>
+</ul>
+<p>这里 Pregel 的并行有意义——两个 executor 真并行（概念上）。</p>
+<h3 id="125">12.5 超级步如何驱动循环<a class="headerlink" href="#125" title="Permanent link">&para;</a></h3>
+<p>ReAct 的循环是 <code>tools → agent</code> 的回边。Pregel 怎么处理回边？</p>
+<p><strong>回边不影响超级步模型</strong>——<code>next_nodes</code> 算下一轮 pending 时，回边和普通边一样处理：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># tools 节点的静态边: {"tools": ["agent"]}</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1"># next_nodes({tools}, state) = {agent}</span>
+</span></code></pre></div>
+<p>所以 <code>tools</code> 执行完，pending 变成 <code>{agent}</code>，下一超级步执行 agent。循环自然形成。</p>
+<p><strong>终止靠条件边返回 END</strong>：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># agent 的条件边: should_continue 返回 END</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="c1"># next_nodes({agent}, state) = {}  (END 被过滤)</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="c1"># pending 为空，while 循环结束</span>
+</span></code></pre></div>
+<p>Pregel 不需要特殊处理循环——回边是边，条件边返回 END 终止，while pending 自然循环。</p>
+<hr />
+<h2 id="13">13. 实际代码示例<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<h3 id="131">13.1 最简单的超级步<a class="headerlink" href="#131" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tiny_langgraph.graph</span><span class="w"> </span><span class="kn">import</span> <span class="n">StateGraph</span><span class="p">,</span> <span class="n">START</span><span class="p">,</span> <span class="n">END</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypedDict</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">State</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">double</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"x"</span><span class="p">:</span> <span class="n">state</span><span class="p">[</span><span class="s2">"x"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">}</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="n">graph</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">State</span><span class="p">)</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"double"</span><span class="p">,</span> <span class="n">double</span><span class="p">)</span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"double"</span><span class="p">)</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"double"</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">stream</span><span class="p">({</span><span class="s2">"x"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}):</span>
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"超级步 </span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'step'</span><span class="p">]</span><span class="si">}</span><span class="s2">: pending=</span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]</span><span class="si">}</span><span class="s2">, state=</span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="c1"># 超级步 0: pending={'double'}, state={'x': 6}</span>
+</span></code></pre></div>
+<p>一个超级步，执行 double，结束。</p>
+<h3 id="132-fan-out">13.2 fan-out 超级步<a class="headerlink" href="#132-fan-out" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">State</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"x"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">add_x</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"x"</span><span class="p">:</span> <span class="n">state</span><span class="p">[</span><span class="s2">"x"</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span><span class="p">}</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">add_y</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"y"</span><span class="p">:</span> <span class="n">state</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span> <span class="o">+</span> <span class="mi">100</span><span class="p">}</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="n">graph</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">State</span><span class="p">)</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"init"</span><span class="p">,</span> <span class="n">init</span><span class="p">)</span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"add_x"</span><span class="p">,</span> <span class="n">add_x</span><span class="p">)</span>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"add_y"</span><span class="p">,</span> <span class="n">add_y</span><span class="p">)</span>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"init"</span><span class="p">)</span>
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"init"</span><span class="p">,</span> <span class="s2">"add_x"</span><span class="p">)</span>   <span class="c1"># fan-out: init → add_x 和 add_y</span>
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"init"</span><span class="p">,</span> <span class="s2">"add_y"</span><span class="p">)</span>
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"add_x"</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"add_y"</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
+</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>
+</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">stream</span><span class="p">({</span><span class="s2">"x"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="mi">0</span><span class="p">}):</span>
+</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"超级步 </span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'step'</span><span class="p">]</span><span class="si">}</span><span class="s2">: pending=</span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]</span><span class="si">}</span><span class="s2">, state=</span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a><span class="c1"># 超级步 0: pending={'init'}, state={'x': 1, 'y': 1}</span>
+</span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a><span class="c1"># 超级步 1: pending={'add_x', 'add_y'}, state={'x': 11, 'y': 101}</span>
+</span></code></pre></div>
+<p>超级步 1 的 <code>add_x</code> 和 <code>add_y</code> 并行（概念上），读同一快照（x=1, y=1），各自更新。</p>
+<h3 id="133">13.3 循环超级步<a class="headerlink" href="#133" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">State</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>    <span class="n">count</span><span class="p">:</span> <span class="nb">int</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">inc</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"count"</span><span class="p">:</span> <span class="n">state</span><span class="p">[</span><span class="s2">"count"</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">router</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>    <span class="k">return</span> <span class="s2">"inc"</span> <span class="k">if</span> <span class="n">state</span><span class="p">[</span><span class="s2">"count"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="k">else</span> <span class="s2">"end"</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="n">graph</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">State</span><span class="p">)</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"inc"</span><span class="p">,</span> <span class="n">inc</span><span class="p">)</span>
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"inc"</span><span class="p">)</span>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span><span class="s2">"inc"</span><span class="p">,</span> <span class="n">router</span><span class="p">,</span> <span class="p">{</span><span class="s2">"inc"</span><span class="p">:</span> <span class="s2">"inc"</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">:</span> <span class="n">END</span><span class="p">})</span>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>
+</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">stream</span><span class="p">({</span><span class="s2">"count"</span><span class="p">:</span> <span class="mi">0</span><span class="p">}):</span>
+</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"超级步 </span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'step'</span><span class="p">]</span><span class="si">}</span><span class="s2">: pending=</span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]</span><span class="si">}</span><span class="s2">, state=</span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="c1"># 超级步 0: pending={'inc'}, state={'count': 1}</span>
+</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="c1"># 超级步 1: pending={'inc'}, state={'count': 2}</span>
+</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a><span class="c1"># 超级步 2: pending={'inc'}, state={'count': 3}</span>
+</span></code></pre></div>
+<p>3 个超级步，每步 count 加 1，到 3 时 router 返回 "end"，pending 变空，结束。</p>
+<h3 id="134">13.4 带检查点的超级步<a class="headerlink" href="#134" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tiny_langgraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">MemorySaver</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">checkpointer</span><span class="o">=</span><span class="n">MemorySaver</span><span class="p">())</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"configurable"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"thread_id"</span><span class="p">:</span> <span class="s2">"t1"</span><span class="p">}}</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="nb">list</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">stream</span><span class="p">({</span><span class="s2">"count"</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">))</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="c1"># 存了 3 个检查点（step 0, 1, 2）</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="n">history</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">get_state_history</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="n">history</span><span class="p">:</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"step </span><span class="si">{</span><span class="n">cp</span><span class="p">[</span><span class="s1">'step'</span><span class="p">]</span><span class="si">}</span><span class="s2">: state=</span><span class="si">{</span><span class="n">cp</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span><span class="si">}</span><span class="s2">, pending=</span><span class="si">{</span><span class="n">cp</span><span class="p">[</span><span class="s1">'pending'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="c1"># step 0: state={'count': 1}, pending={'inc'}</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="c1"># step 1: state={'count': 2}, pending={'inc'}</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="c1"># step 2: state={'count': 3}, pending={'inc'}</span>
+</span></code></pre></div>
+<p>每个超级步一个检查点，对齐到超级步边界。</p>
+<h3 id="135">13.5 续跑<a class="headerlink" href="#135" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># 假设上次执行到 step 1 挂了</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="c1"># 续跑</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="n">result</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="c1"># 从最新检查点（step 2）恢复，继续执行</span>
+</span></code></pre></div>
+<p><code>input=None</code> 表示续跑，引擎从检查点恢复 state 和 pending，接着 while 循环。</p>
+<hr />
+<h2 id="14">14. 超级步的常见误解<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
+<h3 id="141-1">14.1 误解 1：超级步 = 一个节点<a class="headerlink" href="#141-1" title="Permanent link">&para;</a></h3>
+<p><strong>错</strong>。超级步 = <strong>一个 pending 集合的执行</strong>。pending 可以多元素（fan-out 时）。
+单节点图每超级步一个节点，但那是特例。</p>
+<h3 id="142-2-llm">14.2 误解 2：超级步 = 一次 LLM 调用<a class="headerlink" href="#142-2-llm" title="Permanent link">&para;</a></h3>
+<p><strong>错</strong>。超级步和 LLM 无关。超级步是图执行的概念，节点里干什么（调 LLM、查数据库、
+算数学）引擎不关心。Agent 的 agent 节点调 LLM，但那是节点逻辑，不是超级步的定义。</p>
+<h3 id="143-3">14.3 误解 3：超级步内节点能互相看到结果<a class="headerlink" href="#143-3" title="Permanent link">&para;</a></h3>
+<p><strong>错</strong>。超级步内节点读**同一快照**，互不看到对方的写。对方的写在超级步结束时合并，
+下一超级步才看到。这是 BSP 的核心。</p>
+<h3 id="144-4">14.4 误解 4：超级步越多越慢<a class="headerlink" href="#144-4" title="Permanent link">&para;</a></h3>
+<p><strong>不一定</strong>。超级步的开销是快照拷贝 + 合并 + 检查点。如果节点执行时间长（如调 LLM 几秒），
+超级步开销（毫秒级）可忽略。如果节点是纯计算（微秒级），超级步开销可能显著。</p>
+<h3 id="145-5pregel">14.5 误解 5：Pregel 要分布式<a class="headerlink" href="#145-5pregel" title="Permanent link">&para;</a></h3>
+<p><strong>不</strong>。Pregel 是执行**模型**（BSP 超级步），不是部署方式。单机也能用 Pregel 模型——
+我们的实现就是单机 Pregel。分布式是 Pregel 论文的场景，不是模型的要求。</p>
+<hr />
+<h2 id="15">15. 在哪个阶段实现<a class="headerlink" href="#15" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1322,13 +4621,313 @@
 </thead>
 <tbody>
 <tr>
-<td>超级步循环 + 通道 + 并行</td>
+<td>拓扑排序执行（DAG）</td>
+<td style="text-align: center;"><a href="../../stages/stage_1_dag/">阶段 1</a></td>
+</tr>
+<tr>
+<td>while 循环动态遍历</td>
+<td style="text-align: center;"><a href="../../stages/stage_4_cycle/">阶段 3-4</a></td>
+</tr>
+<tr>
+<td>超级步 + pending + 快照</td>
 <td style="text-align: center;"><a href="../../stages/stage_6_pregel/">阶段 6</a></td>
+</tr>
+<tr>
+<td>检查点对齐到超级步</td>
+<td style="text-align: center;"><a href="../../stages/stage_7_checkpoint/">阶段 7</a></td>
+</tr>
+<tr>
+<td>超级步边界中断</td>
+<td style="text-align: center;"><a href="../../stages/stage_8_interrupt/">阶段 8</a></td>
+</tr>
+<tr>
+<td>Agent 的超级步视角</td>
+<td style="text-align: center;"><a href="../../stages/stage_9_agent/">阶段 9</a></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<p>👉 上一篇：<a href="../state_and_reducer/">状态与 Reducer</a> · 下一篇：<a href="../checkpoint/">检查点与时间旅行</a></p>
+<h2 id="16-pregel">16. Pregel 在其他系统的应用<a class="headerlink" href="#16-pregel" title="Permanent link">&para;</a></h2>
+<p>Pregel 的 BSP 模型不只 LangGraph 用。理解其他系统怎么用 Pregel，能加深对超级步的理解。</p>
+<h3 id="161-apache-giraph">16.1 Apache Giraph<a class="headerlink" href="#161-apache-giraph" title="Permanent link">&para;</a></h3>
+<p>Giraph 是 Apache 基金会的开源 Pregel 实现，用于大规模图计算（如 Facebook 的图分析）。</p>
+<ul>
+<li><strong>场景</strong>：在数十亿节点的社交图上跑 PageRank、连通分量等。</li>
+<li><strong>超级步</strong>：每个节点 <code>compute()</code>，处理消息、发新消息。</li>
+<li><strong>分布式</strong>：多机分片，超级步间用 ZooKeeper 同步。</li>
+<li><strong>和 LangGraph 的区别</strong>：Giraph 是图**计算**（在图数据上跑算法），LangGraph 是图**执行**
+  （用图描述程序）。但都用 BSP 超级步。</li>
+</ul>
+<h3 id="162-spark-graphx">16.2 Spark GraphX<a class="headerlink" href="#162-spark-graphx" title="Permanent link">&para;</a></h3>
+<p>GraphX 是 Spark 的图计算库，用 Pregel API。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># Spark GraphX 的 Pregel API</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="n">graph</span><span class="o">.</span><span class="n">pregel</span><span class="p">(</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>    <span class="n">initialMsg</span><span class="p">,</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>    <span class="n">activeDirection</span><span class="o">=</span><span class="n">EdgeDirection</span><span class="o">.</span><span class="n">Out</span><span class="p">,</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>    <span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="p">)(</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>    <span class="n">vprog</span><span class="p">,</span>    <span class="c1"># 节点更新函数</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>    <span class="n">sendMsg</span><span class="p">,</span>  <span class="c1"># 发消息函数</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>    <span class="n">mergeMsg</span>  <span class="c1"># 合并消息函数</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li><code>vprog</code> = Pregel 的 <code>compute</code>。</li>
+<li><code>sendMsg</code> = 给邻居发消息。</li>
+<li><code>mergeMsg</code> = 合并多条消息（类似 Reducer！）。</li>
+</ul>
+<p><strong>GraphX 的 <code>mergeMsg</code> 就是 LangGraph 的 Reducer</strong>——都是"合并多次写入"的策略。
+这印证了 Pregel 通道 + 合并策略是通用抽象。</p>
+<h3 id="163-flink-gelly">16.3 Flink Gelly<a class="headerlink" href="#163-flink-gelly" title="Permanent link">&para;</a></h3>
+<p>Flink 的图计算库 Gelly 也用 Pregel 模型。和 Giraph/GraphX 类似，都是图计算。
+Flink 的优势是流式处理——能增量跑 Pregel（新数据来了接着跑）。</p>
+<h3 id="164-langgraph">16.4 LangGraph 的独特之处<a class="headerlink" href="#164-langgraph" title="Permanent link">&para;</a></h3>
+<p>LangGraph 和这些图计算系统都不同：</p>
+<table>
+<thead>
+<tr>
+<th>方面</th>
+<th>图计算 (Giraph/GraphX/Gelly)</th>
+<th>图执行 (LangGraph)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图的含义</td>
+<td>数据关系</td>
+<td>控制流</td>
+</tr>
+<tr>
+<td>节点</td>
+<td>数据节点</td>
+<td>函数节点</td>
+</tr>
+<tr>
+<td>跑什么</td>
+<td>算法（PageRank...）</td>
+<td>程序（Agent...）</td>
+</tr>
+<tr>
+<td>终止</td>
+<td>收敛/halt</td>
+<td>pending 空</td>
+</tr>
+<tr>
+<td>检查点</td>
+<td>少（计算完就行）</td>
+<td>核心（要续跑/中断）</td>
+</tr>
+<tr>
+<td>人机协作</td>
+<td>无</td>
+<td>核心特性</td>
+</tr>
+</tbody>
+</table>
+<p><strong>LangGraph 借鉴的是 Pregel 的执行模型（BSP 超级步），不是图计算的应用场景。</strong>
+超级步 + 通道 + 合并策略是通用的执行抽象，图计算和图执行都能用。</p>
+<hr />
+<h2 id="17">17. 超级步的数学视角<a class="headerlink" href="#17" title="Permanent link">&para;</a></h2>
+<h3 id="171">17.1 超级步作为不动点<a class="headerlink" href="#171" title="Permanent link">&para;</a></h3>
+<p>图执行可以看作**状态变换函数的迭代**：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>state_{n+1} = F(state_n)
+</span></code></pre></div>
+<p>其中 <code>F</code> 是"执行一个超级步"的函数：读 state、执行 pending 节点、合并更新。</p>
+<p>执行终止 = <code>F</code> 的**不动点**：<code>state* = F(state*)</code>，即 <code>pending</code> 为空，不再变化。</p>
+<p>这和 PageRank 的不动点迭代一样——都是"反复变换直到收敛"。区别是 PageRank 收敛到
+<strong>数值</strong>，图执行收敛到**pending 空**（控制流终止）。</p>
+<h3 id="172">17.2 超级步作为代数<a class="headerlink" href="#172" title="Permanent link">&para;</a></h3>
+<p>每个超级步的合并是**代数运算**：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>state_{n+1} = state_n ⊕ update_1 ⊕ update_2 ⊕ ... ⊕ update_k
+</span></code></pre></div>
+<p>其中 <code>⊕</code> 是 Reducer 定义的合并运算。</p>
+<ul>
+<li><code>⊕</code> 可交换：<code>a ⊕ b = b ⊕ a</code>（并行顺序无关）。</li>
+<li><code>⊕</code> 可结合：<code>(a ⊕ b) ⊕ c = a ⊕ (b ⊕ c)</code>（分组无关）。</li>
+<li><code>⊕</code> 有幺元：<code>state ⊕ {} = state</code>（空更新不变）。</li>
+</ul>
+<p>这构成一个**交换幺半群**（Commutative Monoid）。Pregel 的并行安全有数学基础——
+合并运算构成交换幺半群，所以并行合并顺序无关。</p>
+<h3 id="173">17.3 超级步作为偏序<a class="headerlink" href="#173" title="Permanent link">&para;</a></h3>
+<p>超级步定义了节点执行的**偏序**：</p>
+<ul>
+<li>超级步 N 的节点 &lt; 超级步 N+1 的节点。</li>
+<li>同超级步的节点**不可比较**（并行，无先后）。</li>
+</ul>
+<p>这个偏序就是图的"拓扑层"（对 DAG）或"动态层"（对有环图）。Pregel 执行就是按这个偏序
+一层一层执行。</p>
+<hr />
+<h2 id="18">18. 超级步的工程考量<a class="headerlink" href="#18" title="Permanent link">&para;</a></h2>
+<h3 id="181">18.1 超级步粒度<a class="headerlink" href="#181" title="Permanent link">&para;</a></h3>
+<p>超级步粒度 = 每超级步执行多少节点。</p>
+<ul>
+<li><strong>细粒度</strong>（每超级步少节点）：检查点多、恢复快、并行度低。</li>
+<li><strong>粗粒度</strong>（每超级步多节点）：检查点少、恢复慢、并行度高。</li>
+</ul>
+<p>LangGraph 的粒度由图结构决定——fan-out 多就粗，线性就细。Agent 通常是细粒度
+（每超级步一个节点）。</p>
+<h3 id="182">18.2 超级步开销<a class="headerlink" href="#182" title="Permanent link">&para;</a></h3>
+<p>每个超级步的开销：</p>
+<ol>
+<li><strong>快照拷贝</strong>：<code>dict(state)</code>，O(|state|)。</li>
+<li><strong>节点执行</strong>：节点逻辑，O(节点复杂度)。</li>
+<li><strong>状态合并</strong>：每字段 Reducer，O(|update|)。</li>
+<li><strong>检查点存储</strong>：序列化 + 存储，O(|state|)。</li>
+<li><strong>yield 事件</strong>：构造事件 dict，O(|state|)。</li>
+</ol>
+<p>对 Agent（节点是调 LLM，几秒），开销 1-5（毫秒级）可忽略。
+对纯计算图（节点微秒级），开销可能显著——这时要减少检查点频率。</p>
+<h3 id="183">18.3 超级步和流式<a class="headerlink" href="#183" title="Permanent link">&para;</a></h3>
+<p>LangGraph 的 <code>stream</code> 每超级步 yield 一个事件。这是"<strong>超级步级流式</strong>"——不是 token 级。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s2">"step"</span><span class="p">],</span> <span class="n">event</span><span class="p">[</span><span class="s2">"state"</span><span class="p">])</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>    <span class="c1"># 每个超级步一个 event</span>
+</span></code></pre></div>
+<p>真 LangGraph 还支持 token 级流式（<code>astream_events</code>），能看到 LLM 逐 token 输出。
+那是更细的粒度，需要改节点 API（async + yield）。教学用超级步级，够用。</p>
+<h3 id="184">18.4 超级步和错误处理<a class="headerlink" href="#184" title="Permanent link">&para;</a></h3>
+<p>当前实现：节点抛异常 → 整个执行终止。没有"超级步级重试"。</p>
+<p>可能的改进：</p>
+<ul>
+<li><strong>节点级重试</strong>：节点失败重试 N 次。</li>
+<li><strong>超级步级降级</strong>：超级步失败，跳过该超级步继续。</li>
+<li><strong>检查点恢复</strong>：失败后从上一个检查点续跑。</li>
+</ul>
+<p>这些是工程优化，不影响执行模型。教学用最简单的"异常传播"。</p>
+<hr />
+<h2 id="19">19. 超级步的边界情况<a class="headerlink" href="#19" title="Permanent link">&para;</a></h2>
+<h3 id="191">19.1 空图<a class="headerlink" href="#191" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">graph</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">State</span><span class="p">)</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="c1"># 没加节点</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>  <span class="c1"># 报错：未设置入口节点</span>
+</span></code></pre></div>
+<p>空图编译就报错——要有入口才能编译。</p>
+<h3 id="192">19.2 单节点图<a class="headerlink" href="#192" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"only"</span><span class="p">,</span> <span class="n">only_node</span><span class="p">)</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"only"</span><span class="p">)</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"only"</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span></code></pre></div>
+<p>执行：超级步 0 执行 <code>only</code>，<code>pending = {}</code>，结束。一个超级步。</p>
+<h3 id="193">19.3 死循环图<a class="headerlink" href="#193" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">router</span><span class="p">(</span><span class="n">state</span><span class="p">):</span> <span class="k">return</span> <span class="s2">"loop"</span>  <span class="c1"># 永远返回 loop</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"loop"</span><span class="p">,</span> <span class="n">loop_node</span><span class="p">)</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"loop"</span><span class="p">)</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span><span class="s2">"loop"</span><span class="p">,</span> <span class="n">router</span><span class="p">,</span> <span class="p">{</span><span class="s2">"loop"</span><span class="p">:</span> <span class="s2">"loop"</span><span class="p">})</span>
+</span></code></pre></div>
+<p><code>loop → loop</code> 永远循环。<code>recursion_limit</code> 兜底——超过 25 步抛 <code>RecursionError</code>。</p>
+<h3 id="194-resuming">19.4 中断后续跑的 resuming 标志<a class="headerlink" href="#194-resuming" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">resuming</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interrupt_before</span> <span class="ow">and</span> <span class="p">(</span><span class="n">pending</span> <span class="o">&amp;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interrupt_before</span><span class="p">):</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>    <span class="c1"># 中断</span>
+</span></code></pre></div>
+<p><code>resuming</code> 标志的作用：续跑时**跳过第一个超级步的中断检查**。为什么？</p>
+<p>续跑时，检查点的 pending 就是中断点（如 <code>{"tools"}</code>）。如果不跳过，续跑第一步就又
+中断——死循环。<code>resuming = True</code> 让续跑第一步直接执行 pending，不检查中断。
+执行完一步后 <code>resuming = False</code>，后续步骤正常检查中断。</p>
+<h3 id="195-fan-out-fan-in">19.5 fan-out 后的 fan-in 合并<a class="headerlink" href="#195-fan-out-fan-in" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph LR
+    A --&gt; B
+    A --&gt; C
+    B --&gt; D
+    C --&gt; D</code></pre>
+<p>超级步 1：<code>{b, c}</code> 并行。超级步 2：<code>{d}</code>（set 去重，d 只出现一次）。</p>
+<p>d 看到 b 和 c **合并后**的状态。如果 b 和 c 都写同一字段，用 Reducer 合并——d 看到合并结果。</p>
+<h3 id="196">19.6 条件边返回未定义标签<a class="headerlink" href="#196" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">router</span><span class="p">(</span><span class="n">state</span><span class="p">):</span> <span class="k">return</span> <span class="s2">"unknown"</span>  <span class="c1"># mapping 里没 "unknown"</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">router</span><span class="p">,</span> <span class="p">{</span><span class="s2">"a"</span><span class="p">:</span> <span class="s2">"node_a"</span><span class="p">})</span>
+</span></code></pre></div>
+<p>执行时 <code>next_nodes</code> 检查 <code>label not in mapping</code>，抛 <code>ValueError</code>。这是图定义错误，
+编译时不检查（因为 router 是运行时函数），运行时才报。</p>
+<hr />
+<h2 id="20">20. 超级步的调试技巧<a class="headerlink" href="#20" title="Permanent link">&para;</a></h2>
+<h3 id="201-stream">20.1 用 stream 看每步<a class="headerlink" href="#201-stream" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">):</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"step </span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'step'</span><span class="p">]</span><span class="si">}</span><span class="s2">: pending=</span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  state: </span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"interrupt"</span><span class="p">):</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  ⚠ 中断: </span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'interrupt'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+<p><code>stream</code> 每超级步 yield 一个事件，能看到执行轨迹。</p>
+<h3 id="202-get_state_history">20.2 用 get_state_history 看历史<a class="headerlink" href="#202-get_state_history" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">get_state_history</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"step </span><span class="si">{</span><span class="n">cp</span><span class="p">[</span><span class="s1">'step'</span><span class="p">]</span><span class="si">}</span><span class="s2">: state=</span><span class="si">{</span><span class="n">cp</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span><span class="si">}</span><span class="s2">, pending=</span><span class="si">{</span><span class="n">cp</span><span class="p">[</span><span class="s1">'pending'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>检查点就是执行历史的"存档"，能回看每一步。</p>
+<h3 id="203-recursion_limit">20.3 用 recursion_limit 防死循环<a class="headerlink" href="#203-recursion_limit" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">recursion_limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="k">except</span> <span class="ne">RecursionError</span><span class="p">:</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"超过 10 步，疑似死循环"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>调试时设小 limit，快速发现死循环。</p>
+<h3 id="204">20.4 检查图结构<a class="headerlink" href="#204" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">_nodes</span><span class="p">)</span>           <span class="c1"># 所有节点</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">_edges</span><span class="p">)</span>           <span class="c1"># 静态边</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">_conditional_edges</span><span class="p">)</span>  <span class="c1"># 条件边</span>
+</span></code></pre></div>
+<p>编译前检查图结构，确保边指向存在的节点。</p>
+<hr />
+<h2 id="21">21. 常见问题<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>为什么不用 DFS 执行？</summary>
+<p>DFS（深度优先）也能执行图——从入口一路走到底。但 DFS 有问题：
+- 同层节点不能并行（DFS 是一路走到底）。
+- 检查点难对齐（DFS 中途状态是"半路径"）。
+- 循环要特殊处理（DFS 遇到环要标记已访问）。
+Pregel 超级步解决所有——同层并行、检查点对齐到超级步、循环靠 pending 自然处理。</p>
+</details>
+<details class="question">
+<summary>超级步和"层"什么关系？</summary>
+<p>对 DAG，超级步就是拓扑层——同层的无依赖节点一轮。对有环图，超级步是"动态层"——
+每轮的 pending 由上一轮的路由决定，不是预编译的。所以超级步是"层"的推广。</p>
+</details>
+<details class="question">
+<summary>recursion_limit 是限制什么？</summary>
+<p>限制**超级步数**，不是节点执行次数。<code>while pending</code> 循环超过 recursion_limit 就抛
+<code>RecursionError</code>。默认 25，对 Agent 够用（很少超过 25 轮工具调用）。</p>
+</details>
+<details class="question">
+<summary>能跳过超级步吗（一次执行多层）？</summary>
+<p>当前实现不能——每超级步都要走完（执行、合并、检查点、yield）。真 LangGraph 有"批处理"
+模式能跳过中间检查点。教学用每步检查点，便于调试和续跑。</p>
+</details>
+<details class="question">
+<summary>超级步的 sorted(pending) 为什么排序？</summary>
+<p>为了**确定性**——pending 是 set，遍历顺序不定。排序后顺序固定，同样输入同样执行顺序。
+对调试和测试重要（结果可复现）。真并行时排序不影响（并行结果一样），但顺序执行时
+排序让结果确定。</p>
+</details>
+<details class="question">
+<summary>Pregel 和 MapReduce 什么区别？</summary>
+<p>MapReduce 是"map → reduce"两阶段，每轮迭代是一个 job，开销大。Pregel 是"超级步"
+循环，状态在节点间保持，迭代开销小。对图算法（多轮迭代），Pregel 比 MapReduce 高效。
+LangGraph 借鉴 Pregel 是因为图执行也是多轮迭代（Agent 循环）。</p>
+</details>
+<hr />
+<h2 id="17_1">17. 小结<a class="headerlink" href="#17_1" title="Permanent link">&para;</a></h2>
+<p>Pregel 超级步是 tiny-langgraph 的执行模型。核心：</p>
+<ol>
+<li><strong>超级步 = 一个 pending 集合的执行</strong>。每轮执行 pending 里的所有节点。</li>
+<li><strong>BSP 模型</strong>：超级步内并行（读同一快照）、超级步间同步（合并后进下一轮）。</li>
+<li><strong>fan-out + fan-in</strong>：一个节点多出边 → 并行；多节点到一个节点 → Reducer 合并。</li>
+<li><strong>通道 = 字段 + Reducer</strong>：Pregel 通道在 LangGraph 的落地。</li>
+<li><strong>检查点对齐</strong>：每超级步后存快照，state 是"干净的"全局状态。</li>
+<li><strong>循环自然处理</strong>：回边是边，条件边返回 END 终止，while pending 循环。</li>
+<li><strong>顺序执行模拟并行</strong>：快照隔离保证结果和真并行一样，实现简单。</li>
+</ol>
+<p><strong>核心洞察</strong>：Pregel 不是高深的分布式理论，就是一个 <strong>while pending 循环 + 快照 + 合并 + 检查点</strong>。
+但背后的 BSP 模型让并行、循环、持久化、中断**统一处理**——这是图引擎的核心。</p>
+<hr />
+<h2 id="_2">相关链接<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>上一篇：<a href="../state_and_reducer/">状态与 Reducer</a></li>
+<li>下一篇：<a href="../checkpoint/">检查点与时间旅行</a></li>
+<li>阶段 6：<a href="../../stages/stage_6_pregel/">Pregel 超级步</a></li>
+<li>阶段 9：<a href="../../stages/stage_9_agent/">Agent 的超级步视角</a></li>
+<li>Pregel 论文：<a href="https://research.google/pubs/pregel-a-system-for-large-scale-graph-processing/">Pregel: A System for Large-Scale Graph Processing</a></li>
+<li>源码：<a href="https://github.com/your-repo/blob/main/src/tiny_langgraph/graph.py"><code>src/tiny_langgraph/graph.py</code></a></li>
+</ul>
 
 
 

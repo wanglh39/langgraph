@@ -933,22 +933,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#0" class="md-nav__link">
     <span class="md-ellipsis">
       
-        这一阶段做了什么
+        0. 一句话总结
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="这一阶段做了什么">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 执行模型升级
+        1. 阶段目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-google-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Google Pregel 论文背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Google Pregel 论文背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-bsp-bulk-synchronous-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 BSP 模型（Bulk Synchronous Parallel）
       
     </span>
   </a>
@@ -956,10 +978,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-fan-out" class="md-nav__link">
+  <a href="#22-superstep" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. fan-out：一个节点多条出边
+        2.2 超级步（Superstep）
       
     </span>
   </a>
@@ -967,10 +989,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#23-bsp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 同层节点读同一快照
+        2.3 为什么图计算用 BSP 而不是异步？
       
     </span>
   </a>
@@ -978,10 +1000,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-reducer" class="md-nav__link">
+  <a href="#24-bsp-vs-mapreduce-vs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 通道 = 字段 + Reducer
+        2.4 BSP vs MapReduce vs 数据流
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Pregel 的"顶点活跃性"
       
     </span>
   </a>
@@ -994,10 +1027,121 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        代码走读
+        3. 超级步概念在本项目的落地
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 超级步概念在本项目的落地">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 从"单节点遍历"到"超级步并行层"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 超级步的可视化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. fan-out：一个节点多条出边
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. fan-out：一个节点多条出边">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 阶段 5 的限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-6-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 阶段 6 的 fan-out
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 fan-out 的典型场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-fan-out-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 fan-out 与 fan-in 的对称
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 fan-out 的超级步展开
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-_next_nodes-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. _next_nodes 方法：返回 set 而非单个节点
       
     </span>
   </a>
@@ -1005,10 +1149,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        运行示例
+        6. 事件格式变化
       
     </span>
   </a>
@@ -1016,10 +1160,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#7-reducer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        关于"并行"
+        7. 通道 = 字段 + Reducer 的概念统一
       
     </span>
   </a>
@@ -1027,10 +1171,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#langgraph" class="md-nav__link">
+  <a href="#8-step_state" class="md-nav__link">
     <span class="md-ellipsis">
       
-        对照真实 LangGraph
+        8. step_state 快照：为什么同层节点要读同一快照
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. step_state 快照：为什么同层节点要读同一快照">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 如果不快照会怎样？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 快照的两步合并
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-sortedpending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. sorted(pending)：确定性执行顺序
       
     </span>
   </a>
@@ -1038,10 +1221,542 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        这一阶段的局限
+        10. 完整代码逐行解读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 完整代码逐行解读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-stream-graphpy326-410" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 stream 方法（graph.py:326-410）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-_next_nodes-graphpy480-503" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 _next_nodes 方法（graph.py:480-503）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-add_edge-graphpy208-221" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 add_edge 的变化（graph.py:208-221）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 可运行示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 可运行示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-examplesstage_6_pregelrunpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 代码（examples/stage_6_pregel/run.py）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 运行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 逐步追踪
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 第二个示例：多 Agent 投票
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 测试解读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 测试解读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-test_pregelpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 test_pregel.py 全貌
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-test_fan_out_parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 test_fan_out_parallel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-test_parallel_nodes_read_same_snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 test_parallel_nodes_read_same_snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-test_superstep_events_show_parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 test_superstep_events_show_parallel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-test_multiple_edges_allowed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.5 test_multiple_edges_allowed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#126-test_reducer_merges_parallel_updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6 test_reducer_merges_parallel_updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-langgraph-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. 对照真实 LangGraph 的 Pregel 引擎
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-5-6-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. 从阶段 5 到阶段 6 的 diff 解读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. 从阶段 5 到阶段 6 的 diff 解读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-graphpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 graph.py 的核心改动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-test_cyclepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 test_cycle.py 的小改
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-test_pregelpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 新增 test_pregel.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-examplesstage_6_pregelrunpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 新增 examples/stage_6_pregel/run.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-asyncio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. 设计思考：为什么不是真并行（asyncio）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. 设计思考：为什么不是真并行（asyncio）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 教学清晰
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 确定性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-gil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 GIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#154-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4 真实 LangGraph 的选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#155" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5 为什么不用多线程/多进程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. 性能与复杂度分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. 性能与复杂度分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 每超级步的开销
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 浅拷贝的代价
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3 何时浅拷贝成为瓶颈
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. 调试技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. 调试技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-pending-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.1 打印每超级步的 pending 和 state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.2 检查 fan-out 是否生效
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#173" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3 检查快照隔离
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#174-reducer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.4 Reducer 不可交换时的顺序
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. 常见误区
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. 常见误区">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1 "同层节点并行 = 同时执行"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.2 "fan-out 后的节点一定并行"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#183-reducer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.3 "同层节点写不同字段就不需要 Reducer"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#184" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4 "快照 = 深拷贝"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. 阶段 6 的局限
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. 小结
       
     </span>
   </a>
@@ -1202,22 +1917,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#0" class="md-nav__link">
     <span class="md-ellipsis">
       
-        这一阶段做了什么
+        0. 一句话总结
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="这一阶段做了什么">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 执行模型升级
+        1. 阶段目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-google-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Google Pregel 论文背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Google Pregel 论文背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-bsp-bulk-synchronous-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 BSP 模型（Bulk Synchronous Parallel）
       
     </span>
   </a>
@@ -1225,10 +1962,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-fan-out" class="md-nav__link">
+  <a href="#22-superstep" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. fan-out：一个节点多条出边
+        2.2 超级步（Superstep）
       
     </span>
   </a>
@@ -1236,10 +1973,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#23-bsp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 同层节点读同一快照
+        2.3 为什么图计算用 BSP 而不是异步？
       
     </span>
   </a>
@@ -1247,10 +1984,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-reducer" class="md-nav__link">
+  <a href="#24-bsp-vs-mapreduce-vs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 通道 = 字段 + Reducer
+        2.4 BSP vs MapReduce vs 数据流
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Pregel 的"顶点活跃性"
       
     </span>
   </a>
@@ -1263,10 +2011,121 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        代码走读
+        3. 超级步概念在本项目的落地
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 超级步概念在本项目的落地">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 从"单节点遍历"到"超级步并行层"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 超级步的可视化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. fan-out：一个节点多条出边
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. fan-out：一个节点多条出边">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 阶段 5 的限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-6-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 阶段 6 的 fan-out
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 fan-out 的典型场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-fan-out-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 fan-out 与 fan-in 的对称
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 fan-out 的超级步展开
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-_next_nodes-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. _next_nodes 方法：返回 set 而非单个节点
       
     </span>
   </a>
@@ -1274,10 +2133,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        运行示例
+        6. 事件格式变化
       
     </span>
   </a>
@@ -1285,10 +2144,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#7-reducer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        关于"并行"
+        7. 通道 = 字段 + Reducer 的概念统一
       
     </span>
   </a>
@@ -1296,10 +2155,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#langgraph" class="md-nav__link">
+  <a href="#8-step_state" class="md-nav__link">
     <span class="md-ellipsis">
       
-        对照真实 LangGraph
+        8. step_state 快照：为什么同层节点要读同一快照
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. step_state 快照：为什么同层节点要读同一快照">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 如果不快照会怎样？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 快照的两步合并
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-sortedpending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. sorted(pending)：确定性执行顺序
       
     </span>
   </a>
@@ -1307,10 +2205,542 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        这一阶段的局限
+        10. 完整代码逐行解读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 完整代码逐行解读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-stream-graphpy326-410" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 stream 方法（graph.py:326-410）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-_next_nodes-graphpy480-503" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 _next_nodes 方法（graph.py:480-503）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-add_edge-graphpy208-221" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 add_edge 的变化（graph.py:208-221）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 可运行示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 可运行示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-examplesstage_6_pregelrunpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 代码（examples/stage_6_pregel/run.py）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 运行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 逐步追踪
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 第二个示例：多 Agent 投票
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 测试解读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 测试解读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-test_pregelpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 test_pregel.py 全貌
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-test_fan_out_parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 test_fan_out_parallel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-test_parallel_nodes_read_same_snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 test_parallel_nodes_read_same_snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-test_superstep_events_show_parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 test_superstep_events_show_parallel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-test_multiple_edges_allowed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.5 test_multiple_edges_allowed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#126-test_reducer_merges_parallel_updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6 test_reducer_merges_parallel_updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-langgraph-pregel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. 对照真实 LangGraph 的 Pregel 引擎
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-5-6-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. 从阶段 5 到阶段 6 的 diff 解读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. 从阶段 5 到阶段 6 的 diff 解读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-graphpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 graph.py 的核心改动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-test_cyclepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 test_cycle.py 的小改
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-test_pregelpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 新增 test_pregel.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-examplesstage_6_pregelrunpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 新增 examples/stage_6_pregel/run.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-asyncio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. 设计思考：为什么不是真并行（asyncio）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. 设计思考：为什么不是真并行（asyncio）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 教学清晰
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 确定性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-gil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 GIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#154-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4 真实 LangGraph 的选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#155" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5 为什么不用多线程/多进程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. 性能与复杂度分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. 性能与复杂度分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 每超级步的开销
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 浅拷贝的代价
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3 何时浅拷贝成为瓶颈
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. 调试技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. 调试技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-pending-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.1 打印每超级步的 pending 和 state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.2 检查 fan-out 是否生效
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#173" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3 检查快照隔离
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#174-reducer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.4 Reducer 不可交换时的顺序
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. 常见误区
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. 常见误区">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1 "同层节点并行 = 同时执行"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.2 "fan-out 后的节点一定并行"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#183-reducer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.3 "同层节点写不同字段就不需要 Reducer"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#184" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4 "快照 = 深拷贝"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. 阶段 6 的局限
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. 小结
       
     </span>
   </a>
@@ -1341,30 +2771,21 @@
 <blockquote>
 <p><strong>目标</strong>：把执行模型从"单节点遍历"升级为"超级步并行层"——同层节点并行执行，层间合并。</p>
 <p><strong>git tag</strong>：<code>stage-6</code> · <strong>代码</strong>：<code>CompiledStateGraph.stream</code> 的超级步循环</p>
+<p><strong>前置条件</strong>：已读完<a href="../stage_5_reducer/">阶段 5 Reducer</a>，理解 <code>Annotated[T, reducer]</code> 与 <code>_merge</code> 的覆盖/合并语义。</p>
 </blockquote>
-<h2 id="_1">这一阶段做了什么<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="1">1. 执行模型升级<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>graph TB
-    subgraph 超级步 0
-        S[split]
-    end
-    subgraph 超级步 1
-        A[process_a]
-        B[process_b]
-    end
-    subgraph 超级步 2
-        M[merge]
-    end
-    S --&gt; A
-    S --&gt; B
-    A --&gt; M
-    B --&gt; M</code></pre>
+<hr />
+<h2 id="0">0. 一句话总结<a class="headerlink" href="#0" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>把 <code>while current != END</code> 改成 <code>while pending:</code>，让 <code>pending</code> 从"一个节点"变成"一层节点集合"，于是图就能 fan-out 出并行层——这就是 Pregel。</p>
+</blockquote>
+<hr />
+<h2 id="1">1. 阶段目标<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>阶段 4-5</th>
-<th>阶段 6</th>
+<th>维度</th>
+<th>阶段 5（Reducer）</th>
+<th>阶段 6（Pregel）</th>
 </tr>
 </thead>
 <tbody>
@@ -1388,86 +2809,849 @@
 <td>每节点最多一条</td>
 <td><strong>fan-out</strong>：多条出边 → 多个后继</td>
 </tr>
+<tr>
+<td>事件格式</td>
+<td><code>{"node": str, ...}</code></td>
+<td><code>{"nodes": set[str], ...}</code></td>
+</tr>
+<tr>
+<td>后继计算</td>
+<td><code>_next_node(node) -&gt; str</code></td>
+<td><code>_next_nodes(pending) -&gt; set[str]</code></td>
+</tr>
 </tbody>
 </table>
-<h3 id="2-fan-out">2. fan-out：一个节点多条出边<a class="headerlink" href="#2-fan-out" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="s2">"process_a"</span><span class="p">)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="s2">"process_b"</span><span class="p">)</span>   <span class="c1"># 第二条出边 = fan-out</span>
+<p>本阶段**不改 Reducer、不改条件边语义**，只改"执行循环的形状"——从一根线变成一层一层的并行层。</p>
+<hr />
+<h2 id="2-google-pregel">2. Google Pregel 论文背景<a class="headerlink" href="#2-google-pregel" title="Permanent link">&para;</a></h2>
+<h3 id="21-bsp-bulk-synchronous-parallel">2.1 BSP 模型（Bulk Synchronous Parallel）<a class="headerlink" href="#21-bsp-bulk-synchronous-parallel" title="Permanent link">&para;</a></h3>
+<p>Pregel 是 Google 在 2010 年论文《Pregel: A System for Large-Scale Graph Processing》提出的图计算模型，根植于 <strong>BSP（Bulk Synchronous Parallel，整体同步并行）</strong> 模型。</p>
+<p>BSP 的三个要素：</p>
+<pre class="mermaid"><code>graph LR
+    A[本地计算&lt;br/&gt;Compute] --&gt; B[全局同步&lt;br/&gt;Synchronization]
+    B --&gt; C[通信&lt;br/&gt;Communication]
+    C --&gt; A</code></pre>
+<ol>
+<li><strong>本地计算</strong>：每个进程用自己的本地数据算一段</li>
+<li><strong>通信</strong>：进程间交换消息（在 Pregel 里就是写通道）</li>
+<li><strong>全局同步</strong>：所有进程都到达栅栏（barrier）后才进入下一轮</li>
+</ol>
+<p>BSP 的核心契约：<strong>一轮之内，进程之间看不见彼此的更新</strong>。这保证了"逻辑并行"——不管你实际是串行还是并行执行，结果都一样。</p>
+<h3 id="22-superstep">2.2 超级步（Superstep）<a class="headerlink" href="#22-superstep" title="Permanent link">&para;</a></h3>
+<p>Pregel 把 BSP 的"一轮"叫做**超级步**。整个计算是一串超级步：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>超级步 0 → 超级步 1 → 超级步 2 → ... → 终止
 </span></code></pre></div>
-<p>执行完 <code>split</code> 后，<code>process_a</code> 和 <code>process_b</code> 在**同一超级步**执行。</p>
-<h3 id="3">3. 同层节点读同一快照<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p>这是 Pregel 的核心语义：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">step_state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>           <span class="c1"># 快照本超级步的输入</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">updates</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">for</span> <span class="n">node_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pending</span><span class="p">):</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">node_name</span><span class="p">](</span><span class="n">step_state</span><span class="p">)</span>   <span class="c1"># 都读同一快照</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">updates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">for</span> <span class="n">update</span> <span class="ow">in</span> <span class="n">updates</span><span class="p">:</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>     <span class="c1"># 最后合并</span>
+<p>每个超级步里：</p>
+<ul>
+<li>所有**活跃节点**读上一超级步结束时的全局状态快照</li>
+<li>各自计算，写出更新</li>
+<li>超级步结束时，所有更新一次性合并，形成下一超级步的输入</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Pregel 的关键不变量</p>
+<p>同一超级步内的节点**互不可见**。节点 A 在超级步 k 写的值，节点 B 在超级步 k 看不到，要到超级步 k+1 才能看到。</p>
+</div>
+<h3 id="23-bsp">2.3 为什么图计算用 BSP 而不是异步？<a class="headerlink" href="#23-bsp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>异步消息传递</td>
+<td>快、无需等慢节点</td>
+<td>结果依赖调度顺序，难推理</td>
+</tr>
+<tr>
+<td>BSP（Pregel）</td>
+<td>结果确定、易推理、易容错</td>
+<td>每步要等最慢的节点</td>
+</tr>
+</tbody>
+</table>
+<p>图算法（PageRank、最短路径、连通分量）天然适合 BSP：每轮所有节点用上一轮的全局状态更新自己。LangGraph 借用了这个模型来表达"一层节点并行执行"。</p>
+<div class="admonition tip">
+<p class="admonition-title">LangGraph 与 Pregel 的关系</p>
+<p>LangGraph 的执行引擎名字就叫 <code>Pregel</code>。它把"节点"对应到 Pregel 的 vertex，把"状态字段 + Reducer"对应到 Pregel 的 channel。本教学项目正是复刻这一映射。</p>
+</div>
+<h3 id="24-bsp-vs-mapreduce-vs">2.4 BSP vs MapReduce vs 数据流<a class="headerlink" href="#24-bsp-vs-mapreduce-vs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>同步</th>
+<th>通信</th>
+<th>典型代表</th>
+<th>适合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MapReduce</td>
+<td>每阶段同步</td>
+<td>框架自动 shuffle</td>
+<td>Hadoop</td>
+<td>批处理 ETL</td>
+</tr>
+<tr>
+<td>BSP（Pregel）</td>
+<td>每超级步同步</td>
+<td>显式写通道</td>
+<td>Pregel/Giraph/LangGraph</td>
+<td>图算法、Agent 循环</td>
+</tr>
+<tr>
+<td>数据流</td>
+<td>异步</td>
+<td>消息队列</td>
+<td>Spark/Flink</td>
+<td>流处理</td>
+</tr>
+</tbody>
+</table>
+<p>LangGraph 选 BSP 是因为 Agent 的执行模式像图算法：每轮所有活跃节点用上一轮全局状态更新自己，轮间同步。</p>
+<h3 id="25-pregel">2.5 Pregel 的"顶点活跃性"<a class="headerlink" href="#25-pregel" title="Permanent link">&para;</a></h3>
+<p>Pregel 论文里每个顶点有个 <code>active</code> 标志，顶点可以 <code>vote_to_halt()</code> 把自己设为 inactive。当所有顶点都 inactive，计算终止。</p>
+<p>本项目的对应：<code>pending</code> 集合为空就终止。节点不会显式 halt，而是通过**没有后继**（或后继是 END）自然退出 pending。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">while</span> <span class="n">pending</span><span class="p">:</span>          <span class="c1"># pending 非空就继续（有活跃节点）</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="o">...</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">pending</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_nodes</span><span class="p">(</span><span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>   <span class="c1"># 算下一批活跃节点</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># pending 为空，终止</span>
 </span></code></pre></div>
-<p><code>process_a</code> 和 <code>process_b</code> 都读超级步开始的状态，<strong>互不影响</strong>。即使 <code>process_a</code> 改了某字段，<code>process_b</code> 看到的还是旧值。合并发生在所有节点执行完之后。</p>
-<p><strong>为什么这样？</strong> 如果串行执行且第二个节点读第一个节点的更新，结果依赖执行顺序——不并行就不安全。Pregel 的快照语义保证：同层节点**逻辑并行**，结果与执行顺序无关。</p>
-<h3 id="4-reducer">4. 通道 = 字段 + Reducer<a class="headerlink" href="#4-reducer" title="Permanent link">&para;</a></h3>
-<p>阶段 5 的 Reducer 和阶段 6 的超级步在这里统一：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>节点 ──写──▶ [通道: 字段 + Reducer] ──读──▶ 节点
+<hr />
+<h2 id="3">3. 超级步概念在本项目的落地<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 从"单节点遍历"到"超级步并行层"<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>阶段 4-5 的执行循环：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entry_point</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">while</span> <span class="n">current</span> <span class="o">!=</span> <span class="n">END</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">current</span><span class="p">](</span><span class="n">state</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_node</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>   <span class="c1"># 返回单个节点</span>
+</span></code></pre></div>
+<p>阶段 6 的执行循环：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pending</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_entry_point</span><span class="p">}</span>                   <span class="c1"># 一层节点的集合</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">while</span> <span class="n">pending</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">step_state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>                    <span class="c1"># 快照</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">updates</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pending</span><span class="p">):</span>                <span class="c1"># 同层所有节点</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">updates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">name</span><span class="p">](</span><span class="n">step_state</span><span class="p">))</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">for</span> <span class="n">update</span> <span class="ow">in</span> <span class="n">updates</span><span class="p">:</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>              <span class="c1"># 合并</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">pending</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_nodes</span><span class="p">(</span><span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>  <span class="c1"># 返回下一层集合</span>
+</span></code></pre></div>
+<p>变化只有两处：</p>
+<ol>
+<li><code>current: str</code> → <code>pending: set[str]</code></li>
+<li><code>_next_node</code> 返回单个 → <code>_next_nodes</code> 返回集合</li>
+</ol>
+<p>但语义跃迁是巨大的：现在图能表达"一层多个节点并行"。</p>
+<h3 id="32">3.2 超级步的可视化<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph TB
+    subgraph 超级步 0
+        S[split]
+    end
+    subgraph 超级步 1
+        A[process_a]
+        B[process_b]
+    end
+    subgraph 超级步 2
+        M[merge]
+    end
+    S --&gt; A
+    S --&gt; B
+    A --&gt; M
+    B --&gt; M</code></pre>
+<ul>
+<li>超级步 0：执行 <code>{split}</code></li>
+<li>超级步 1：执行 <code>{process_a, process_b}</code>（<strong>同一层</strong>，读同一快照）</li>
+<li>超级步 2：执行 <code>{merge}</code>（收集上一步两个节点的结果）</li>
+<li>超级步 3：<code>pending = {}</code>，循环结束</li>
+</ul>
+<hr />
+<h2 id="4-fan-out">4. fan-out：一个节点多条出边<a class="headerlink" href="#4-fan-out" title="Permanent link">&para;</a></h2>
+<h3 id="41-5">4.1 阶段 5 的限制<a class="headerlink" href="#41-5" title="Permanent link">&para;</a></h3>
+<p>阶段 5 的 <code>add_edge</code> 在 <code>StateGraph</code> 里其实已经允许 <code>dict[str, list[str]]</code>（看 <code>self._edges.setdefault(source, []).append(target)</code>），但执行循环是单节点的，所以多条出边没有意义——<code>_next_node</code> 只能返回一个。</p>
+<h3 id="42-6-fan-out">4.2 阶段 6 的 fan-out<a class="headerlink" href="#42-6-fan-out" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="s2">"process_a"</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="s2">"process_b"</span><span class="p">)</span>   <span class="c1"># 第二条出边 = fan-out</span>
+</span></code></pre></div>
+<p>执行完 <code>split</code> 后，<code>_next_nodes</code> 把两条出边都收进集合：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">next_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edges</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="p">[]):</span>   <span class="c1"># ["process_a", "process_b"]</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">if</span> <span class="n">target</span> <span class="o">!=</span> <span class="n">END</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="n">next_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># next_set = {"process_a", "process_b"}</span>
+</span></code></pre></div>
+<p>于是下一个超级步的 <code>pending = {"process_a", "process_b"}</code>，两节点同层执行。</p>
+<h3 id="43-fan-out">4.3 fan-out 的典型场景<a class="headerlink" href="#43-fan-out" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分发-并行-收集</td>
+<td>split → {a, b} → merge（本阶段示例）</td>
+</tr>
+<tr>
+<td>多 Agent 投票</td>
+<td>query → {agent_1, agent_2, agent_3} → vote</td>
+</tr>
+<tr>
+<td>多视角检索</td>
+<td>query → {search_web, search_db, search_cache} → merge</td>
+</tr>
+<tr>
+<td>Map 阶段</td>
+<td>input → {mapper_1, mapper_2, ...} → reducer</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">fan-out 不是条件边的多路</p>
+<p>条件边 <code>add_conditional_edges</code> 是"根据状态选**一个**目标"。fan-out 是"**所有**出边都走"。两者正交：一个节点要么有条件边（选一个），要么有静态边（全走）。</p>
+</div>
+<h3 id="44-fan-out-fan-in">4.4 fan-out 与 fan-in 的对称<a class="headerlink" href="#44-fan-out-fan-in" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph LR
+    S[split] --&gt; A
+    S --&gt; B
+    S --&gt; C
+    A --&gt; M[merge]
+    B --&gt; M
+    C --&gt; M</code></pre>
+<ul>
+<li><strong>fan-out</strong>（分发）：<code>split</code> 有多条出边 → 下一超级步多个节点</li>
+<li><strong>fan-in</strong>（收集）：<code>merge</code> 有多条入边 → 上一超级步多个节点都指向它</li>
+</ul>
+<p>fan-in 不需要特殊语法，<code>_next_nodes</code> 的 set 去重天然处理：<code>a → merge, b → merge, c → merge</code> 时，<code>next_set = {merge}</code>（去重），merge 只执行一次。</p>
+<h3 id="45-fan-out">4.5 fan-out 的超级步展开<a class="headerlink" href="#45-fan-out" title="Permanent link">&para;</a></h3>
+<p>考虑 <code>split → {a, b, c} → merge</code>：</p>
+<table>
+<thead>
+<tr>
+<th>超级步</th>
+<th>pending</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>{split}</code></td>
+<td>单节点</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>{a, b, c}</code></td>
+<td>fan-out 展开成 3 节点同层</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>{merge}</code></td>
+<td>fan-in 收束回单节点</td>
+</tr>
+</tbody>
+</table>
+<p>fan-out 把"一个节点"展开成"一层多个节点"，fan-in 把"一层多个节点"收束回"一个节点"。超级步的层就是这种展开-收束的节奏。</p>
+<hr />
+<h2 id="5-_next_nodes-set">5. <code>_next_nodes</code> 方法：返回 set 而非单个节点<a class="headerlink" href="#5-_next_nodes-set" title="Permanent link">&para;</a></h2>
+<p>完整代码（<code>graph.py:480-503</code>）：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_next_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pending</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">state</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">"""收集所有 pending 节点的后继，构成下一个超级步。</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">    - 条件边：路由选一个目标</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="sd">    - 静态边：所有出边目标都走（fan-out）</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="sd">    - END 被过滤掉</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="sd">    """</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">next_set</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">pending</span><span class="p">:</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conditional_edges</span><span class="p">:</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>            <span class="n">router</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conditional_edges</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>            <span class="n">label</span> <span class="o">=</span> <span class="n">router</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>            <span class="k">if</span> <span class="n">label</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mapping</span><span class="p">:</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>                    <span class="sa">f</span><span class="s2">"节点 '</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">' 的路由返回了未知标签 '</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">'"</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>                <span class="p">)</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>            <span class="n">target</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>            <span class="k">if</span> <span class="n">target</span> <span class="o">!=</span> <span class="n">END</span><span class="p">:</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>                <span class="n">next_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>            <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edges</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="p">[]):</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>                <span class="k">if</span> <span class="n">target</span> <span class="o">!=</span> <span class="n">END</span><span class="p">:</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>                    <span class="n">next_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="k">return</span> <span class="n">next_set</span>
+</span></code></pre></div>
+<p>逐行解读：</p>
+<table>
+<thead>
+<tr>
+<th>行</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>next_set: set[str] = set()</code></td>
+<td>用 set 自动去重——两个节点都指向 <code>merge</code> 时，<code>merge</code> 只出现一次</td>
+</tr>
+<tr>
+<td><code>for node in pending:</code></td>
+<td>遍历当前层的每个节点</td>
+</tr>
+<tr>
+<td><code>if node in self._conditional_edges:</code></td>
+<td>该节点有条件边 → 走条件分支</td>
+</tr>
+<tr>
+<td><code>label = router(state)</code></td>
+<td>调路由函数，拿标签</td>
+</tr>
+<tr>
+<td><code>if label not in mapping:</code></td>
+<td>路由返回未知标签 → 报错（防御）</td>
+</tr>
+<tr>
+<td><code>target = mapping[label]</code></td>
+<td>标签 → 目标节点</td>
+</tr>
+<tr>
+<td><code>if target != END: next_set.add(target)</code></td>
+<td>END 不入集合（END 是终止符）</td>
+</tr>
+<tr>
+<td><code>else: for target in self._edges.get(node, []):</code></td>
+<td>静态边：所有出边都走（fan-out）</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">为什么用 set 去重</p>
+<p>考虑 <code>a → c, b → c</code>：超级步 k 执行 <code>{a, b}</code>，两者都指向 <code>c</code>。如果用 list，<code>c</code> 会出现两次，下一个超级步会执行两次 <code>c</code>——错误。set 自动去重，<code>c</code> 只执行一次。</p>
+</div>
+<hr />
+<h2 id="6">6. 事件格式变化<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p>阶段 4-5 的事件：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span><span class="s2">"node"</span><span class="p">:</span> <span class="s2">"loop"</span><span class="p">,</span> <span class="s2">"state"</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span> <span class="s2">"step"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>     <span class="c1"># 单个节点</span>
+</span></code></pre></div>
+<p>阶段 6 的事件：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="s2">"nodes"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"process_a"</span><span class="p">,</span> <span class="s2">"process_b"</span><span class="p">},</span> <span class="s2">"state"</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span> <span class="s2">"step"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>   <span class="c1"># 一层节点集合</span>
+</span></code></pre></div>
+<p><code>node</code> → <code>nodes</code>（复数 + set 类型）。这是破坏性变更：下游消费事件的地方要改。</p>
+<div class="admonition warning">
+<p class="admonition-title">如果你在阶段 5 写过 <code>event["node"]</code></p>
+<p>阶段 6 起要改成 <code>event["nodes"]</code>。本项目的示例和测试都已同步更新。</p>
+</div>
+<hr />
+<h2 id="7-reducer">7. 通道 = 字段 + Reducer 的概念统一<a class="headerlink" href="#7-reducer" title="Permanent link">&para;</a></h2>
+<p>Pregel 论文里有 <strong>channel</strong>（通道）的概念：节点往通道里写消息，下一超级步其他节点从通道读。本项目的对应：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Pregel 通道  ⟷  状态的一个字段 + 该字段的 Reducer
+</span></code></pre></div>
+<pre class="mermaid"><code>graph LR
+    A[节点 A] --"写 values=[1]"--&gt; C[通道: values 字段&lt;br/&gt;Reducer: add]
+    B[节点 B] --"写 values=[2]"--&gt; C
+    C --"读 [1,2]"--&gt; N[下一超级步的节点]</code></pre>
+<ul>
+<li><strong>通道</strong> = 状态的一个字段（如 <code>values</code>）</li>
+<li><strong>合并策略</strong> = 该字段的 Reducer（如 <code>add</code>）</li>
+<li>同层多个节点写同一通道，Reducer 决定怎么合</li>
+</ul>
+<p><code>add</code> 天然可交换可结合：<code>add([1], [2]) == add([2], [1]) == [1, 2]</code>。所以同层节点不管以什么顺序执行，合并结果都一样——这就是"逻辑并行"的数学保证。</p>
+<div class="admonition question">
+<p class="admonition-title">如果 Reducer 不可交换会怎样？</p>
+<p>比如 <code>str.__add__</code>（字符串拼接）：<code>"a" + "b" != "b" + "a"</code>。这时同层节点的合并结果**依赖执行顺序**。本项目用 <code>sorted(pending)</code> 保证顺序确定，但语义上这已经不算"真并行"了。真实 LangGraph 在文档里也警告：Reducer 最好可交换。</p>
+</div>
+<hr />
+<h2 id="8-step_state">8. <code>step_state</code> 快照：为什么同层节点要读同一快照<a class="headerlink" href="#8-step_state" title="Permanent link">&para;</a></h2>
+<p>核心代码：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">step_state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>           <span class="c1"># 快照本超级步的输入</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">updates</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">for</span> <span class="n">node_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pending</span><span class="p">):</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">node_name</span><span class="p">](</span><span class="n">step_state</span><span class="p">)</span>   <span class="c1"># 都读同一快照</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">updates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">for</span> <span class="n">update</span> <span class="ow">in</span> <span class="n">updates</span><span class="p">:</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>     <span class="c1"># 最后合并到 state</span>
+</span></code></pre></div>
+<h3 id="81">8.1 如果不快照会怎样？<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<p>假设不复制，直接传 <code>state</code>：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">for</span> <span class="n">node_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pending</span><span class="p">):</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">node_name</span><span class="p">](</span><span class="n">state</span><span class="p">)</span>   <span class="c1"># 直接传 state</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>               <span class="c1"># 立即合并</span>
+</span></code></pre></div>
+<p>那么 <code>process_a</code> 改了 <code>state["x"]</code> 后，<code>process_b</code> 会看到新的 <code>state["x"]</code>。结果依赖 <code>sorted(pending)</code> 的顺序——<code>process_a</code> 在前和 <code>process_b</code> 在前结果不同。这违反了 Pregel 的"同层互不可见"契约。</p>
+<h3 id="82">8.2 快照的两步合并<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>sequenceDiagram
+    participant S as state
+    participant SS as step_state (快照)
+    participant A as process_a
+    participant B as process_b
+    S-&gt;&gt;SS: dict(state) 复制
+    SS-&gt;&gt;A: 读 step_state
+    SS-&gt;&gt;B: 读 step_state（同一份）
+    A--&gt;&gt;S: update_a（暂存）
+    B--&gt;&gt;S: update_b（暂存）
+    Note over S: 所有节点执行完
+    S-&gt;&gt;S: merge(update_a)
+    S-&gt;&gt;S: merge(update_b)</code></pre>
+<ol>
+<li><strong>读阶段</strong>：所有节点读 <code>step_state</code>（同一份快照），各自算出 update，<strong>不写 state</strong></li>
+<li><strong>写阶段</strong>：所有 update 算完后，依次 <code>_merge</code> 进 <code>state</code></li>
+</ol>
+<p>这保证同层节点的输入完全一致，输出合并顺序由 <code>sorted(pending)</code> 确定（对可交换 Reducer 无关）。</p>
+<div class="admonition info">
+<p class="admonition-title">BSP 的栅栏就在这里</p>
+<p>"所有节点执行完"就是 BSP 的 barrier。读阶段是本地计算，写阶段是通信+同步。</p>
+</div>
+<hr />
+<h2 id="9-sortedpending">9. <code>sorted(pending)</code>：确定性执行顺序<a class="headerlink" href="#9-sortedpending" title="Permanent link">&para;</a></h2>
+<p><code>pending</code> 是 <code>set[str]</code>，迭代顺序在 Python 里是哈希序（对字符串而言，CPython 实现上是不确定的，跨 Python 版本可能不同）。<code>sorted(pending)</code> 强制成字典序：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">sorted</span><span class="p">({</span><span class="s2">"process_b"</span><span class="p">,</span> <span class="s2">"process_a"</span><span class="p">})</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">[</span><span class="s1">'process_a'</span><span class="p">,</span> <span class="s1">'process_b'</span><span class="p">]</span>
+</span></code></pre></div>
+<p>为什么重要：</p>
+<ol>
+<li><strong>测试可复现</strong>：同一输入永远同一输出，不会因为 set 迭代顺序飘忽</li>
+<li><strong>调试可重现</strong>：bug 不会"偶发"</li>
+<li><strong>Reducer 不可交换时的明确语义</strong>：至少顺序是确定的，能推理</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">真实 LangGraph 怎么做</p>
+<p>真实 LangGraph 在 Pregel 引擎里也对同层节点排序（按节点名），同样为了确定性。生产里同层节点用 <code>asyncio.gather</code> 真并行，但**写通道时仍按确定顺序合并**，所以结果还是确定的。</p>
+</div>
+<hr />
+<h2 id="10">10. 完整代码逐行解读<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<h3 id="101-stream-graphpy326-410">10.1 <code>stream</code> 方法（<code>graph.py:326-410</code>）<a class="headerlink" href="#101-stream-graphpy326-410" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">stream</span><span class="p">(</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="nb">input</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="o">*</span><span class="p">,</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="n">recursion_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">DEFAULT_RECURSION_LIMIT</span><span class="p">,</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+</span></code></pre></div>
+<p>签名：<code>input</code> 可为 <code>None</code>（续跑，阶段 7）；<code>config</code> 含 <code>thread_id</code>（阶段 7）；返回生成器，每个超级步 yield 一个事件。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>    <span class="n">thread_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_thread_id</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="k">if</span> <span class="nb">input</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_checkpointer</span> <span class="ow">and</span> <span class="n">thread_id</span><span class="p">:</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>        <span class="n">cp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_checkpointer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">thread_id</span><span class="p">)</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>        <span class="k">if</span> <span class="n">cp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"thread '</span><span class="si">{</span><span class="n">thread_id</span><span class="si">}</span><span class="s2">' 没有检查点，无法续跑"</span><span class="p">)</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>        <span class="n">state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cp</span><span class="p">[</span><span class="s2">"state"</span><span class="p">])</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>        <span class="n">pending</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">cp</span><span class="p">[</span><span class="s2">"pending"</span><span class="p">])</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>        <span class="n">step</span> <span class="o">=</span> <span class="n">cp</span><span class="p">[</span><span class="s2">"step"</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>        <span class="n">resuming</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>        <span class="n">state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="k">if</span> <span class="nb">input</span> <span class="k">else</span> <span class="p">{}</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>        <span class="n">pending</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_entry_point</span><span class="p">}</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>        <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>        <span class="n">resuming</span> <span class="o">=</span> <span class="kc">False</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>分支</th>
+<th>触发条件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>续跑</td>
+<td><code>input is None</code> 且有 checkpointer 且有 thread_id</td>
+<td>从检查点恢复 state/pending/step</td>
+</tr>
+<tr>
+<td>新跑</td>
+<td>其他</td>
+<td>state 从 input 复制，pending = 入口，step = 0</td>
+</tr>
+</tbody>
+</table>
+<p><code>resuming</code> 标志阶段 8 用于跳过 interrupt 检查，本阶段不影响。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>    <span class="k">while</span> <span class="n">pending</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>        <span class="k">if</span> <span class="n">step</span> <span class="o">&gt;=</span> <span class="n">recursion_limit</span><span class="p">:</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>            <span class="k">raise</span> <span class="ne">RecursionError</span><span class="p">(</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>                <span class="sa">f</span><span class="s2">"执行超过 recursion_limit (</span><span class="si">{</span><span class="n">recursion_limit</span><span class="si">}</span><span class="s2">) 步，疑似死循环"</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>            <span class="p">)</span>
+</span></code></pre></div>
+<p>主循环：<code>pending</code> 非空就继续。<code>recursion_limit</code> 防死循环（默认 25）。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">resuming</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interrupt_before</span> <span class="ow">and</span> <span class="p">(</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>            <span class="n">pending</span> <span class="o">&amp;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interrupt_before</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>        <span class="p">):</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_checkpointer</span> <span class="ow">and</span> <span class="n">thread_id</span><span class="p">:</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">_checkpointer</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">thread_id</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">),</span> <span class="n">pending</span><span class="p">)</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>            <span class="k">yield</span> <span class="p">{</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>                <span class="s2">"nodes"</span><span class="p">:</span> <span class="n">pending</span><span class="p">,</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>                <span class="s2">"state"</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">),</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>                <span class="s2">"step"</span><span class="p">:</span> <span class="n">step</span><span class="p">,</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>                <span class="s2">"interrupt"</span><span class="p">:</span> <span class="s2">"before"</span><span class="p">,</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>            <span class="p">}</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>            <span class="k">return</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>        <span class="n">resuming</span> <span class="o">=</span> <span class="kc">False</span>
+</span></code></pre></div>
+<p>阶段 8 的 <code>interrupt_before</code> 检查。本阶段 <code>_interrupt_before</code> 是空 set，整段跳过。<code>resuming = False</code> 在检查后重置。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>        <span class="n">step_state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>        <span class="n">updates</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>        <span class="k">for</span> <span class="n">node_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pending</span><span class="p">):</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>            <span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">node_name</span><span class="p">](</span><span class="n">step_state</span><span class="p">)</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>            <span class="n">updates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>        <span class="k">for</span> <span class="n">update</span> <span class="ow">in</span> <span class="n">updates</span><span class="p">:</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Pregel 超级步的核心</strong>：</p>
+<ol>
+<li><code>step_state = dict(state)</code> 快照</li>
+<li><code>for node_name in sorted(pending)</code>：同层所有节点，按字典序</li>
+<li>每个节点读 <code>step_state</code>，返回 update，<strong>暂存</strong> <code>updates</code> 列表</li>
+<li>所有节点算完后，依次 <code>_merge</code> 进 <code>state</code></li>
+</ol>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interrupt_after</span> <span class="ow">and</span> <span class="p">(</span><span class="n">pending</span> <span class="o">&amp;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interrupt_after</span><span class="p">):</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>            <span class="n">next_pending</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_nodes</span><span class="p">(</span><span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_checkpointer</span> <span class="ow">and</span> <span class="n">thread_id</span><span class="p">:</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">_checkpointer</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">thread_id</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">),</span> <span class="n">next_pending</span><span class="p">)</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>            <span class="k">yield</span> <span class="p">{</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>                <span class="s2">"nodes"</span><span class="p">:</span> <span class="n">pending</span><span class="p">,</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>                <span class="s2">"state"</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">),</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>                <span class="s2">"step"</span><span class="p">:</span> <span class="n">step</span><span class="p">,</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>                <span class="s2">"interrupt"</span><span class="p">:</span> <span class="s2">"after"</span><span class="p">,</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>            <span class="p">}</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>            <span class="k">return</span>
+</span></code></pre></div>
+<p>阶段 8 的 <code>interrupt_after</code> 检查。本阶段为空，跳过。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_checkpointer</span> <span class="ow">and</span> <span class="n">thread_id</span><span class="p">:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_checkpointer</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">thread_id</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">),</span> <span class="n">pending</span><span class="p">)</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>        <span class="k">yield</span> <span class="p">{</span><span class="s2">"nodes"</span><span class="p">:</span> <span class="n">pending</span><span class="p">,</span> <span class="s2">"state"</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">),</span> <span class="s2">"step"</span><span class="p">:</span> <span class="n">step</span><span class="p">}</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>        <span class="n">pending</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_nodes</span><span class="p">(</span><span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>        <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></code></pre></div>
 <ul>
-<li>**通道**就是状态的一个字段</li>
-<li><strong>Reducer</strong> 就是通道的合并策略</li>
-<li>同层多个节点写同一通道，Reducer 决定怎么合（<code>add</code> 天然可交换可结合，合并顺序无关）</li>
+<li>有 checkpointer 就存快照（阶段 7）</li>
+<li>yield 事件：<code>{"nodes": set, "state": dict, "step": int}</code></li>
+<li>算下一层：<code>pending = self._next_nodes(pending, state)</code></li>
+<li>step 递增</li>
 </ul>
-<h2 id="_2">代码走读<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">超级步循环</label><div class="tabbed-content">
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">recursion_limit</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">pending</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_entry_point</span><span class="p">}</span>      <span class="c1"># 超级步 0：入口</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">while</span> <span class="n">pending</span><span class="p">:</span>                      <span class="c1"># 还有节点要执行</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">step_state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>        <span class="c1"># 快照</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">updates</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pending</span><span class="p">):</span>    <span class="c1"># 同层所有节点</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            <span class="n">updates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">name</span><span class="p">](</span><span class="n">step_state</span><span class="p">))</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="k">for</span> <span class="n">update</span> <span class="ow">in</span> <span class="n">updates</span><span class="p">:</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>  <span class="c1"># 合并</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="k">yield</span> <span class="p">{</span><span class="s2">"nodes"</span><span class="p">:</span> <span class="n">pending</span><span class="p">,</span> <span class="s2">"state"</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">state</span><span class="p">),</span> <span class="s2">"step"</span><span class="p">:</span> <span class="n">step</span><span class="p">}</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="n">pending</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_nodes</span><span class="p">(</span><span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>  <span class="c1"># 下一层</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+<h3 id="102-_next_nodes-graphpy480-503">10.2 <code>_next_nodes</code> 方法（<code>graph.py:480-503</code>）<a class="headerlink" href="#102-_next_nodes-graphpy480-503" title="Permanent link">&para;</a></h3>
+<p>已在第 5 节详述。</p>
+<h3 id="103-add_edge-graphpy208-221">10.3 <code>add_edge</code> 的变化（<code>graph.py:208-221</code>）<a class="headerlink" href="#103-add_edge-graphpy208-221" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">add_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="k">if</span> <span class="n">source</span> <span class="o">==</span> <span class="n">START</span><span class="p">:</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>        <span class="k">if</span> <span class="n">target</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">:</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"目标节点 '</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">' 不存在"</span><span class="p">)</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_entry_point</span> <span class="o">=</span> <span class="n">target</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>        <span class="k">return</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>    <span class="k">if</span> <span class="n">source</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">:</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"源节点 '</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">' 不存在"</span><span class="p">)</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>    <span class="k">if</span> <span class="n">target</span> <span class="o">!=</span> <span class="n">END</span> <span class="ow">and</span> <span class="n">target</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">:</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"目标节点 '</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">' 不存在"</span><span class="p">)</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>    <span class="k">if</span> <span class="n">source</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conditional_edges</span><span class="p">:</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"节点 '</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">' 已有条件出边，不能再加静态边"</span><span class="p">)</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_edges</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>   <span class="c1"># ← 关键</span>
 </span></code></pre></div>
+<p>最后一行 <code>setdefault(source, []).append(target)</code>：同一 source 多次 <code>add_edge</code> 会累积成 list。阶段 1 的 <code>Graph</code> 这里是 <code>self._edges[source] = target</code>（覆盖，只留一条），阶段 6 的 <code>StateGraph</code> 是 append（累积，fan-out）。</p>
+<div class="admonition info">
+<p class="admonition-title">其实阶段 2-5 的 StateGraph.add_edge 已经是 append</p>
+<p>没错，<code>setdefault(...).append(...)</code> 在阶段 2 就有了。但阶段 2-5 的执行循环是单节点，多条出边没有效果。阶段 6 的 <code>_next_nodes</code> 才真正让多条出边生效。</p>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">收集后继</label><div class="tabbed-content">
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_next_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pending</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">next_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">pending</span><span class="p">:</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conditional_edges</span><span class="p">:</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            <span class="n">target</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">router</span><span class="p">(</span><span class="n">state</span><span class="p">)]</span>   <span class="c1"># 条件边选一个</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>            <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edges</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="p">[]):</span>  <span class="c1"># 静态边全走</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>                <span class="n">next_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="k">return</span> <span class="n">next_set</span>
+<hr />
+<h2 id="11">11. 可运行示例<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<h3 id="111-examplesstage_6_pregelrunpy">11.1 代码（<code>examples/stage_6_pregel/run.py</code>）<a class="headerlink" href="#111-examplesstage_6_pregelrunpy" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">add</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Annotated</span><span class="p">,</span> <span class="n">TypedDict</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tiny_langgraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">END</span><span class="p">,</span> <span class="n">START</span><span class="p">,</span> <span class="n">StateGraph</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">State</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>    <span class="n">number</span><span class="p">:</span> <span class="nb">int</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>    <span class="n">doubled</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">add</span><span class="p">]</span>      <span class="c1"># Reducer: 追加</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>    <span class="n">shifted</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">add</span><span class="p">]</span>      <span class="c1"># Reducer: 追加</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    <span class="n">combined</span><span class="p">:</span> <span class="nb">int</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">State</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>        <span class="k">return</span> <span class="p">{}</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_a</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">State</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>        <span class="n">result</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">"number"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">"doubled"</span><span class="p">:</span> <span class="p">[</span><span class="n">result</span><span class="p">]}</span>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_b</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">State</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>        <span class="n">result</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">"number"</span><span class="p">]</span> <span class="o">+</span> <span class="mi">100</span>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">"shifted"</span><span class="p">:</span> <span class="p">[</span><span class="n">result</span><span class="p">]}</span>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">State</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>        <span class="n">d</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">"doubled"</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">state</span><span class="p">[</span><span class="s2">"shifted"</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">"combined"</span><span class="p">:</span> <span class="n">d</span> <span class="o">+</span> <span class="n">s</span><span class="p">}</span>
+</span><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>
+</span><span id="__span-21-29"><a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>    <span class="n">graph</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">State</span><span class="p">)</span>
+</span><span id="__span-21-30"><a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="n">split</span><span class="p">)</span>
+</span><span id="__span-21-31"><a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"process_a"</span><span class="p">,</span> <span class="n">process_a</span><span class="p">)</span>
+</span><span id="__span-21-32"><a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"process_b"</span><span class="p">,</span> <span class="n">process_b</span><span class="p">)</span>
+</span><span id="__span-21-33"><a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"merge"</span><span class="p">,</span> <span class="n">merge</span><span class="p">)</span>
+</span><span id="__span-21-34"><a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"split"</span><span class="p">)</span>
+</span><span id="__span-21-35"><a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="s2">"process_a"</span><span class="p">)</span>    <span class="c1"># fan-out</span>
+</span><span id="__span-21-36"><a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="s2">"process_b"</span><span class="p">)</span>    <span class="c1"># fan-out</span>
+</span><span id="__span-21-37"><a id="__codelineno-21-37" name="__codelineno-21-37" href="#__codelineno-21-37"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"process_a"</span><span class="p">,</span> <span class="s2">"merge"</span><span class="p">)</span>
+</span><span id="__span-21-38"><a id="__codelineno-21-38" name="__codelineno-21-38" href="#__codelineno-21-38"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"process_b"</span><span class="p">,</span> <span class="s2">"merge"</span><span class="p">)</span>
+</span><span id="__span-21-39"><a id="__codelineno-21-39" name="__codelineno-21-39" href="#__codelineno-21-39"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"merge"</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__span-21-40"><a id="__codelineno-21-40" name="__codelineno-21-40" href="#__codelineno-21-40"></a>
+</span><span id="__span-21-41"><a id="__codelineno-21-41" name="__codelineno-21-41" href="#__codelineno-21-41"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
+</span><span id="__span-21-42"><a id="__codelineno-21-42" name="__codelineno-21-42" href="#__codelineno-21-42"></a>    <span class="n">initial</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"number"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">"doubled"</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">"shifted"</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">"combined"</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+</span><span id="__span-21-43"><a id="__codelineno-21-43" name="__codelineno-21-43" href="#__codelineno-21-43"></a>
+</span><span id="__span-21-44"><a id="__codelineno-21-44" name="__codelineno-21-44" href="#__codelineno-21-44"></a>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">initial</span><span class="p">):</span>
+</span><span id="__span-21-45"><a id="__codelineno-21-45" name="__codelineno-21-45" href="#__codelineno-21-45"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  超级步 </span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'step'</span><span class="p">]</span><span class="si">}</span><span class="s2">: 执行 </span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-21-46"><a id="__codelineno-21-46" name="__codelineno-21-46" href="#__codelineno-21-46"></a>
+</span><span id="__span-21-47"><a id="__codelineno-21-47" name="__codelineno-21-47" href="#__codelineno-21-47"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">initial</span><span class="p">)</span>
+</span><span id="__span-21-48"><a id="__codelineno-21-48" name="__codelineno-21-48" href="#__codelineno-21-48"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"最终结果: combined = </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'combined'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span></code></pre></div>
-</div>
-</div>
-<h2 id="_3">运行示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>-m<span class="w"> </span>examples.stage_6_pregel.run
+<h3 id="112">11.2 运行<a class="headerlink" href="#112" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>python<span class="w"> </span>-m<span class="w"> </span>examples.stage_6_pregel.run
 </span></code></pre></div>
-<p>输出：
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>按超级步执行：
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  超级步 0: 执行 {'split'}
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  超级步 1: 执行 {'process_a', 'process_b'}
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  超级步 2: 执行 {'merge'}
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>最终结果: combined = 121
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  (doubled=[14], shifted=[107])
-</span></code></pre></div></p>
-<h2 id="_4">关于"并行"<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>本阶段同层节点**串行执行**（<code>for name in sorted(pending)</code>），但**读同一快照**，所以**语义上并行**——结果与执行顺序无关。</p>
-<p>真实 LangGraph 用 <code>asyncio</code> 做真并行。我们保持串行是为了：</p>
-<ol>
-<li>教学清晰——Pregel 的核心是**快照语义**，不是线程</li>
-<li>确定性——<code>sorted(pending)</code> 保证执行顺序稳定，便于测试和调试</li>
-<li>GIL——Python 的真并行对 CPU 密集型意义有限</li>
-</ol>
-<h2 id="langgraph">对照真实 LangGraph<a class="headerlink" href="#langgraph" title="Permanent link">&para;</a></h2>
+<h3 id="113">11.3 输出<a class="headerlink" href="#113" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>============================================================
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>示例：Pregel 超级步 —— 分发-并行-收集
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>============================================================
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>图: split -&gt; {process_a, process_b} -&gt; merge
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>     process_a 和 process_b 在同一超级步并行执行
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>按超级步执行：
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>------------------------------------------------------------
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>  [split] 收到 number=7, 分发到两个处理器
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>  超级步 0: 执行 {'split'}
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>  [process_a] 并行执行: 7 * 2 = 14
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>  [process_b] 并行执行: 7 + 100 = 107
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>  超级步 1: 执行 {'process_a', 'process_b'}
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>  [merge] 收集并行结果: 14 + 107 = 121
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>  超级步 2: 执行 {'merge'}
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>最终结果: combined = 121
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>  (doubled=[14], shifted=[107])
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>============================================================
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>关键观察：Pregel 超级步
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>============================================================
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>  - 超级步 0: split（1 个节点）
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>  - 超级步 1: process_a + process_b（2 个节点并行，读同一快照）
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>  - 超级步 2: merge（收集并行结果）
+</span><span id="__span-23-26"><a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>  - fan-out: split 有两条出边 -&gt; process_a 和 process_b
+</span><span id="__span-23-27"><a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>  - 同层节点读同一状态快照，互不影响，最后用 Reducer 合并
+</span></code></pre></div>
+<h3 id="114">11.4 逐步追踪<a class="headerlink" href="#114" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>超级步</th>
+<th>pending</th>
+<th>step_state</th>
+<th>各节点输出</th>
+<th>合并后 state</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>{split}</code></td>
+<td><code>{number:7,...}</code></td>
+<td><code>split → {}</code></td>
+<td>不变</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>{process_a, process_b}</code></td>
+<td><code>{number:7,...}</code></td>
+<td><code>a → {doubled:[14]}</code>, <code>b → {shifted:[107]}</code></td>
+<td><code>doubled:[14], shifted:[107]</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>{merge}</code></td>
+<td><code>{doubled:[14], shifted:[107]}</code></td>
+<td><code>merge → {combined:121}</code></td>
+<td><code>combined:121</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>{}</code>（END 过滤）</td>
+<td>—</td>
+<td>—</td>
+<td>循环结束</td>
+</tr>
+</tbody>
+</table>
+<p>注意超级步 1：<code>process_a</code> 和 <code>process_b</code> 都读 <code>step_state</code>（<code>number=7</code>），互不影响。合并时 <code>doubled</code> 用 <code>add</code> Reducer 追加 <code>[14]</code>，<code>shifted</code> 用 <code>add</code> 追加 <code>[107]</code>。</p>
+<h3 id="115-agent">11.5 第二个示例：多 Agent 投票<a class="headerlink" href="#115-agent" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">add</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Annotated</span><span class="p">,</span> <span class="n">TypedDict</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tiny_langgraph</span><span class="w"> </span><span class="kn">import</span> <span class="n">END</span><span class="p">,</span> <span class="n">START</span><span class="p">,</span> <span class="n">StateGraph</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">VoteState</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>    <span class="n">question</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>    <span class="n">votes</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">add</span><span class="p">]</span>   <span class="c1"># 收集各 Agent 的票</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>    <span class="n">tally</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>    <span class="n">winner</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">ask</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">VoteState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>        <span class="k">return</span> <span class="p">{}</span>   <span class="c1"># 分发问题</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">agent_a</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">VoteState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">"votes"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"A"</span><span class="p">]}</span>   <span class="c1"># Agent A 投 A</span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">agent_b</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">VoteState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">"votes"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"B"</span><span class="p">]}</span>   <span class="c1"># Agent B 投 B</span>
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">agent_c</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">VoteState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">"votes"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"A"</span><span class="p">]}</span>   <span class="c1"># Agent C 投 A</span>
+</span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a>
+</span><span id="__span-24-26"><a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">tally</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">VoteState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-24-27"><a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a>        <span class="n">counts</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-24-28"><a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">state</span><span class="p">[</span><span class="s2">"votes"</span><span class="p">]:</span>
+</span><span id="__span-24-29"><a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a>            <span class="n">counts</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-24-30"><a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>        <span class="n">winner</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+</span><span id="__span-24-31"><a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">"tally"</span><span class="p">:</span> <span class="n">counts</span><span class="p">,</span> <span class="s2">"winner"</span><span class="p">:</span> <span class="n">winner</span><span class="p">}</span>
+</span><span id="__span-24-32"><a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a>
+</span><span id="__span-24-33"><a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a>    <span class="n">graph</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">VoteState</span><span class="p">)</span>
+</span><span id="__span-24-34"><a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"ask"</span><span class="p">,</span> <span class="n">ask</span><span class="p">)</span>
+</span><span id="__span-24-35"><a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"agent_a"</span><span class="p">,</span> <span class="n">agent_a</span><span class="p">)</span>
+</span><span id="__span-24-36"><a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"agent_b"</span><span class="p">,</span> <span class="n">agent_b</span><span class="p">)</span>
+</span><span id="__span-24-37"><a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"agent_c"</span><span class="p">,</span> <span class="n">agent_c</span><span class="p">)</span>
+</span><span id="__span-24-38"><a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"tally"</span><span class="p">,</span> <span class="n">tally</span><span class="p">)</span>
+</span><span id="__span-24-39"><a id="__codelineno-24-39" name="__codelineno-24-39" href="#__codelineno-24-39"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"ask"</span><span class="p">)</span>
+</span><span id="__span-24-40"><a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"ask"</span><span class="p">,</span> <span class="s2">"agent_a"</span><span class="p">)</span>
+</span><span id="__span-24-41"><a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"ask"</span><span class="p">,</span> <span class="s2">"agent_b"</span><span class="p">)</span>
+</span><span id="__span-24-42"><a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"ask"</span><span class="p">,</span> <span class="s2">"agent_c"</span><span class="p">)</span>
+</span><span id="__span-24-43"><a id="__codelineno-24-43" name="__codelineno-24-43" href="#__codelineno-24-43"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"agent_a"</span><span class="p">,</span> <span class="s2">"tally"</span><span class="p">)</span>
+</span><span id="__span-24-44"><a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"agent_b"</span><span class="p">,</span> <span class="s2">"tally"</span><span class="p">)</span>
+</span><span id="__span-24-45"><a id="__codelineno-24-45" name="__codelineno-24-45" href="#__codelineno-24-45"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"agent_c"</span><span class="p">,</span> <span class="s2">"tally"</span><span class="p">)</span>
+</span><span id="__span-24-46"><a id="__codelineno-24-46" name="__codelineno-24-46" href="#__codelineno-24-46"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"tally"</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__span-24-47"><a id="__codelineno-24-47" name="__codelineno-24-47" href="#__codelineno-24-47"></a>
+</span><span id="__span-24-48"><a id="__codelineno-24-48" name="__codelineno-24-48" href="#__codelineno-24-48"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
+</span><span id="__span-24-49"><a id="__codelineno-24-49" name="__codelineno-24-49" href="#__codelineno-24-49"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"question"</span><span class="p">:</span> <span class="s2">"选谁?"</span><span class="p">,</span> <span class="s2">"votes"</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">"tally"</span><span class="p">:</span> <span class="p">{},</span> <span class="s2">"winner"</span><span class="p">:</span> <span class="s2">""</span><span class="p">})</span>
+</span><span id="__span-24-50"><a id="__codelineno-24-50" name="__codelineno-24-50" href="#__codelineno-24-50"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">"tally"</span><span class="p">])</span>   <span class="c1"># {"A": 2, "B": 1}</span>
+</span><span id="__span-24-51"><a id="__codelineno-24-51" name="__codelineno-24-51" href="#__codelineno-24-51"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">"winner"</span><span class="p">])</span>  <span class="c1"># A</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>超级步</th>
+<th>pending</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>{ask}</code></td>
+<td>分发问题</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>{agent_a, agent_b, agent_c}</code></td>
+<td>三个 Agent 并行投票，都写 <code>votes</code> 通道</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>{tally}</code></td>
+<td>收集所有票，统计</td>
+</tr>
+</tbody>
+</table>
+<p>三个 Agent 都写 <code>votes</code> 字段（同一通道），Reducer <code>add</code> 把 <code>["A"]</code>、<code>["B"]</code>、<code>["A"]</code> 合成 <code>["A", "B", "A"]</code>。这就是"通道 = 字段 + Reducer"的威力——同层多节点写同一通道，自动合并。</p>
+<hr />
+<h2 id="12">12. 测试解读<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<h3 id="121-test_pregelpy">12.1 <code>test_pregel.py</code> 全貌<a class="headerlink" href="#121-test_pregelpy" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">TestFanOut</span><span class="p">:</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="sd">"""一个节点多条出边 → fan-out 并行。"""</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_fan_out_parallel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_parallel_nodes_read_same_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_superstep_events_show_parallel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_multiple_edges_allowed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">TestSuperstepSemantics</span><span class="p">:</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">    </span><span class="sd">"""超级步语义。"""</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_reducer_merges_parallel_updates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</span></code></pre></div>
+<h3 id="122-test_fan_out_parallel">12.2 <code>test_fan_out_parallel</code><a class="headerlink" href="#122-test_fan_out_parallel" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_fan_out_parallel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    <span class="n">graph</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">State</span><span class="p">)</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">{})</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"process_a"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">{</span><span class="s2">"result_a"</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s2">"input"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]})</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"process_b"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">{</span><span class="s2">"result_b"</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s2">"input"</span><span class="p">]</span> <span class="o">+</span> <span class="mi">100</span><span class="p">]})</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"merge"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">{</span><span class="s2">"final"</span><span class="p">:</span> <span class="n">s</span><span class="p">[</span><span class="s2">"result_a"</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="s2">"result_b"</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]})</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"split"</span><span class="p">)</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="s2">"process_a"</span><span class="p">)</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"split"</span><span class="p">,</span> <span class="s2">"process_b"</span><span class="p">)</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"process_a"</span><span class="p">,</span> <span class="s2">"merge"</span><span class="p">)</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"process_b"</span><span class="p">,</span> <span class="s2">"merge"</span><span class="p">)</span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"merge"</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>        <span class="p">{</span><span class="s2">"input"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">"result_a"</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">"result_b"</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">"final"</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>    <span class="p">)</span>
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="s2">"result_a"</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="s2">"result_b"</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">105</span><span class="p">]</span>
+</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="s2">"final"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">115</span>
+</span></code></pre></div>
+<p>验证 fan-out 的端到端正确性：<code>5*2 + (5+100) = 115</code>。</p>
+<h3 id="123-test_parallel_nodes_read_same_snapshot">12.3 <code>test_parallel_nodes_read_same_snapshot</code><a class="headerlink" href="#123-test_parallel_nodes_read_same_snapshot" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_parallel_nodes_read_same_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="sd">"""同层节点读同一快照，互不影响。"""</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"src"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">{</span><span class="s2">"input"</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">{</span><span class="s2">"result_a"</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s2">"input"</span><span class="p">]]})</span>  <span class="c1"># 读 input=10</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">{</span><span class="s2">"result_b"</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s2">"input"</span><span class="p">]]})</span>  <span class="c1"># 也读 input=10</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"src"</span><span class="p">)</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"src"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"src"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">)</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>    <span class="o">...</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="s2">"result_a"</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="s2">"result_b"</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+</span></code></pre></div>
+<p><strong>关键测试</strong>：<code>src</code> 在超级步 0 把 <code>input</code> 改成 10。<code>a</code> 和 <code>b</code> 在超级步 1 都读 <code>input</code>，都该看到 10。如果没快照，<code>a</code> 先执行改了某字段，<code>b</code> 可能受影响（这里 <code>a</code> 没改 <code>input</code>，所以即使不快照也碰巧过——但语义上快照才对）。</p>
+<h3 id="124-test_superstep_events_show_parallel">12.4 <code>test_superstep_events_show_parallel</code><a class="headerlink" href="#124-test_superstep_events_show_parallel" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_superstep_events_show_parallel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>    <span class="o">...</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    <span class="n">events</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>    <span class="k">assert</span> <span class="n">events</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"nodes"</span><span class="p">]</span> <span class="o">==</span> <span class="p">{</span><span class="s2">"split"</span><span class="p">}</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>    <span class="k">assert</span> <span class="n">events</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">"nodes"</span><span class="p">]</span> <span class="o">==</span> <span class="p">{</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">}</span>  <span class="c1"># 并行层</span>
+</span></code></pre></div>
+<p>验证事件格式：<code>nodes</code> 是 set，且同层节点在同一事件里。</p>
+<h3 id="125-test_multiple_edges_allowed">12.5 <code>test_multiple_edges_allowed</code><a class="headerlink" href="#125-test_multiple_edges_allowed" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_multiple_edges_allowed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="sd">"""阶段 6 允许一个节点多条出边。"""</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">)</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">)</span>  <span class="c1"># 不报错</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>    <span class="k">assert</span> <span class="n">graph</span><span class="o">.</span><span class="n">_edges</span><span class="p">[</span><span class="s2">"a"</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">]</span>
+</span></code></pre></div>
+<p>验证 <code>add_edge</code> 累积而非覆盖。</p>
+<h3 id="126-test_reducer_merges_parallel_updates">12.6 <code>test_reducer_merges_parallel_updates</code><a class="headerlink" href="#126-test_reducer_merges_parallel_updates" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_reducer_merges_parallel_updates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="sd">"""同层两个节点都写同一 Reducer 字段，合并。"""</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    <span class="k">class</span><span class="w"> </span><span class="nc">S</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>        <span class="n">values</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">add</span><span class="p">]</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"src"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">{})</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">{</span><span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">{</span><span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">]})</span>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">"src"</span><span class="p">)</span>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"src"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span>
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">"src"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">)</span>
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>    <span class="o">...</span>
+</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"values"</span><span class="p">:</span> <span class="p">[]})</span>
+</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="s2">"values"</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span></code></pre></div>
+<p><strong>通道合并的核心测试</strong>：<code>a</code> 和 <code>b</code> 都写 <code>values</code> 字段（同一通道），Reducer <code>add</code> 把 <code>[1]</code> 和 <code>[2]</code> 合成 <code>[1, 2]</code>。如果用覆盖合并，后写的会覆盖先写的，结果只剩 <code>[2]</code>——错。</p>
+<hr />
+<h2 id="13-langgraph-pregel">13. 对照真实 LangGraph 的 Pregel 引擎<a class="headerlink" href="#13-langgraph-pregel" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1478,19 +3662,24 @@
 </thead>
 <tbody>
 <tr>
-<td>Pregel 超级步循环</td>
-<td>同</td>
+<td><code>Pregel</code> 类</td>
+<td><code>CompiledStateGraph</code></td>
+<td>同一角色：编译后的执行器</td>
+</tr>
+<tr>
+<td><code>Pregel.step</code> 超级步循环</td>
+<td><code>while pending:</code></td>
 <td>核心语义一致</td>
 </tr>
 <tr>
-<td>通道（Channel）</td>
+<td><code>Channel</code> 对象</td>
 <td>字段 + Reducer</td>
-<td>概念统一</td>
+<td>概念统一，实现简化</td>
 </tr>
 <tr>
-<td><code>asyncio</code> 真并行</td>
-<td>串行（语义并行）</td>
-<td>教学简化</td>
+<td><code>asyncio.gather</code> 真并行</td>
+<td><code>for name in sorted(pending)</code> 串行</td>
+<td>教学简化，语义并行</td>
 </tr>
 <tr>
 <td><code>Send</code> API（动态 fan-out）</td>
@@ -1498,13 +3687,225 @@
 <td>我们用静态多条边</td>
 </tr>
 <tr>
-<td>批处理调度</td>
+<td><code>Command</code> 对象（节点返回路由指令）</td>
 <td>❌</td>
+<td>我们用条件边</td>
+</tr>
+<tr>
+<td>批处理调度（batch）</td>
+<td>❌</td>
+<td>单次执行</td>
+</tr>
+<tr>
+<td><code>Writer</code> / <code>Reader</code> 通道抽象</td>
+<td>直接 dict + Reducer</td>
+<td>简化</td>
+</tr>
+<tr>
+<td>优先级队列（节点排序）</td>
+<td><code>sorted(pending)</code></td>
+<td>简化版</td>
+</tr>
+<tr>
+<td>持久化通道（Channel persistence）</td>
+<td>❌（阶段 7 才有 checkpoint）</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="_5">这一阶段的局限<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">真实 LangGraph 的 Pregel 源码</p>
+<p>在 <code>langgraph.pregel.Pregel</code> 类里，<code>step</code> 方法是超级步循环。每个 channel 有 <code>Writer</code> 和 <code>Reader</code>，节点通过 Writer 写通道，下一超级步通过 Reader 读。同层节点用 <code>asyncio.gather</code> 并行执行，但写通道时按确定顺序合并——和我们的 <code>sorted(pending)</code> + 串行合并是同一思路的简化。</p>
+</div>
+<hr />
+<h2 id="14-5-6-diff">14. 从阶段 5 到阶段 6 的 diff 解读<a class="headerlink" href="#14-5-6-diff" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>git<span class="w"> </span>diff<span class="w"> </span>stage-5<span class="w"> </span>stage-6<span class="w"> </span>--stat
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a> docs/stages/stage_6_pregel.md       | 158 +++++++++++++++++++++++++++++++++---
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a> examples/stage_6_pregel/__init__.py |   0
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a> examples/stage_6_pregel/run.py      |  92 +++++++++++++++++++++
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a> src/tiny_langgraph/__init__.py      |   4 +-
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a> src/tiny_langgraph/graph.py         |  89 +++++++++++++-------
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a> tests/tiny_langgraph/test_cycle.py  |   4 +-
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a> tests/tiny_langgraph/test_pregel.py | 106 ++++++++++++++++++++++++
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a> 7 files changed, 409 insertions(+), 44 deletions(-)
+</span></code></pre></div>
+<h3 id="141-graphpy">14.1 <code>graph.py</code> 的核心改动<a class="headerlink" href="#141-graphpy" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>git<span class="w"> </span>diff<span class="w"> </span>stage-5<span class="w"> </span>stage-6<span class="w"> </span>--<span class="w"> </span>src/tiny_langgraph/graph.py
+</span></code></pre></div>
+<p>关键 hunk：</p>
+<div class="language-diff highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="gd">-        current: str = self._entry_point</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="gd">-        step = 0</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="gd">-        while current is not None and current != END:</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="gi">+        pending = {self._entry_point}</span>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="gi">+        step = 0</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="gi">+        while pending:</span>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="w"> </span>            ...
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="gd">-            update = self._nodes[current](state)</span>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="gd">-            self._merge(state, update)</span>
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="gi">+            step_state = dict(state)</span>
+</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="gi">+            updates: list[dict[str, Any]] = []</span>
+</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a><span class="gi">+            for node_name in sorted(pending):</span>
+</span><span id="__span-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="gi">+                update = self._nodes[node_name](step_state)</span>
+</span><span id="__span-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a><span class="gi">+                updates.append(update)</span>
+</span><span id="__span-34-15"><a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a><span class="gi">+            for update in updates:</span>
+</span><span id="__span-34-16"><a id="__codelineno-34-16" name="__codelineno-34-16" href="#__codelineno-34-16"></a><span class="gi">+                self._merge(state, update)</span>
+</span><span id="__span-34-17"><a id="__codelineno-34-17" name="__codelineno-34-17" href="#__codelineno-34-17"></a><span class="w"> </span>            ...
+</span><span id="__span-34-18"><a id="__codelineno-34-18" name="__codelineno-34-18" href="#__codelineno-34-18"></a><span class="gd">-            yield {"node": current, "state": dict(state), "step": step}</span>
+</span><span id="__span-34-19"><a id="__codelineno-34-19" name="__codelineno-34-19" href="#__codelineno-34-19"></a><span class="gd">-            current = self._next_node(current, state)</span>
+</span><span id="__span-34-20"><a id="__codelineno-34-20" name="__codelineno-34-20" href="#__codelineno-34-20"></a><span class="gi">+            yield {"nodes": pending, "state": dict(state), "step": step}</span>
+</span><span id="__span-34-21"><a id="__codelineno-34-21" name="__codelineno-34-21" href="#__codelineno-34-21"></a><span class="gi">+            pending = self._next_nodes(pending, state)</span>
+</span><span id="__span-34-22"><a id="__codelineno-34-22" name="__codelineno-34-22" href="#__codelineno-34-22"></a><span class="w"> </span>            step += 1
+</span></code></pre></div>
+<p>以及新增 <code>_next_nodes</code> 方法（替换 <code>_next_node</code>）。</p>
+<h3 id="142-test_cyclepy">14.2 <code>test_cycle.py</code> 的小改<a class="headerlink" href="#142-test_cyclepy" title="Permanent link">&para;</a></h3>
+<p>阶段 4 的循环测试用 <code>event["node"]</code>，阶段 6 改成 <code>event["nodes"]</code>：</p>
+<div class="language-diff highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="gd">-        assert events[0]["node"] == "loop"</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="gi">+        assert events[0]["nodes"] == {"loop"}</span>
+</span></code></pre></div>
+<h3 id="143-test_pregelpy">14.3 新增 <code>test_pregel.py</code><a class="headerlink" href="#143-test_pregelpy" title="Permanent link">&para;</a></h3>
+<p>106 行新测试，覆盖 fan-out、快照、事件格式、多出边、Reducer 合并。</p>
+<h3 id="144-examplesstage_6_pregelrunpy">14.4 新增 <code>examples/stage_6_pregel/run.py</code><a class="headerlink" href="#144-examplesstage_6_pregelrunpy" title="Permanent link">&para;</a></h3>
+<p>92 行可运行示例。</p>
+<hr />
+<h2 id="15-asyncio">15. 设计思考：为什么不是真并行（asyncio）<a class="headerlink" href="#15-asyncio" title="Permanent link">&para;</a></h2>
+<h3 id="151">15.1 教学清晰<a class="headerlink" href="#151" title="Permanent link">&para;</a></h3>
+<p>Pregel 的核心是**快照语义**（同层互不可见 + 层间合并），不是线程。用串行 + 快照就能完整表达这个语义。引入 <code>asyncio</code> 会把注意力分散到 <code>async/await</code>、事件循环、协程调度上，对理解 Pregel 没帮助。</p>
+<h3 id="152">15.2 确定性<a class="headerlink" href="#152" title="Permanent link">&para;</a></h3>
+<p><code>sorted(pending)</code> 串行执行，结果**完全确定**。<code>asyncio.gather</code> 虽然也按提交顺序合并，但执行顺序不可控，调试时难复现。教学项目要的是"每次跑都一样"。</p>
+<h3 id="153-gil">15.3 GIL<a class="headerlink" href="#153-gil" title="Permanent link">&para;</a></h3>
+<p>Python 的 <code>asyncio</code> 是单线程协程，对 CPU 密集型节点（纯计算）没有真并行收益——GIL 还在。只有 I/O 密集型（如调 LLM API）才受益。本教学项目节点都是纯函数，<code>asyncio</code> 价值有限。</p>
+<h3 id="154-langgraph">15.4 真实 LangGraph 的选择<a class="headerlink" href="#154-langgraph" title="Permanent link">&para;</a></h3>
+<p>真实 LangGraph 用 <code>asyncio</code> 是因为节点常是 <code>async def</code>（调 LLM API、查数据库），I/O 密集。它用 <code>asyncio.gather</code> 让同层节点的 I/O 并行（一个等 API 时另一个也能等），但**写通道仍按确定顺序合并**——所以语义上和我们的串行一样，只是 I/O 并行。</p>
+<details class="question">
+<summary>如果要加真并行怎么改</summary>
+<ol>
+<li>节点签名改成 <code>async def</code></li>
+<li><code>for name in sorted(pending)</code> 改成 <code>await asyncio.gather(*[self._nodes[name](step_state) for name in sorted(pending)])</code></li>
+<li><code>stream</code> 改成 <code>async def</code>，调用方 <code>async for event in app.astream(...)</code></li>
+<li>合并阶段仍按 <code>sorted(pending)</code> 顺序 <code>_merge</code>，保证确定性</li>
+</ol>
+<p>本项目保持同步是为了让初学者专注 Pregel 语义。</p>
+</details>
+<h3 id="155">15.5 为什么不用多线程/多进程<a class="headerlink" href="#155" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>threading</code></td>
+<td>GIL 限制 CPU 并行；I/O 并行但共享 state 要加锁，复杂</td>
+</tr>
+<tr>
+<td><code>multiprocessing</code></td>
+<td>state 要序列化跨进程，开销大；教学项目过重</td>
+</tr>
+<tr>
+<td><code>asyncio</code></td>
+<td>单线程协程，I/O 并行无锁，但要求节点 async</td>
+</tr>
+<tr>
+<td>串行</td>
+<td>最简单，语义清晰，确定性强</td>
+</tr>
+</tbody>
+</table>
+<p>教学项目选串行：最少的概念，最清晰的语义。</p>
+<hr />
+<h2 id="16">16. 性能与复杂度分析<a class="headerlink" href="#16" title="Permanent link">&para;</a></h2>
+<h3 id="161">16.1 每超级步的开销<a class="headerlink" href="#161" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>复杂度</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>step_state = dict(state)</code></td>
+<td>O(|state|)</td>
+<td>浅拷贝整个 state</td>
+</tr>
+<tr>
+<td><code>for name in sorted(pending)</code></td>
+<td>O(|pending| log |pending|)</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>节点执行</td>
+<td>取决于节点</td>
+<td>同层所有节点</td>
+</tr>
+<tr>
+<td><code>_merge</code></td>
+<td>O(|update|)</td>
+<td>每个字段一次合并</td>
+</tr>
+<tr>
+<td><code>_next_nodes</code></td>
+<td>O(|pending| × 平均出边数)</td>
+<td>收集后继</td>
+</tr>
+</tbody>
+</table>
+<h3 id="162">16.2 浅拷贝的代价<a class="headerlink" href="#162" title="Permanent link">&para;</a></h3>
+<p><code>step_state = dict(state)</code> 每超级步复制一次 state。对大 state（如长对话历史）这是 O(n)。真实 LangGraph 用通道版本号避免全量复制——只复制被写的通道。本项目简化为全量浅拷贝。</p>
+<h3 id="163">16.3 何时浅拷贝成为瓶颈<a class="headerlink" href="#163" title="Permanent link">&para;</a></h3>
+<ul>
+<li>state 有几万条消息：每步复制几万元素</li>
+<li>超级步很多（如循环 1000 次）：1000 × 几万 = 几千万次拷贝</li>
+</ul>
+<p>这时该上真实 LangGraph 的通道增量更新。教学项目不优化。</p>
+<hr />
+<h2 id="17">17. 调试技巧<a class="headerlink" href="#17" title="Permanent link">&para;</a></h2>
+<h3 id="171-pending-state">17.1 打印每超级步的 pending 和 state<a class="headerlink" href="#171-pending-state" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">initial</span><span class="p">):</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"step </span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'step'</span><span class="p">]</span><span class="si">}</span><span class="s2">: pending=</span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  state=</span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>能看到超级步的层结构和状态演变。</p>
+<h3 id="172-fan-out">17.2 检查 fan-out 是否生效<a class="headerlink" href="#172-fan-out" title="Permanent link">&para;</a></h3>
+<p>如果期望同层多节点但事件显示单节点：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">assert</span> <span class="n">event</span><span class="p">[</span><span class="s2">"nodes"</span><span class="p">]</span> <span class="o">==</span> <span class="p">{</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">},</span> <span class="sa">f</span><span class="s2">"fan-out 没生效: </span><span class="si">{</span><span class="n">event</span><span class="p">[</span><span class="s1">'nodes'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+</span></code></pre></div>
+<p>常见原因：<code>add_edge</code> 写错，或用了条件边（条件边只选一个）。</p>
+<h3 id="173">17.3 检查快照隔离<a class="headerlink" href="#173" title="Permanent link">&para;</a></h3>
+<p>如果同层节点互相影响（后执行的看到前执行的更新），说明快照失效。测试：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_snapshot_isolation</span><span class="p">():</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>    <span class="c1"># a 改 x，b 读 x</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>    <span class="c1"># 如果 b 读到 a 改后的 x，说明没快照</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>    <span class="o">...</span>
+</span></code></pre></div>
+<p>本项目的 <code>test_parallel_nodes_read_same_snapshot</code> 就是这个测试。</p>
+<h3 id="174-reducer">17.4 Reducer 不可交换时的顺序<a class="headerlink" href="#174-reducer" title="Permanent link">&para;</a></h3>
+<p>如果 Reducer 不可交换（如字符串拼接），结果依赖 <code>sorted(pending)</code> 顺序。调试时打印合并顺序：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pending</span><span class="p">):</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>    <span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span><span class="p">[</span><span class="n">name</span><span class="p">](</span><span class="n">step_state</span><span class="p">)</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">update</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>   <span class="c1"># 看合并顺序</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>    <span class="n">updates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="18">18. 常见误区<a class="headerlink" href="#18" title="Permanent link">&para;</a></h2>
+<h3 id="181">18.1 "同层节点并行 = 同时执行"<a class="headerlink" href="#181" title="Permanent link">&para;</a></h3>
+<p><strong>错</strong>。同层节点**逻辑并行**（互不可见），但**物理上可能串行**。本项目就是串行。真实 LangGraph 用 asyncio 也是单线程协程，不是多线程。</p>
+<h3 id="182-fan-out">18.2 "fan-out 后的节点一定并行"<a class="headerlink" href="#182-fan-out" title="Permanent link">&para;</a></h3>
+<p><strong>不一定</strong>。fan-out 出的多个后继在**同一超级步**执行（逻辑并行）。但如果这些后继又都指向同一个节点，那个节点只执行一次（set 去重）。</p>
+<h3 id="183-reducer">18.3 "同层节点写不同字段就不需要 Reducer"<a class="headerlink" href="#183-reducer" title="Permanent link">&para;</a></h3>
+<p><strong>对</strong>。如果 <code>process_a</code> 只写 <code>doubled</code>，<code>process_b</code> 只写 <code>shifted</code>，两字段不同，没有 Reducer 也安全（覆盖合并，但没人竞争同一字段）。Reducer 只在**多节点写同一字段**时才必要。但给字段加 Reducer（如 <code>add</code>）是无害的，且为未来扩展留余地。</p>
+<h3 id="184">18.4 "快照 = 深拷贝"<a class="headerlink" href="#184" title="Permanent link">&para;</a></h3>
+<p><strong>不是</strong>。<code>dict(state)</code> 是**浅拷贝**——顶层 dict 是新的，但值是引用。如果节点修改了 <code>state["messages"].append(...)</code>（原地改），会泄漏到快照。本项目节点都返回新 list（如 <code>{"doubled": [result]}</code>），不原地改，所以浅拷贝够用。真实 LangGraph 用更严格的通道隔离。</p>
+<div class="admonition warning">
+<p class="admonition-title">别在节点里原地改 state 的值</p>
+<p>错误示范：<code>state["messages"].append(msg); return {}</code>。正确示范：<code>return {"messages": [msg]}</code>，让引擎用 Reducer 合并。</p>
+</div>
+<hr />
+<h2 id="19-6">19. 阶段 6 的局限<a class="headerlink" href="#19-6" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1521,8 +3922,27 @@
 <td>不能暂停等人输入</td>
 <td>阶段 8 Interrupt</td>
 </tr>
+<tr>
+<td>同层节点串行，I/O 不并行</td>
+<td>不解决（教学简化）</td>
+</tr>
+<tr>
+<td>没有动态 fan-out（运行时决定分发到谁）</td>
+<td>不解决（用条件边近似）</td>
+</tr>
 </tbody>
 </table>
+<hr />
+<h2 id="20">20. 小结<a class="headerlink" href="#20" title="Permanent link">&para;</a></h2>
+<p>阶段 6 把执行模型从"一根线"升级为"一层一层的并行层"：</p>
+<ol>
+<li><code>pending</code> 从 <code>str</code> 变 <code>set[str]</code></li>
+<li><code>_next_nodes</code> 返回集合，静态边全走（fan-out）</li>
+<li>同层节点读 <code>step_state</code> 快照，互不可见</li>
+<li>合并按 <code>sorted(pending)</code> 顺序，对可交换 Reducer 无关</li>
+<li>事件格式 <code>node</code> → <code>nodes</code></li>
+</ol>
+<p>这一步让图能表达 MapReduce、多 Agent 投票、多视角检索等"分发-并行-收集"模式，是走向真实 Agent 框架的关键一跃。</p>
 <hr />
 <p>👉 下一阶段：<a href="../stage_7_checkpoint/">阶段 7 - Checkpoint</a>——每个超级步存快照，支持断点续跑和时间旅行。</p>
 

@@ -768,7 +768,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        这一阶段做了什么
+        阶段目标与定位
       
     </span>
   </a>
@@ -776,22 +776,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#langgraph" class="md-nav__link">
     <span class="md-ellipsis">
       
-        关键设计决策
+        项目动机：为什么从零造 LangGraph
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="关键设计决策">
+    <nav class="md-nav" aria-label="项目动机：为什么从零造 LangGraph">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#src" class="md-nav__link">
+  <a href="#langgraph_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么用 src/ 布局
+        LangGraph 是什么
       
     </span>
   </a>
@@ -799,10 +799,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#hatchling" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么用 hatchling
+        市面教程的缺口
       
     </span>
   </a>
@@ -810,10 +810,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#src_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么测试镜像 src 结构
+        为什么"渐进式"是关键
       
     </span>
   </a>
@@ -821,10 +821,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mkdocs-material-docusaurus" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么 MkDocs Material 而不是 Docusaurus
+        为什么纯标准库
       
     </span>
   </a>
@@ -837,7 +837,772 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        项目结构详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="项目结构详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全貌
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        每个目录和文件的作用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="每个目录和文件的作用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#srctiny_langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        src/tiny_langgraph/ —— 实现包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teststiny_langgraph-src" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tests/tiny_langgraph/ —— 测试，镜像 src
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docs-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docs/ —— MkDocs 文档源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        examples/ —— 可运行示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#githubworkflows-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .github/workflows/ —— CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyprojecttoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pyproject.toml 配置详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pyproject.toml 配置详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 构建系统声明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 项目元数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-extras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 可选依赖（extras）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 项目 URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-hatchling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. hatchling 构建目标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 工具配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 工具配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pytest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ruff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mypy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MkDocs Material 配置详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MkDocs Material 配置详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 站点元数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 主题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 调色板（深浅切换）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 字体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 图标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 导航结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 插件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Markdown 扩展
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 额外资源
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-actions-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Actions CI/CD 详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub Actions CI/CD 详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ciyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ci.yml：测试流水线
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ci.yml：测试流水线">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        触发条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        权限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        矩阵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docs.yml：文档部署
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .gitignore 设计
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        渐进式路线总览
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="渐进式路线总览">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概念依赖图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        每阶段读法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设计原则深度阐述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="设计原则深度阐述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 1：纯标准库优先
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 2：每个概念只做一件事
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 3：对照真实源码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 4：可运行 &gt; 可读 &gt; 完备
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 5：测试镜像源码结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 6：文档随代码演进
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何本地预览文档
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何本地预览文档">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装文档工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实时预览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建静态站
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署到 GitHub Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        严格构建（CI 用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何切到某个阶段看代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何切到某个阶段看代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查看所有阶段标签
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        切到某阶段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        看某阶段加了什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        只看某个文件的历史
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在某阶段跑测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        回到最新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langgraph_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对照真实 LangGraph 的项目结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="对照真实 LangGraph 的项目结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        真实版结构（简化）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        我们砍掉了什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        我们保留了什么（核心骨架）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
     <span class="md-ellipsis">
       
         验证骨架
@@ -848,10 +1613,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#langgraph" class="md-nav__link">
+  <a href="#_31" class="md-nav__link">
     <span class="md-ellipsis">
       
-        对照真实 LangGraph
+        常见问题
       
     </span>
   </a>
@@ -859,7 +1624,40 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#0_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段 0 的产出清单
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        从阶段 0 到阶段 1 会发生什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设计哲学总结
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
     <span class="md-ellipsis">
       
         下一阶段
@@ -1194,7 +1992,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        这一阶段做了什么
+        阶段目标与定位
       
     </span>
   </a>
@@ -1202,22 +2000,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#langgraph" class="md-nav__link">
     <span class="md-ellipsis">
       
-        关键设计决策
+        项目动机：为什么从零造 LangGraph
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="关键设计决策">
+    <nav class="md-nav" aria-label="项目动机：为什么从零造 LangGraph">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#src" class="md-nav__link">
+  <a href="#langgraph_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么用 src/ 布局
+        LangGraph 是什么
       
     </span>
   </a>
@@ -1225,10 +2023,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#hatchling" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么用 hatchling
+        市面教程的缺口
       
     </span>
   </a>
@@ -1236,10 +2034,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#src_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么测试镜像 src 结构
+        为什么"渐进式"是关键
       
     </span>
   </a>
@@ -1247,10 +2045,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mkdocs-material-docusaurus" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        为什么 MkDocs Material 而不是 Docusaurus
+        为什么纯标准库
       
     </span>
   </a>
@@ -1263,7 +2061,772 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        项目结构详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="项目结构详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全貌
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        每个目录和文件的作用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="每个目录和文件的作用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#srctiny_langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        src/tiny_langgraph/ —— 实现包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teststiny_langgraph-src" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tests/tiny_langgraph/ —— 测试，镜像 src
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docs-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docs/ —— MkDocs 文档源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        examples/ —— 可运行示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#githubworkflows-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .github/workflows/ —— CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyprojecttoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pyproject.toml 配置详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pyproject.toml 配置详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 构建系统声明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 项目元数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-extras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 可选依赖（extras）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 项目 URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-hatchling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. hatchling 构建目标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 工具配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 工具配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pytest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ruff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mypy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MkDocs Material 配置详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MkDocs Material 配置详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 站点元数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 主题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 调色板（深浅切换）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 字体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 图标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 导航结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 插件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Markdown 扩展
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 额外资源
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-actions-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Actions CI/CD 详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub Actions CI/CD 详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ciyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ci.yml：测试流水线
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ci.yml：测试流水线">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        触发条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        权限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        矩阵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docs.yml：文档部署
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .gitignore 设计
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        渐进式路线总览
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="渐进式路线总览">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概念依赖图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        每阶段读法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设计原则深度阐述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="设计原则深度阐述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 1：纯标准库优先
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 2：每个概念只做一件事
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 3：对照真实源码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 4：可运行 &gt; 可读 &gt; 完备
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 5：测试镜像源码结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原则 6：文档随代码演进
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何本地预览文档
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何本地预览文档">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装文档工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实时预览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建静态站
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署到 GitHub Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        严格构建（CI 用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何切到某个阶段看代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何切到某个阶段看代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查看所有阶段标签
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        切到某阶段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        看某阶段加了什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        只看某个文件的历史
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在某阶段跑测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        回到最新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langgraph_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对照真实 LangGraph 的项目结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="对照真实 LangGraph 的项目结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        真实版结构（简化）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        我们砍掉了什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        我们保留了什么（核心骨架）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
     <span class="md-ellipsis">
       
         验证骨架
@@ -1274,10 +2837,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#langgraph" class="md-nav__link">
+  <a href="#_31" class="md-nav__link">
     <span class="md-ellipsis">
       
-        对照真实 LangGraph
+        常见问题
       
     </span>
   </a>
@@ -1285,7 +2848,40 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#0_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段 0 的产出清单
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        从阶段 0 到阶段 1 会发生什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设计哲学总结
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
     <span class="md-ellipsis">
       
         下一阶段
@@ -1318,84 +2914,1531 @@
 <h1 id="0">阶段 0：项目骨架<a class="headerlink" href="#0" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>本阶段目标</strong>：搭好项目骨架、文档站点、测试框架、CI/CD，让后续 9 个阶段能在稳固的地基上逐层加概念。</p>
+<p><strong>前置条件</strong>：会基本的 Python 包管理（<code>pip</code>）、会用终端跑命令、对 <code>pyproject.toml</code> 有概念性了解即可。</p>
+<p><strong>git tag</strong>：<code>stage-0</code> · <strong>本阶段产出</strong>：可安装的空包 + 可构建的文档站 + 可跑的 CI 流水线。</p>
 </blockquote>
-<h2 id="_1">这一阶段做了什么<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="_1">阶段目标与定位<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本阶段**不写一行引擎代码**。它要做的是把"工地"搭好：脚手架、工具链、文档站、CI。很多人写教学项目喜欢直接 <code>main.py</code> 开干，写到第三周就乱成一锅粥——找不到测试、文档散落、新概念没地方放、旧代码没法对照。本阶段就是避免这件事。</p>
+<div class="admonition info">
+<p class="admonition-title">为什么阶段 0 也要单独成章</p>
+<p>不少人觉得"骨架"不值得花一个阶段。但真实工程里，<strong>骨架决定了后续 9 个阶段能不能干净地叠加</strong>。<code>src/</code> 布局、测试镜像、CI 矩阵、文档导航——这些一旦定下来，后面每个阶段就是"加一个文件 + 加一篇文档 + 加一组测试"的机械动作。骨架没搭好，每加一个概念都要回头改结构，越改越乱。</p>
+</div>
+<p>本阶段读完你应该能回答：</p>
+<ul>
+<li>为什么用 <code>src/</code> 布局而不是根目录平铺？</li>
+<li><code>pyproject.toml</code> 里 <code>[project.optional-dependencies]</code> 的 <code>dev</code> / <code>docs</code> / <code>llm</code> 三个 extras 各自给谁用？</li>
+<li><code>mkdocs.yml</code> 里 <code>navigation.instant</code> 是干嘛的？为什么搜索要配 <code>ja</code> + <code>en</code> 两个语言？</li>
+<li>CI 矩阵为什么跑 4 个 Python 版本？<code>mypy || true</code> 为什么加 <code>|| true</code>？</li>
+<li><code>git tag stage-0</code> 之后，怎么用 <code>git diff stage-0..stage-1</code> 看每一层加了什么？</li>
+</ul>
+<hr />
+<h2 id="langgraph">项目动机：为什么从零造 LangGraph<a class="headerlink" href="#langgraph" title="Permanent link">&para;</a></h2>
+<h3 id="langgraph_1">LangGraph 是什么<a class="headerlink" href="#langgraph_1" title="Permanent link">&para;</a></h3>
+<p>LangGraph 是 LangChain 团队推出的**基于图的有状态执行引擎**，受 Google 2010 年的 Pregel 论文启发。它的核心洞察是：</p>
+<blockquote>
+<p><strong>把"写 Agent"从一坨 prompt 拼接，变成"画一张状态机"，再用一个通用引擎去跑这张图。</strong></p>
+</blockquote>
+<p>这张图不是装饰——它是**执行模型本身**。节点是计算单元，边是控制流，状态在节点间流动，引擎负责调度、合并、检查点、中断恢复。</p>
+<h3 id="_2">市面教程的缺口<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>市面 LangGraph 教程分两类：</p>
+<table>
+<thead>
+<tr>
+<th>教程类型</th>
+<th>内容</th>
+<th>缺什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>入门类</td>
+<td>"5 行代码写个 ReAct Agent"</td>
+<td>不讲 <code>StateGraph</code> 内部怎么跑</td>
+</tr>
+<tr>
+<td>源码类</td>
+<td>贴 <code>pregel/__init__.py</code> 几百行</td>
+<td>一上来就全量代码，没有渐进路径</td>
+</tr>
+</tbody>
+</table>
+<p>本项目要填的缺口是：<strong>从空文件开始，一层层把它造出来，每层都能跑、都有测试、都能对照真实源码</strong>。读完你不仅会用，还能回答"它到底怎么做到的"。</p>
+<h3 id="_3">为什么"渐进式"是关键<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">渐进式 = 每一步都可独立验证</p>
+<p>每个阶段引入**一个**新概念，配一组测试、一个示例、一篇文档。你可以：</p>
+<ul>
+<li><code>git checkout stage-1</code> 看最小 DAG 长啥样</li>
+<li><code>git diff stage-1..stage-2</code> 看状态是怎么加进来的</li>
+<li>跑 <code>pytest -m stage1</code> 只测阶段 1 的行为</li>
+</ul>
+<p>这比"一坨最终代码 + 一篇万字解读"好懂 10 倍。</p>
+</div>
+<h3 id="_4">为什么纯标准库<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>阶段 1-8 <strong>只用 Python 标准库</strong>（<code>typing</code>、<code>collections</code>、<code>sqlite3</code> 等），阶段 9 才接 OpenAI。理由：</p>
+<ol>
+<li><strong>底层原理不被框架噪音淹没</strong>——不引入 LangChain、pydantic、asyncio，引擎逻辑裸露在外</li>
+<li><strong>可读</strong>——读者不需要先懂一堆第三方库</li>
+<li><strong>可对照</strong>——真实 LangGraph 用了 pydantic v2、orjson、asyncio，把这些剥掉后剩下的就是 Pregel 的骨架</li>
+<li><strong>可跑</strong>——<code>pip install -e .</code> 不下任何依赖（除了 dev/docs 工具）</li>
+</ol>
+<hr />
+<h2 id="_5">项目结构详解<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">全貌<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>langgraph/
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── pyproject.toml          # 项目配置（hatchling 构建）
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── mkdocs.yml              # 文档站点配置（Material 主题）
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── README.md
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── src/
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   └── tiny_langgraph/
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│       ├── __init__.py     # 包入口（版本号）
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│       ├── graph.py        # 图引擎（阶段 1 起填充）
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│       └── py.typed        # PEP 561 类型标记
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── tests/
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   └── tiny_langgraph/
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│       └── test_graph.py   # 测试（镜像 src 结构）
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>├── docs/                   # MkDocs 文档源
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   ├── index.md
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   ├── getting_started.md
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│   ├── principles/         # 核心原理（4 篇）
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│   ├── stages/             # 阶段文档（10 篇）
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│   └── api.md
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>├── examples/
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>└── .github/workflows/      # CI + Pages 部署
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    ├── ci.yml
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    └── docs.yml
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── pyproject.toml              # 项目配置（hatchling 构建 + 工具链）
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── mkdocs.yml                  # 文档站点配置（Material 主题）
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── README.md                   # 项目门面
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── LICENSE                     # MIT
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── .env.example                # 环境变量样例（OPENAI_API_KEY 等）
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── .gitignore                  # 忽略规则
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── src/
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   └── tiny_langgraph/         # 我们的实现（逐阶段演进）
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│       ├── __init__.py         # 包入口，导出公开 API
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│       ├── graph.py            # 图引擎核心（阶段 1 起填充）
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│       ├── reducers.py         # Reducer 机制（阶段 5）
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│       ├── checkpoint.py       # 检查点存储（阶段 7）
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│       ├── prebuilt.py         # 预制组件 Tool/Agent（阶段 9）
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│       └── py.typed            # PEP 561 类型标记（空文件）
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>├── tests/
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│   └── tiny_langgraph/         # 测试，镜像 src 结构
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│       ├── test_graph.py
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│       ├── test_state_graph.py
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│       ├── test_reducers.py
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│       └── ...
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>├── docs/                       # MkDocs 文档源
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│   ├── index.md                # 首页
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│   ├── getting_started.md      # 快速上手
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│   ├── api.md                  # API 参考（mkdocstrings 自动生成）
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│   ├── principles/             # 核心原理（4 篇）
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│   └── stages/                 # 阶段文档（10 篇，本文是其一）
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>├── examples/                   # 每阶段可运行示例
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│   ├── stage_1_dag/run.py
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│   ├── stage_2_state/run.py
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│   └── ...
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>└── .github/workflows/          # CI + Pages 部署
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    ├── ci.yml                  # 测试 + lint + 类型检查
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    └── docs.yml                # 文档构建 + gh-deploy
 </span></code></pre></div>
-<h2 id="_2">关键设计决策<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="src">为什么用 <code>src/</code> 布局<a class="headerlink" href="#src" title="Permanent link">&para;</a></h3>
-<p>把包放在 <code>src/tiny_langgraph/</code> 而不是根目录的 <code>tiny_langgraph/</code>，是为了**防止隐式导入**——根目录跑测试时不会意外导入到源码而非已安装的包。这是 Python 打包的现代最佳实践。</p>
-<h3 id="hatchling">为什么用 hatchling<a class="headerlink" href="#hatchling" title="Permanent link">&para;</a></h3>
-<p><code>pyproject.toml</code> + <code>hatchling</code> 是当前最简洁的纯 Python 构建后端，不需要 <code>setup.py</code> / <code>setup.cfg</code>。配置全在 <code>pyproject.toml</code> 一个文件里。</p>
-<h3 id="src_1">为什么测试镜像 src 结构<a class="headerlink" href="#src_1" title="Permanent link">&para;</a></h3>
-<p><code>tests/tiny_langgraph/test_graph.py</code> 对应 <code>src/tiny_langgraph/graph.py</code>。这样：</p>
+<h3 id="_7">每个目录和文件的作用<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h4 id="srctiny_langgraph"><code>src/tiny_langgraph/</code> —— 实现包<a class="headerlink" href="#srctiny_langgraph" title="Permanent link">&para;</a></h4>
+<div class="admonition info">
+<p class="admonition-title">为什么叫 <code>tiny_langgraph</code> 而不是 <code>langgraph</code></p>
+<ol>
+<li>避免和真实 <code>langgraph</code> 包撞名，可以同时装在同一个环境里对照</li>
+<li><code>tiny</code> 前缀表明这是教学版，砍掉了生产级噪音</li>
+<li>PyPI 上 <code>tiny-langgraph</code> 是个可发布的名字（虽然我们不发）</li>
+</ol>
+</div>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>阶段引入</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__init__.py</code></td>
+<td>0</td>
+<td>包入口，导出公开 API（<code>Graph</code>、<code>StateGraph</code>、<code>START</code>、<code>END</code>...）</td>
+</tr>
+<tr>
+<td><code>graph.py</code></td>
+<td>1</td>
+<td>图引擎核心：<code>Graph</code> / <code>StateGraph</code> / <code>CompiledGraph</code> / <code>CompiledStateGraph</code></td>
+</tr>
+<tr>
+<td><code>reducers.py</code></td>
+<td>5</td>
+<td><code>add_messages</code> 智能合并、<code>extract_reducers</code> 从 <code>Annotated</code> 提取 reducer</td>
+</tr>
+<tr>
+<td><code>checkpoint.py</code></td>
+<td>7</td>
+<td><code>BaseCheckpointSaver</code> / <code>MemorySaver</code> / <code>SqliteSaver</code></td>
+</tr>
+<tr>
+<td><code>prebuilt.py</code></td>
+<td>9</td>
+<td><code>Tool</code>、<code>AgentState</code>、<code>create_react_agent</code> 预制组件</td>
+</tr>
+<tr>
+<td><code>py.typed</code></td>
+<td>0</td>
+<td>空文件，PEP 561 标记"本包提供类型信息"，让 mypy 能查</td>
+</tr>
+</tbody>
+</table>
+<h4 id="teststiny_langgraph-src"><code>tests/tiny_langgraph/</code> —— 测试，镜像 src<a class="headerlink" href="#teststiny_langgraph-src" title="Permanent link">&para;</a></h4>
+<p>测试文件和源码文件**一一对应**：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>src/tiny_langgraph/graph.py     ←→   tests/tiny_langgraph/test_graph.py
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>src/tiny_langgraph/reducers.py  ←→   tests/tiny_langgraph/test_reducers.py
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>src/tiny_langgraph/checkpoint.py ←→  tests/tiny_langgraph/test_checkpoint.py
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">镜像结构的好处</p>
 <ul>
-<li>测试文件和源码文件一一对应，找测试不会迷路</li>
-<li>后续模块多了不会乱</li>
-<li>符合企业级项目的测试组织规范</li>
+<li>找测试不会迷路：要看 <code>graph.py</code> 的测试，直接去 <code>test_graph.py</code></li>
+<li>后续模块多了不会乱：新增 <code>checkpoint.py</code> 就新增 <code>test_checkpoint.py</code>，机械动作</li>
+<li>符合企业级项目的测试组织规范（pytest 官方推荐）</li>
 </ul>
-<h3 id="mkdocs-material-docusaurus">为什么 MkDocs Material 而不是 Docusaurus<a class="headerlink" href="#mkdocs-material-docusaurus" title="Permanent link">&para;</a></h3>
+</div>
+<h4 id="docs-mkdocs"><code>docs/</code> —— MkDocs 文档源<a class="headerlink" href="#docs-mkdocs" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docs/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── index.md                # 首页：项目介绍 + 路线图
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── getting_started.md      # 安装、跑示例、跑测试
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>├── api.md                  # API 参考（用 mkdocstrings 自动从 docstring 生成）
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>├── principles/             # 核心原理（不随阶段变，讲"为什么这么设计"）
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   ├── index.md
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├── graph_as_program.md
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   ├── state_and_reducer.md
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│   ├── pregel.md
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>│   └── checkpoint.md
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>└── stages/                 # 阶段文档（本文所在位置）
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    ├── stage_0_skeleton.md
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    ├── stage_1_dag.md
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    └── ...
+</span></code></pre></div>
+<p><code>principles/</code> 和 <code>stages/</code> 的分工：</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>视角</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>principles/</code></td>
+<td>横截面</td>
+<td>讲概念：什么是 Pregel、为什么用 Reducer、检查点怎么实现时间旅行</td>
+</tr>
+<tr>
+<td><code>stages/</code></td>
+<td>纵截面</td>
+<td>讲实现：这一阶段加了什么代码、为什么这么加、对照真实源码哪几行</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples"><code>examples/</code> —— 可运行示例<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
+<p>每个阶段一个目录，里面一个 <code>run.py</code>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>examples/
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── stage_1_dag/run.py        # 3 个 DAG 示例
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── stage_2_state/run.py      # 带状态的管线
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>└── ...
+</span></code></pre></div>
+<p>设计原则：<strong>每个示例 <code>python -m examples.stage_N_xxx.run</code> 就能跑，输出贴在阶段文档里</strong>。读者不用猜"这段代码跑出来是啥"。</p>
+<h4 id="githubworkflows-cicd"><code>.github/workflows/</code> —— CI/CD<a class="headerlink" href="#githubworkflows-cicd" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>触发</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ci.yml</code></td>
+<td>push/PR 到 main</td>
+<td>跑 ruff + mypy + pytest，矩阵 4 个 Python 版本</td>
+</tr>
+<tr>
+<td><code>docs.yml</code></td>
+<td>push 到 main</td>
+<td><code>mkdocs gh-deploy</code> 把文档站发到 GitHub Pages</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="pyprojecttoml"><code>pyproject.toml</code> 配置详解<a class="headerlink" href="#pyprojecttoml" title="Permanent link">&para;</a></h2>
+<p>整个文件 81 行，分 6 个段。逐段拆。</p>
+<h3 id="1">1. 构建系统声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[build-system]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"hatchling"</span><span class="p">]</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"hatchling.build"</span>
+</span></code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">为什么用 hatchling 而不是 setuptools</p>
 <ul>
-<li>Python 生态，和项目语言一致</li>
-<li>Markdown 编写，不用学 MDX</li>
-<li><code>mkdocs gh-deploy</code> 一键发 GitHub Pages</li>
-<li>Material 主题开箱即用支持 mermaid 图、代码高亮、搜索、深色模式</li>
+<li><code>setuptools</code> 需要 <code>setup.py</code> / <code>setup.cfg</code>，配置分散</li>
+<li><code>hatchling</code> 是当前最简洁的纯 Python 构建后端，<strong>所有配置都在 <code>pyproject.toml</code> 一个文件</strong></li>
+<li><code>flit</code> 也简洁，但不支持 src 布局的开箱即用</li>
+<li><code>poetry</code> 功能全但锁文件机制争议大，教学项目不需要</li>
 </ul>
-<h2 id="_3">验证骨架<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 1. 安装</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[dev,docs]"</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 2. 包可导入</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import tiny_langgraph; print(tiny_langgraph.__version__)"</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># 输出: 0.0.0</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># 3. 测试通过</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>pytest
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># 输出: no tests ran（阶段 0 没有实质测试，正常）</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># 4. 文档可构建</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>mkdocs<span class="w"> </span>serve
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1"># 浏览器打开 http://127.0.0.1:8000</span>
+<p>hatchling 由 PyPA 维护，是 PyPI 官方推荐的构建后端之一。</p>
+</div>
+<p><code>requires = ["hatchling"]</code> 表示构建时需要 hatchling；<code>build-backend = "hatchling.build"</code> 表示用 hatchling 的 build 入口。<code>pip install -e .</code> 时 pip 会自动装 hatchling 并调它。</p>
+<h3 id="2">2. 项目元数据<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[project]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"tiny-langgraph"</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"0.0.0"</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"从零渐进式实现 LangGraph，理解图执行引擎的底层原理与设计原则"</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"README.md"</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&gt;=3.10"</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"MIT"</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"tiny-langgraph"</span><span class="w"> </span><span class="p">}]</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">keywords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"langgraph"</span><span class="p">,</span><span class="w"> </span><span class="s2">"agent"</span><span class="p">,</span><span class="w"> </span><span class="s2">"graph"</span><span class="p">,</span><span class="w"> </span><span class="s2">"llm"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tutorial"</span><span class="p">,</span><span class="w"> </span><span class="s2">"pregel"</span><span class="p">]</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="err">...]</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
 </span></code></pre></div>
-<h2 id="langgraph">对照真实 LangGraph<a class="headerlink" href="#langgraph" title="Permanent link">&para;</a></h2>
-<p>真实 LangGraph 的项目结构（简化）：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>langgraph/
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── libs/langgraph/langgraph/
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   ├── graph.py          # StateGraph
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── pregel/
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   │   ├── __init__.py   # Pregel 执行循环
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   │   └── read.py       # 通道读取
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├── checkpoint/
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   │   ├── base.py       # BaseCheckpointSaver
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│   │   ├── memory.py     # MemorySaver
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>│   │   └── sqlite.py     # SqliteSaver
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>│   └── types/
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>└── docs/
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>tiny-langgraph</code></td>
+<td>PyPI 包名（连字符），import 名是 <code>tiny_langgraph</code>（下划线）</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td><code>0.0.0</code></td>
+<td>阶段 0 的版本；阶段 9 是 <code>0.9.0</code>，每阶段 bump</td>
+</tr>
+<tr>
+<td><code>requires-python</code></td>
+<td><code>&gt;=3.10</code></td>
+<td>用了 <code>match</code> 语法、<code>X \| Y</code> 类型联合，最低 3.10</td>
+</tr>
+<tr>
+<td><code>license</code></td>
+<td><code>MIT</code></td>
+<td>SPDX 标识</td>
+</tr>
+<tr>
+<td><code>dependencies</code></td>
+<td><code>[]</code></td>
+<td><strong>空</strong>——纯标准库承诺的体现</td>
+</tr>
+<tr>
+<td><code>classifiers</code></td>
+<td>...</td>
+<td>PyPI 分类，帮用户搜到</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">version 为什么不动态</p>
+<p>真实项目常用 <code>version = { source = "code" }</code> 从 <code>__init__.py</code> 读版本。这里写死是为了**每个 git tag 对应一个固定版本号**，<code>git checkout stage-3</code> 时 <code>pyproject.toml</code> 的版本就是 <code>0.3.0</code>，一目了然。</p>
+</div>
+<h3 id="3-extras">3. 可选依赖（extras）<a class="headerlink" href="#3-extras" title="Permanent link">&para;</a></h3>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[project.optional-dependencies]</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">llm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"openai&gt;=1.0.0"</span><span class="p">]</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"pytest&gt;=8.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"pytest-cov&gt;=4.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ruff&gt;=0.6"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mypy&gt;=1.10"</span><span class="p">]</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"mkdocs&gt;=1.6"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mkdocs-material&gt;=9.5"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mkdocstrings[python]&gt;=0.26"</span><span class="p">,</span><span class="w"> </span><span class="s2">"pymdown-extensions&gt;=10.7"</span><span class="p">]</span>
 </span></code></pre></div>
-<p>我们的 <code>tiny_langgraph/</code> 会逐步长成类似的形状，但**砍掉所有生产级噪音**（分布式、LangChain 生态兼容、流式协议细节...），只留骨架。</p>
-<h2 id="_4">下一阶段<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>👉 <a href="../stage_1_dag/">阶段 1：最小 DAG 执行器</a>——从空文件开始写第一个能跑的图引擎。</p>
+<p>三个 extras，<strong>三套人</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>extra</th>
+<th>谁用</th>
+<th>命令</th>
+<th>装啥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>llm</code></td>
+<td>阶段 9 才需要</td>
+<td><code>pip install -e ".[llm]"</code></td>
+<td>openai</td>
+</tr>
+<tr>
+<td><code>dev</code></td>
+<td>贡献者</td>
+<td><code>pip install -e ".[dev]"</code></td>
+<td>pytest、ruff、mypy</td>
+</tr>
+<tr>
+<td><code>docs</code></td>
+<td>写文档的人</td>
+<td><code>pip install -e ".[docs]"</code></td>
+<td>mkdocs 全家桶</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">为什么分开</p>
+<ul>
+<li>普通读者 <code>pip install -e .</code> 就够跑阶段 1-8，不下载 openai/mkdocs</li>
+<li>CI 的 <code>ci.yml</code> 只装 <code>[dev]</code>，不装 <code>[docs]</code>，省时间</li>
+<li>CI 的 <code>docs.yml</code> 只装 <code>[docs]</code>，不装 <code>[dev]</code></li>
+<li>阶段 9 的 Agent 测试需要 <code>[llm]</code>，但 CI 默认不跑（要 API key）</li>
+</ul>
+</div>
+<p>组合安装：<code>pip install -e ".[dev,docs]"</code> 同时装开发和文档工具。</p>
+<h3 id="4-url">4. 项目 URL<a class="headerlink" href="#4-url" title="Permanent link">&para;</a></h3>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[project.urls]</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">Documentation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://wanglh39.github.io/langgraph/"</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">Source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://github.com/wanglh39/langgraph"</span>
+</span></code></pre></div>
+<p>PyPI 页面会显示这两个链接。<code>Documentation</code> 指向 GitHub Pages 站点，<code>Source</code> 指向仓库。</p>
+<h3 id="5-hatchling">5. hatchling 构建目标<a class="headerlink" href="#5-hatchling" title="Permanent link">&para;</a></h3>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[tool.hatch.build.targets.wheel]</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"src/tiny_langgraph"</span><span class="p">]</span>
+</span></code></pre></div>
+<p>告诉 hatchling：打 wheel 时把 <code>src/tiny_langgraph</code> 作为包根。这是 <strong>src 布局的关键配置</strong>——没有它，hatchling 会在根目录找 <code>tiny_langgraph/</code>，找不到。</p>
+<h3 id="6">6. 工具配置<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<h4 id="pytest">pytest<a class="headerlink" href="#pytest" title="Permanent link">&para;</a></h4>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[tool.pytest.ini_options]</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">testpaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"tests"</span><span class="p">]</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">addopts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"-ra --strict-markers"</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">markers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="s2">"stage1: 阶段 1 - DAG 执行器"</span><span class="p">,</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="s2">"stage2: 阶段 2 - 共享状态"</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="err">...</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="err">]</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>testpaths</code></td>
+<td>只在 <code>tests/</code> 下找测试</td>
+</tr>
+<tr>
+<td><code>addopts = "-ra"</code></td>
+<td>显示所有跳过/失败原因的摘要</td>
+</tr>
+<tr>
+<td><code>--strict-markers</code></td>
+<td>用未注册的 marker 会报错（防拼写错误）</td>
+</tr>
+<tr>
+<td><code>markers</code></td>
+<td>注册 9 个阶段标记，可 <code>pytest -m stage1</code> 只跑阶段 1 测试</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">marker 用法</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>pytest<span class="w"> </span>-m<span class="w"> </span>stage1<span class="w">          </span><span class="c1"># 只跑阶段 1 的测试</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>pytest<span class="w"> </span>-m<span class="w"> </span><span class="s2">"stage1 or stage2"</span><span class="w">  </span><span class="c1"># 跑阶段 1+2</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>pytest<span class="w"> </span>-m<span class="w"> </span><span class="s2">"not stage9"</span><span class="w">    </span><span class="c1"># 跳过阶段 9（需要 API key）</span>
+</span></code></pre></div>
+</div>
+<h4 id="ruff">ruff<a class="headerlink" href="#ruff" title="Permanent link">&para;</a></h4>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">[tool.ruff]</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">target-version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"py310"</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"src"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tests"</span><span class="p">]</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">[tool.ruff.lint]</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"E"</span><span class="p">,</span><span class="w"> </span><span class="s2">"F"</span><span class="p">,</span><span class="w"> </span><span class="s2">"I"</span><span class="p">,</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w"> </span><span class="s2">"UP"</span><span class="p">,</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w"> </span><span class="s2">"SIM"</span><span class="p">]</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>规则集</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>E</code></td>
+<td>pycodestyle 错误（空格、缩进）</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>pyflakes（未用变量、未用 import）</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>isort（import 排序）</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>pep8-naming（命名规范）</td>
+</tr>
+<tr>
+<td><code>UP</code></td>
+<td>pyupgrade（自动升级新语法，如 <code>Optional[X]</code> → <code>X \| None</code>）</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>bugbear（常见 bug 模式）</td>
+</tr>
+<tr>
+<td><code>SIM</code></td>
+<td>simplify（简化代码，如 <code>if x: return True else: return False</code> → <code>return x</code>）</td>
+</tr>
+</tbody>
+</table>
+<p><code>line-length = 100</code> 比 80 宽，比 120 窄，平衡可读性和屏幕利用率。</p>
+<h4 id="mypy">mypy<a class="headerlink" href="#mypy" title="Permanent link">&para;</a></h4>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">[tool.mypy]</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">python_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"3.10"</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">strict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">warn_return_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">warn_unused_configs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span></code></pre></div>
+<p><code>strict = true</code> 开启所有严格检查（disallow untyped defs、disallow any expr 等）。这是**类型安全承诺**——引擎代码要经得起 mypy strict。</p>
+<hr />
+<h2 id="mkdocs-material">MkDocs Material 配置详解<a class="headerlink" href="#mkdocs-material" title="Permanent link">&para;</a></h2>
+<p><code>mkdocs.yml</code> 127 行，分 8 个段。</p>
+<h3 id="1_1">1. 站点元数据<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">从零实现 LangGraph</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">site_description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">渐进式理解图执行引擎的底层原理与设计原则</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://wanglh39.github.io/langgraph/</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nt">repo_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/wanglh39/langgraph</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nt">repo_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wanglh39/langgraph</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nt">docs_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docs</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nt">site_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site_name</code></td>
+<td>浏览器标题、左上角 logo 旁的文字</td>
+</tr>
+<tr>
+<td><code>site_description</code></td>
+<td>SEO meta description</td>
+</tr>
+<tr>
+<td><code>site_url</code></td>
+<td>站点绝对 URL，用于 sitemap</td>
+</tr>
+<tr>
+<td><code>repo_url</code> / <code>repo_name</code></td>
+<td>右上角 GitHub 链接</td>
+</tr>
+<tr>
+<td><code>docs_dir</code> / <code>site_dir</code></td>
+<td>源目录 / 构建输出目录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_1">2. 主题<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zh</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.instant</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.sections</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.expand</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.indexes</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.top</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.suggest</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.highlight</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.code.copy</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.code.annotate</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.tabs.link</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">toc.follow</span>
+</span></code></pre></div>
+<p>逐条解释 <code>features</code>：</p>
+<table>
+<thead>
+<tr>
+<th>feature</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>navigation.instant</code></td>
+<td>点击链接不刷新整页，只换内容（SPA 模式），快</td>
+</tr>
+<tr>
+<td><code>navigation.tabs</code></td>
+<td>顶部用 tab 分一级导航</td>
+</tr>
+<tr>
+<td><code>navigation.sections</code></td>
+<td>侧边栏按 section 分组</td>
+</tr>
+<tr>
+<td><code>navigation.expand</code></td>
+<td>默认展开所有子项（不折叠）</td>
+</tr>
+<tr>
+<td><code>navigation.indexes</code></td>
+<td>section 的 <code>index.md</code> 作为该 section 首页</td>
+</tr>
+<tr>
+<td><code>navigation.top</code></td>
+<td>滚动时出现"回到顶部"按钮</td>
+</tr>
+<tr>
+<td><code>search.suggest</code></td>
+<td>搜索框自动补全</td>
+</tr>
+<tr>
+<td><code>search.highlight</code></td>
+<td>搜索结果高亮匹配词</td>
+</tr>
+<tr>
+<td><code>content.code.copy</code></td>
+<td>代码块右上角加"复制"按钮</td>
+</tr>
+<tr>
+<td><code>content.code.annotate</code></td>
+<td>代码块支持 <code># (1)</code> 注释标注</td>
+</tr>
+<tr>
+<td><code>content.tabs.link</code></td>
+<td>同步 tab 切换（多个 tab 块联动）</td>
+</tr>
+<tr>
+<td><code>toc.follow</code></td>
+<td>滚动时右侧目录高亮当前章节</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">3. 调色板（深浅切换）<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">palette</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">media</span><span class="p">:</span><span class="w"> </span><span class="s">"(prefers-color-scheme:</span><span class="nv"> </span><span class="s">light)"</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deep purple</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="nt">toggle</span><span class="p">:</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">      </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/brightness-7</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">切换到深色模式</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">media</span><span class="p">:</span><span class="w"> </span><span class="s">"(prefers-color-scheme:</span><span class="nv"> </span><span class="s">dark)"</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slate</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deep purple</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="nt">toggle</span><span class="p">:</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">      </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/brightness-4</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">切换到浅色模式</span>
+</span></code></pre></div>
+<p>两套配色，根据系统偏好自动选，并提供切换按钮。<code>primary: deep purple</code> 是主色（紫），<code>accent: indigo</code> 是强调色（靛蓝）。</p>
+<h3 id="4">4. 字体<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">font</span><span class="p">:</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Noto Sans SC</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="nt">code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JetBrains Mono</span>
+</span></code></pre></div>
+<ul>
+<li><code>Noto Sans SC</code>：思源黑体简体中文，覆盖中文字符</li>
+<li><code>JetBrains Mono</code>：等宽编程字体，代码块用</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">字体加载需要联网</p>
+<p>Material 主题从 Google Fonts 拉字体。离线环境会 fallback 到系统字体，不影响功能但中文字形会变。</p>
+</div>
+<h3 id="5">5. 图标<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">icon</span><span class="p">:</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/graph-outline</span>
+</span></code></pre></div>
+<p>左上角 logo 用 Material 内置的"图"图标（三个节点连线），呼应"图执行引擎"主题。</p>
+<h3 id="6_1">6. 导航结构<a class="headerlink" href="#6_1" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">nav</span><span class="p">:</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">首页</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">快速上手</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">getting_started.md</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">核心原理</span><span class="p">:</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">概览</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">principles/index.md</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">图即程序</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">principles/graph_as_program.md</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">状态与 Reducer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">principles/state_and_reducer.md</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Pregel 超级步</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">principles/pregel.md</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">检查点与时间旅行</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">principles/checkpoint.md</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">渐进式实现</span><span class="p">:</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">阶段 0 - 项目骨架</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stages/stage_0_skeleton.md</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">阶段 1 - DAG 执行器</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stages/stage_1_dag.md</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">阶段 9 - 完整 Agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stages/stage_9_agent.md</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">API 参考</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.md</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">为什么显式列 nav 而不自动发现</p>
+<p>自动发现（不写 <code>nav</code>）会按文件名字母排序，阶段顺序会乱（<code>stage_10</code> 排在 <code>stage_2</code> 前面）。显式列出保证顺序正确，也能控制分组层级。</p>
+</div>
+<h3 id="7">7. 插件<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">search</span><span class="p">:</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">      </span><span class="nt">lang</span><span class="p">:</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ja</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mkdocstrings</span><span class="p">:</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">      </span><span class="nt">handlers</span><span class="p">:</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">        </span><span class="nt">python</span><span class="p">:</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">          </span><span class="nt">paths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">src</span><span class="p p-Indicator">]</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">          </span><span class="nt">options</span><span class="p">:</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">            </span><span class="nt">show_source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">            </span><span class="nt">show_root_heading</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">            </span><span class="nt">heading_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>插件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>search</code></td>
+<td>全文搜索，<code>lang: [ja, en]</code> 用日语+英语分词器（中文搜索效果最好的折中方案，因为 Material 不内置中文分词器）</td>
+</tr>
+<tr>
+<td><code>mkdocstrings</code></td>
+<td>从 docstring 自动生成 API 文档，<code>paths: [src]</code> 告诉它源码在哪</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">为什么搜索 lang 用 ja + en</p>
+<p>MkDocs Material 的搜索基于 Lunr.js，不内置中文分词。中文分词器（jieba）需要额外集成。<strong>日语分词器对中文有奇效</strong>——日语和中文都用 CJK 字符，Lunr 的日语模式按字符切分，对中文搜索的召回率比英语模式好得多。加 <code>en</code> 是为了同时支持英文术语搜索（如 "Pregel"）。</p>
+</div>
+<h3 id="8-markdown">8. Markdown 扩展<a class="headerlink" href="#8-markdown" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admonition</span><span class="w">                    </span><span class="c1"># !!! note/warning/tip 框</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span><span class="w">                     </span><span class="c1"># {.class} 给元素加 CSS</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">def_list</span><span class="w">                      </span><span class="c1"># 定义列表</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">footnotes</span><span class="w">                     </span><span class="c1"># 脚注 [^1]</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">md_in_html</span><span class="w">                    </span><span class="c1"># HTML 里嵌 markdown</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tables</span><span class="w">                        </span><span class="c1"># GFM 表格</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">toc</span><span class="p">:</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">      </span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">             </span><span class="c1"># 标题旁的 ¶ 锚点链接</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.arithmatex</span><span class="w">           </span><span class="c1"># 数学公式 $...$</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.betterem</span><span class="w">             </span><span class="c1"># **加粗**/_斜体_ 智能识别</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.caret</span><span class="w">                </span><span class="c1"># ^^下划线^^</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span><span class="w">              </span><span class="c1"># ??? question 折叠块</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.emoji</span><span class="w">                </span><span class="c1"># :smile: emoji</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.highlight</span><span class="w">            </span><span class="c1"># 代码高亮（带行号）</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.inlinehilite</span><span class="w">         </span><span class="c1"># 行内代码高亮 `#!python foo()`</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.keys</span><span class="w">                 </span><span class="c1"># 键盘按键 ++ctrl+c++</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.mark</span><span class="w">                 </span><span class="c1"># ==高亮==</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.smartsymbols</span><span class="w">         </span><span class="c1"># (c) (tm) -&gt; 等智能符号</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.snippets</span><span class="w">             </span><span class="c1"># include 其他文件</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.superfences</span><span class="p">:</span><span class="w">         </span><span class="c1"># 代码块增强</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">      </span><span class="nt">custom_fences</span><span class="p">:</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid</span><span class="w">           </span><span class="c1"># mermaid 图表</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="w">          </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">          </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:pymdownx.superfences.fence_code_format</span>
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.tabbed</span><span class="w">               </span><span class="c1"># === "Tab 1" 标签页</span>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.tasklist</span><span class="p">:</span><span class="w">            </span><span class="c1"># - [x] 任务列表</span>
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="w">      </span><span class="nt">custom_checkbox</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.tilde</span><span class="w">                </span><span class="c1"># ~~删除线~~</span>
+</span></code></pre></div>
+<p>最常用的几个：</p>
+<ul>
+<li><code>admonition</code>：<code>!!! tip "提示"</code> 生成彩色提示框</li>
+<li><code>pymdownx.details</code>：<code>??? question "折叠"</code> 生成可折叠区域</li>
+<li><code>pymdownx.superfences</code> + mermaid：画流程图</li>
+<li><code>pymdownx.tabbed</code>：<code>=== "Graph"</code> / <code>=== "StateGraph"</code> 对比代码</li>
+<li><code>pymdownx.highlight</code>：代码块带行号、锚点</li>
+</ul>
+<h3 id="9">9. 额外资源<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">extra</span><span class="p">:</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nt">social</span><span class="p">:</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontawesome/brands/github</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">      </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/wanglh39/langgraph</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nt">extra_javascript</span><span class="p">:</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://unpkg.com/mermaid@10/dist/mermaid.min.js</span>
+</span></code></pre></div>
+<p><code>extra.social</code> 在页脚加 GitHub 图标链接。<code>extra_javascript</code> 加载 mermaid.js——<code>pymdownx.superfences</code> 只负责把 <code>```mermaid</code> 代码块标记成 mermaid 容器，真正画图靠这个 JS 在浏览器端渲染。</p>
+<hr />
+<h2 id="github-actions-cicd">GitHub Actions CI/CD 详解<a class="headerlink" href="#github-actions-cicd" title="Permanent link">&para;</a></h2>
+<h3 id="ciyml"><code>ci.yml</code>：测试流水线<a class="headerlink" href="#ciyml" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nt">on</span><span class="p">:</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nt">permissions</span><span class="p">:</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="nt">jobs</span><span class="p">:</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">  </span><span class="nt">test</span><span class="p">:</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="w">    </span><span class="nt">strategy</span><span class="p">:</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">      </span><span class="nt">fail-fast</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">      </span><span class="nt">matrix</span><span class="p">:</span>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"3.10"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"3.11"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"3.12"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"3.13"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python ${{ matrix.python-version }}</span>
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a><span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span>
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="w">          </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>
+</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install</span>
+</span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -e ".[dev]"</span>
+</span><span id="__span-22-31"><a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a>
+</span><span id="__span-22-32"><a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lint (ruff)</span>
+</span><span id="__span-22-33"><a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ruff check src tests</span>
+</span><span id="__span-22-34"><a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a>
+</span><span id="__span-22-35"><a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Type check (mypy)</span>
+</span><span id="__span-22-36"><a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mypy src || true</span>
+</span><span id="__span-22-37"><a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a>
+</span><span id="__span-22-38"><a id="__codelineno-22-38" name="__codelineno-22-38" href="#__codelineno-22-38"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test</span>
+</span><span id="__span-22-39"><a id="__codelineno-22-39" name="__codelineno-22-39" href="#__codelineno-22-39"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest --tb=short</span>
+</span></code></pre></div>
+<p>逐行拆：</p>
+<h4 id="_8">触发条件<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">on</span><span class="p">:</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
+<ul>
+<li>push 到 main：合并后跑</li>
+<li>PR 到 main：开 PR 时跑</li>
+</ul>
+<h4 id="_9">权限<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">permissions</span><span class="p">:</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+</span></code></pre></div>
+<p>最小权限原则——只读仓库内容，不能写。<code>docs.yml</code> 才需要 <code>contents: write</code>（要 push 文档到 gh-pages 分支）。</p>
+<h4 id="_10">矩阵<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">strategy</span><span class="p">:</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="nt">fail-fast</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="nt">matrix</span><span class="p">:</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"3.10"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"3.11"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"3.12"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"3.13"</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
+<p>4 个 Python 版本并行跑。<code>fail-fast: false</code> 表示一个版本挂了不取消其他版本——方便看是哪个版本的问题。</p>
+<div class="admonition question">
+<p class="admonition-title">为什么从 3.10 起</p>
+<p><code>requires-python = "&gt;=3.10"</code>。3.10 引入了 <code>match</code> 语句、<code>X | Y</code> 类型联合、参数化 <code>dict[str, int]</code>，这些在引擎代码里大量使用。3.9 不支持。</p>
+</div>
+<h4 id="_11">步骤<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>actions/checkout@v4</code></td>
+<td>拉代码</td>
+</tr>
+<tr>
+<td><code>actions/setup-python@v5</code></td>
+<td>装 Python，<code>cache: pip</code> 缓存 pip 下载</td>
+</tr>
+<tr>
+<td><code>pip install -e ".[dev]"</code></td>
+<td>可编辑安装 + dev 依赖（pytest/ruff/mypy）</td>
+</tr>
+<tr>
+<td><code>ruff check src tests</code></td>
+<td>lint</td>
+</tr>
+<tr>
+<td><code>mypy src || true</code></td>
+<td>类型检查，<strong>挂了不阻断 CI</strong></td>
+</tr>
+<tr>
+<td><code>pytest --tb=short</code></td>
+<td>跑测试，失败时只显示短 traceback</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">为什么 <code>mypy || true</code></p>
+<p><code>|| true</code> 让这一步永远成功。原因：</p>
+<ol>
+<li>教学项目早期类型可能不全，不想 mypy 卡住 CI</li>
+<li>mypy strict 对第三方库（如 openai）的 stub 要求高，容易误报</li>
+<li>真实 LangGraph 的 mypy 也不是 0 错误</li>
+</ol>
+<p>生产项目应该去掉 <code>|| true</code>，让 mypy 真正把关。教学项目先松后紧。</p>
+</div>
+<h3 id="docsyml"><code>docs.yml</code>：文档部署<a class="headerlink" href="#docsyml" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Docs</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nt">on</span><span class="p">:</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="nt">permissions</span><span class="p">:</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="nt">jobs</span><span class="p">:</span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>
+</span><span id="__span-26-20"><a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+</span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+</span><span id="__span-26-22"><a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+</span><span id="__span-26-23"><a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a><span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">"3.13"</span>
+</span><span id="__span-26-24"><a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a><span class="w">          </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
+</span><span id="__span-26-25"><a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>
+</span><span id="__span-26-26"><a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install</span>
+</span><span id="__span-26-27"><a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -e ".[docs]"</span>
+</span><span id="__span-26-28"><a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a>
+</span><span id="__span-26-29"><a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and deploy</span>
+</span><span id="__span-26-30"><a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs gh-deploy --force</span>
+</span></code></pre></div>
+<p>和 <code>ci.yml</code> 的差异：</p>
+<table>
+<thead>
+<tr>
+<th>差异点</th>
+<th>ci.yml</th>
+<th>docs.yml</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>触发</td>
+<td>push + PR</td>
+<td>push + 手动 (<code>workflow_dispatch</code>)</td>
+</tr>
+<tr>
+<td>权限</td>
+<td><code>contents: read</code></td>
+<td><code>contents: write</code>（要 push gh-pages）</td>
+</tr>
+<tr>
+<td>Python 版本</td>
+<td>矩阵 4 个</td>
+<td>单个 3.13</td>
+</tr>
+<tr>
+<td>装的 extras</td>
+<td><code>[dev]</code></td>
+<td><code>[docs]</code></td>
+</tr>
+<tr>
+<td><code>fetch-depth</code></td>
+<td>默认 1</td>
+<td><code>0</code>（全历史，mkdocs 需要）</td>
+</tr>
+<tr>
+<td>最后一步</td>
+<td>pytest</td>
+<td><code>mkdocs gh-deploy --force</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>mkdocs gh-deploy</code> 做的事：</p>
+<ol>
+<li><code>mkdocs build</code> 把 <code>docs/</code> 编译成静态站到 <code>site/</code></li>
+<li>把 <code>site/</code> 推到 <code>gh-pages</code> 分支</li>
+<li>GitHub Pages 自动部署 <code>gh-pages</code> 分支</li>
+</ol>
+<p><code>--force</code> 强制覆盖 gh-pages 历史（每次部署是全新 commit，不保留历史）。教学项目不需要文档 git 历史。</p>
+<hr />
+<h2 id="gitignore"><code>.gitignore</code> 设计<a class="headerlink" href="#gitignore" title="Permanent link">&para;</a></h2>
+<p>74 行，分 9 段：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a># Python          - __pycache__、*.pyc、build/、dist/、*.egg-info/
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a># Virtual envs    - .venv/ venv/ env/
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a># Testing         - .pytest_cache/、.coverage、htmlcov/
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a># Type checking   - .mypy_cache/、.ruff_cache/
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a># IDE             - .vscode/、.idea/、*.swp
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a># OS              - .DS_Store、Thumbs.db
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a># MkDocs          - site/（构建输出）
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a># Env / secrets   - .env、*.key、*.pem（但保留 .env.example）
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a># Jupyter         - .ipynb_checkpoints/
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a># Tooling         - .codeartsdoer/、.codegraph/（IDE 内部）
+</span></code></pre></div>
+<p>几个关键设计：</p>
+<div class="admonition tip">
+<p class="admonition-title"><code>.env.example</code> 不被忽略</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>.env
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>.env.*
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>!.env.example    # ← ! 表示不忽略
+</span></code></pre></div>
+<code>.env</code> 含真实密钥必须忽略。但 <code>.env.example</code>（样例文件）要进仓库，让新人知道需要哪些环境变量。<code>!</code> 是 gitignore 的取反规则。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">为什么要忽略 <code>.codeartsdoer/</code> 和 <code>.codegraph/</code></p>
+<p>这是 IDE/工具的内部缓存，不该进仓库。但它们对开发有用，所以本地保留、仓库忽略。</p>
+</div>
+<hr />
+<h2 id="_12">渐进式路线总览<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>10 个阶段，每阶段一个 git tag、一个新概念、一组测试、一个示例、一篇文档。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>git tag</th>
+<th>内容</th>
+<th>新增概念</th>
+<th>代码量级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>stage-0</code></td>
+<td>项目骨架 + 文档站 + CI</td>
+<td>MkDocs Material、hatchling、src 布局</td>
+<td>0 行引擎</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>stage-1</code></td>
+<td>最小 DAG 执行器</td>
+<td><code>Graph</code>、<code>CompiledGraph</code>、<code>START</code>/<code>END</code>、线性链</td>
+<td>~80 行</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>stage-2</code></td>
+<td>共享状态</td>
+<td><code>StateGraph</code>、更新片段、覆盖合并、<code>TypedDict</code></td>
+<td>~60 行新增</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>stage-3</code></td>
+<td>条件边</td>
+<td><code>add_conditional_edges</code>、路由函数、运行时遍历</td>
+<td>~40 行新增</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>stage-4</code></td>
+<td>循环图 + stream</td>
+<td>回边、<code>while</code> 循环、<code>stream</code> yield 事件</td>
+<td>~50 行新增</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>stage-5</code></td>
+<td>Reducer</td>
+<td><code>Annotated[T, reducer]</code>、<code>add_messages</code>、<code>_merge</code></td>
+<td>~80 行新增</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>stage-6</code></td>
+<td>Pregel 超级步</td>
+<td>并行层、fan-out、通道=字段+Reducer</td>
+<td>~60 行重构</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>stage-7</code></td>
+<td>Checkpoint</td>
+<td><code>BaseCheckpointSaver</code>、<code>MemorySaver</code>、<code>SqliteSaver</code></td>
+<td>~100 行新增</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>stage-8</code></td>
+<td>Interrupt + 流式</td>
+<td><code>interrupt_before/after</code>、人机协作、续跑</td>
+<td>~60 行新增</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>stage-9</code></td>
+<td>完整 Tool Agent</td>
+<td><code>Tool</code>、<code>create_react_agent</code>、接 OpenAI、对照真版</td>
+<td>~120 行新增</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_13">概念依赖图<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph TD
+    S0[阶段 0 骨架] --&gt; S1[阶段 1 DAG]
+    S1 --&gt; S2[阶段 2 状态]
+    S2 --&gt; S3[阶段 3 条件边]
+    S3 --&gt; S4[阶段 4 循环]
+    S4 --&gt; S5[阶段 5 Reducer]
+    S5 --&gt; S6[阶段 6 Pregel]
+    S6 --&gt; S7[阶段 7 Checkpoint]
+    S7 --&gt; S8[阶段 8 Interrupt]
+    S8 --&gt; S9[阶段 9 Agent]
+
+    S2 -.-&gt;|状态合并| S5
+    S4 -.-&gt;|stream| S6
+    S6 -.-&gt;|超级步| S7
+    S7 -.-&gt;|快照| S8</code></pre>
+<p>实线 = 代码直接依赖；虚线 = 概念复用。</p>
+<h3 id="_14">每阶段读法<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>git checkout stage-N</code> 切到该阶段代码</li>
+<li>读 <code>docs/stages/stage_N_xxx.md</code> 看这一阶段做了啥</li>
+<li>跑 <code>python -m examples.stage_N_xxx.run</code> 看效果</li>
+<li>跑 <code>pytest -m stageN</code> 看测试</li>
+<li><code>git diff stage-(N-1)..stage-N</code> 看具体加了哪些代码</li>
+</ol>
+<hr />
+<h2 id="_15">设计原则深度阐述<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">原则 1：纯标准库优先<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>阶段 1-8 只用 Python 标准库。理由前面说过——剥离框架噪音。但有几个具体决策：</p>
+<div class="admonition example">
+<p class="admonition-title">具体决策</p>
+<ul>
+<li><strong>不用 pydantic</strong>：状态用 <code>TypedDict</code> + <code>dict</code>，类型检查靠 mypy 而非运行时校验</li>
+<li><strong>不用 asyncio</strong>：执行引擎是同步的，async 是真实 LangGraph 的复杂度大头</li>
+<li><strong>不用 orjson</strong>：用标准 <code>json</code>，性能差但可读</li>
+<li><strong>不用 networkx</strong>：图结构用 <code>dict</code> 自己存，让读者看到邻接表长啥样</li>
+<li><strong>不用 tenacity</strong>：重试逻辑（阶段 9）手写一个简单的</li>
+</ul>
+</div>
+<h3 id="2_2">原则 2：每个概念只做一件事<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>每阶段**只引入一个新概念**。不是"加状态 + 加条件边 + 加循环"一锅端，而是：</p>
+<ul>
+<li>阶段 2 只加状态，边还是静态的、还是线性</li>
+<li>阶段 3 只加条件边，状态合还是覆盖、还是无循环</li>
+<li>阶段 4 才加循环</li>
+</ul>
+<p>这样每阶段的 diff 都很小（&lt; 100 行），能完整读完。</p>
+<h3 id="3_1">原则 3：对照真实源码<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>每阶段文档有"对照真实 LangGraph"表格，指出：</p>
+<ul>
+<li>真实版对应文件在 <code>langgraph/</code> 的哪个路径</li>
+<li>我们的实现和真实版的语义一致点</li>
+<li>我们砍掉了真实版的哪些生产级噪音</li>
+<li>哪些阶段才会补上某个能力</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">为什么对照</p>
+<p>读完这个项目，你应该能打开真实 LangGraph 源码，认出"哦这是 Pregel 超级步循环"、"哦这是 <code>add_messages</code> reducer"、"哦这是检查点 put"。<strong>教学版是真实版的索引</strong>。</p>
+</div>
+<h3 id="4_1">原则 4：可运行 &gt; 可读 &gt; 完备<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>优先级：</p>
+<ol>
+<li><strong>可运行</strong>：所有代码 <code>python -m</code> 能跑，输出贴在文档里</li>
+<li><strong>可读</strong>：代码有 docstring、类型注解、注释</li>
+<li><strong>完备</strong>：覆盖所有边界情况（但允许某些罕见 case 不处理）</li>
+</ol>
+<p>举例：阶段 1 的 <code>Graph</code> 不支持 DAG（只支持线性链），这是"不完备"但"可运行可读"。完备的 DAG 支持在阶段 6 Pregel 才补。</p>
+<h3 id="5_1">原则 5：测试镜像源码结构<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<p><code>tests/tiny_langgraph/test_graph.py</code> 对应 <code>src/tiny_langgraph/graph.py</code>。测试类名对应功能分组：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>TestAddNode        ←  Graph.add_node
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>TestAddEdge        ←  Graph.add_edge
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>TestCompile        ←  Graph.compile
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>TestInvoke         ←  CompiledGraph.invoke
+</span></code></pre></div>
+<p>找测试不会迷路。</p>
+<h3 id="6_2">原则 6：文档随代码演进<a class="headerlink" href="#6_2" title="Permanent link">&para;</a></h3>
+<p>每阶段代码 + 测试 + 示例 + 文档**一起提交**。不会出现"代码到阶段 9 了，文档还停在阶段 3"。<code>git tag stage-N</code> 是个完整快照。</p>
+<hr />
+<h2 id="_16">如何本地预览文档<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h3 id="_17">安装文档工具<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[docs]"</span>
+</span></code></pre></div>
+<p>这会装：<code>mkdocs</code>、<code>mkdocs-material</code>、<code>mkdocstrings[python]</code>、<code>pymdown-extensions</code>。</p>
+<h3 id="_18">实时预览<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>mkdocs<span class="w"> </span>serve
+</span></code></pre></div>
+<p>输出：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>INFO    -  Building documentation...
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>INFO    -  Cleaning site directory
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>INFO    -  Documentation built in 0.5 seconds
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>INFO    -  [15:00:00] Watching paths for changes: 'docs', 'mkdocs.yml'
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>INFO    -  [15:00:00] Serving on http://127.0.0.1:8000/
+</span></code></pre></div>
+<p>浏览器打开 <code>http://127.0.0.1:8000</code>。<strong>改 <code>docs/</code> 下任何 <code>.md</code> 文件，浏览器自动刷新</strong>。</p>
+<h3 id="_19">构建静态站<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>mkdocs<span class="w"> </span>build
+</span></code></pre></div>
+<p>把 <code>docs/</code> 编译成 <code>site/</code> 目录（纯 HTML/CSS/JS）。可以直接 <code>python -m http.server -d site</code> 起一个静态服务器看。</p>
+<h3 id="github-pages">部署到 GitHub Pages<a class="headerlink" href="#github-pages" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>mkdocs<span class="w"> </span>gh-deploy
+</span></code></pre></div>
+<p>自动 <code>build</code> + 推到 <code>gh-pages</code> 分支。GitHub Pages 配好后，访问 <code>https://&lt;user&gt;.github.io/&lt;repo&gt;/</code> 就能看到。</p>
+<div class="admonition warning">
+<p class="admonition-title">gh-deploy 不会推 main</p>
+<p><code>mkdocs gh-deploy</code> 只推 <code>site/</code> 到 <code>gh-pages</code> 分支，<strong>不会 commit 你的 main 改动</strong>。先 <code>git commit &amp;&amp; git push</code> 再 <code>gh-deploy</code>。</p>
+</div>
+<h3 id="ci">严格构建（CI 用）<a class="headerlink" href="#ci" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
+</span></code></pre></div>
+<p><code>--strict</code> 把警告升级成错误——如果有未解析的链接、缺图片、mkdocstrings 找不到符号，直接挂。CI 应该用这个，本地预览不用（太烦）。</p>
+<hr />
+<h2 id="_20">如何切到某个阶段看代码<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<h3 id="_21">查看所有阶段标签<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>git<span class="w"> </span>tag
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="c1"># stage-0</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="c1"># stage-1</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="c1"># stage-2</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="c1"># ...</span>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="c1"># stage-9</span>
+</span></code></pre></div>
+<h3 id="_22">切到某阶段<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>stage-1
+</span></code></pre></div>
+<p>现在 <code>src/tiny_langgraph/graph.py</code> 就是阶段 1 的版本（只有 <code>Graph</code> + <code>CompiledGraph</code>，没有 <code>StateGraph</code>）。</p>
+<h3 id="_23">看某阶段加了什么<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>git<span class="w"> </span>diff<span class="w"> </span>stage-0..stage-1
+</span></code></pre></div>
+<p>输出阶段 0 到阶段 1 的所有改动。</p>
+<h3 id="_24">只看某个文件的历史<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--follow<span class="w"> </span>src/tiny_langgraph/graph.py
+</span></code></pre></div>
+<h3 id="_25">在某阶段跑测试<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>stage-2
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[dev]"</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>pytest<span class="w"> </span>-m<span class="w"> </span>stage2
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">checkout 后记得重装</p>
+<p><code>pip install -e .</code> 是可编辑安装，改代码不用重装。但 <code>pyproject.toml</code> 的 <code>version</code> 或 <code>optional-dependencies</code> 变了要重装，让 metadata 更新。</p>
+</div>
+<h3 id="_26">回到最新<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
+</span></code></pre></div>
+<hr />
+<h2 id="langgraph_2">对照真实 LangGraph 的项目结构<a class="headerlink" href="#langgraph_2" title="Permanent link">&para;</a></h2>
+<p>真实 LangGraph 是 monorepo（<code>libs/</code> 下多个包），我们单包。对比如下：</p>
+<table>
+<thead>
+<tr>
+<th>真实 LangGraph</th>
+<th>我们</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>libs/langgraph/langgraph/graph/graph.py</code></td>
+<td><code>src/tiny_langgraph/graph.py</code></td>
+<td><code>Graph</code> 类（无状态）</td>
+</tr>
+<tr>
+<td><code>libs/langgraph/langgraph/graph/state.py</code></td>
+<td><code>src/tiny_langgraph/graph.py</code></td>
+<td><code>StateGraph</code> 类（合并到一个文件）</td>
+</tr>
+<tr>
+<td><code>libs/langgraph/langgraph/pregel/__init__.py</code></td>
+<td><code>src/tiny_langgraph/graph.py</code></td>
+<td>Pregel 执行循环（<code>CompiledStateGraph.stream</code>）</td>
+</tr>
+<tr>
+<td><code>libs/langgraph/langgraph/pregel/read.py</code></td>
+<td>（砍掉）</td>
+<td>通道读取，我们用 <code>state[key]</code> 直接读</td>
+</tr>
+<tr>
+<td><code>libs/langgraph/langgraph/pregel/write.py</code></td>
+<td>（砍掉）</td>
+<td>通道写入，我们用 <code>state.update</code></td>
+</tr>
+<tr>
+<td><code>libs/langgraph/langgraph/checkpoint/base.py</code></td>
+<td><code>src/tiny_langgraph/checkpoint.py</code></td>
+<td><code>BaseCheckpointSaver</code></td>
+</tr>
+<tr>
+<td><code>libs/langgraph/langgraph/checkpoint/memory.py</code></td>
+<td><code>src/tiny_langgraph/checkpoint.py</code></td>
+<td><code>MemorySaver</code></td>
+</tr>
+<tr>
+<td><code>libs/langgraph/langgraph/checkpoint/sqlite.py</code></td>
+<td><code>src/tiny_langgraph/checkpoint.py</code></td>
+<td><code>SqliteSaver</code></td>
+</tr>
+<tr>
+<td><code>libs/langgraph/langgraph/types/</code></td>
+<td>（砍掉）</td>
+<td>类型定义，我们用 <code>TypedDict</code></td>
+</tr>
+<tr>
+<td><code>libs/langgraph/langgraph/prebuilt/</code></td>
+<td><code>src/tiny_langgraph/prebuilt.py</code></td>
+<td><code>create_react_agent</code></td>
+</tr>
+<tr>
+<td><code>docs/</code> (Markdown)</td>
+<td><code>docs/</code> (MkDocs)</td>
+<td>文档</td>
+</tr>
+<tr>
+<td><code>.github/workflows/</code></td>
+<td><code>.github/workflows/</code></td>
+<td>CI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_27">真实版结构（简化）<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>langgraph/
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>├── libs/
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>│   ├── langgraph/              # 核心包
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>│   │   ├── langgraph/
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>│   │   │   ├── graph/
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>│   │   │   │   ├── graph.py    # Graph
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>│   │   │   │   └── state.py    # StateGraph
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>│   │   │   ├── pregel/
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>│   │   │   │   ├── __init__.py # Pregel 循环
+</span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>│   │   │   │   ├── read.py     # 通道读
+</span><span id="__span-42-11"><a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a>│   │   │   │   └── write.py    # 通道写
+</span><span id="__span-42-12"><a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a>│   │   │   ├── checkpoint/
+</span><span id="__span-42-13"><a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a>│   │   │   │   ├── base.py
+</span><span id="__span-42-14"><a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a>│   │   │   │   ├── memory.py
+</span><span id="__span-42-15"><a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a>│   │   │   │   └── sqlite.py
+</span><span id="__span-42-16"><a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a>│   │   │   ├── prebuilt/
+</span><span id="__span-42-17"><a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a>│   │   │   └── types/
+</span><span id="__span-42-18"><a id="__codelineno-42-18" name="__codelineno-42-18" href="#__codelineno-42-18"></a>│   │   └── pyproject.toml
+</span><span id="__span-42-19"><a id="__codelineno-42-19" name="__codelineno-42-19" href="#__codelineno-42-19"></a>│   └── langgraph-sdk/          # SDK 包
+</span><span id="__span-42-20"><a id="__codelineno-42-20" name="__codelineno-42-20" href="#__codelineno-42-20"></a>└── docs/
+</span></code></pre></div>
+<h3 id="_28">我们砍掉了什么<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>砍掉的</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>monorepo / <code>libs/</code></td>
+<td>单包够用</td>
+</tr>
+<tr>
+<td><code>pregel/read.py</code> + <code>write.py</code></td>
+<td>通道抽象太重，直接 <code>state[key]</code></td>
+</tr>
+<tr>
+<td><code>types/</code> 一堆 TypedDict</td>
+<td>内联到使用处</td>
+</tr>
+<tr>
+<td>asyncio 全套</td>
+<td>同步引擎够讲清原理</td>
+</tr>
+<tr>
+<td>pydantic v2 校验</td>
+<td><code>TypedDict</code> + mypy 够</td>
+</tr>
+<tr>
+<td>LangChain 生态兼容</td>
+<td>教学项目不需要</td>
+</tr>
+<tr>
+<td>流式协议细节（event 类型、metadata）</td>
+<td>阶段 4 的 stream 只 yield 简单 dict</td>
+</tr>
+<tr>
+<td>分布式 / 远程检查点</td>
+<td>单机 <code>MemorySaver</code> + <code>SqliteSaver</code> 够</td>
+</tr>
+<tr>
+<td>错误恢复 / 重试</td>
+<td>阶段 9 简单处理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_29">我们保留了什么（核心骨架）<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>保留的</th>
+<th>体现于</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>compile()</code> 分离校验和执行</td>
+<td>阶段 1 <code>Graph.compile</code></td>
+</tr>
+<tr>
+<td><code>START</code>/<code>END</code> 虚拟节点</td>
+<td>阶段 1</td>
+</tr>
+<tr>
+<td>邻接表存图</td>
+<td>阶段 1 <code>_edges</code></td>
+</tr>
+<tr>
+<td>更新片段 + 引擎合并</td>
+<td>阶段 2 <code>_merge</code></td>
+</tr>
+<tr>
+<td>条件边 = 路由函数</td>
+<td>阶段 3 <code>add_conditional_edges</code></td>
+</tr>
+<tr>
+<td>运行时 while 遍历（非预编译顺序）</td>
+<td>阶段 3 起</td>
+</tr>
+<tr>
+<td><code>stream</code> yield 事件</td>
+<td>阶段 4</td>
+</tr>
+<tr>
+<td>Reducer = <code>Annotated[T, fn]</code></td>
+<td>阶段 5</td>
+</tr>
+<tr>
+<td>Pregel 超级步 = 并行层</td>
+<td>阶段 6 <code>pending: set[str]</code></td>
+</tr>
+<tr>
+<td>检查点 = 快照 + 续跑</td>
+<td>阶段 7</td>
+</tr>
+<tr>
+<td>Interrupt = 暂停 + 人类输入</td>
+<td>阶段 8</td>
+</tr>
+<tr>
+<td>ReAct = 循环图 + 工具节点</td>
+<td>阶段 9</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_30">验证骨架<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<p>阶段 0 完成后，以下命令应该全部成功：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="c1"># 1. 安装（开发 + 文档）</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[dev,docs]"</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="c1"># 2. 包可导入</span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import tiny_langgraph; print(tiny_langgraph.__version__)"</span>
+</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="c1"># 输出: 0.0.0</span>
+</span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>
+</span><span id="__span-43-8"><a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a><span class="c1"># 3. 测试通过</span>
+</span><span id="__span-43-9"><a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a>pytest
+</span><span id="__span-43-10"><a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a><span class="c1"># 输出: no tests ran（阶段 0 没有实质测试，正常）</span>
+</span><span id="__span-43-11"><a id="__codelineno-43-11" name="__codelineno-43-11" href="#__codelineno-43-11"></a>
+</span><span id="__span-43-12"><a id="__codelineno-43-12" name="__codelineno-43-12" href="#__codelineno-43-12"></a><span class="c1"># 4. Lint 通过</span>
+</span><span id="__span-43-13"><a id="__codelineno-43-13" name="__codelineno-43-13" href="#__codelineno-43-13"></a>ruff<span class="w"> </span>check<span class="w"> </span>src<span class="w"> </span>tests
+</span><span id="__span-43-14"><a id="__codelineno-43-14" name="__codelineno-43-14" href="#__codelineno-43-14"></a><span class="c1"># 输出: All checks passed!</span>
+</span><span id="__span-43-15"><a id="__codelineno-43-15" name="__codelineno-43-15" href="#__codelineno-43-15"></a>
+</span><span id="__span-43-16"><a id="__codelineno-43-16" name="__codelineno-43-16" href="#__codelineno-43-16"></a><span class="c1"># 5. 文档可构建</span>
+</span><span id="__span-43-17"><a id="__codelineno-43-17" name="__codelineno-43-17" href="#__codelineno-43-17"></a>mkdocs<span class="w"> </span>build
+</span><span id="__span-43-18"><a id="__codelineno-43-18" name="__codelineno-43-18" href="#__codelineno-43-18"></a><span class="c1"># 输出: Documentation built in X seconds</span>
+</span><span id="__span-43-19"><a id="__codelineno-43-19" name="__codelineno-43-19" href="#__codelineno-43-19"></a>
+</span><span id="__span-43-20"><a id="__codelineno-43-20" name="__codelineno-43-20" href="#__codelineno-43-20"></a><span class="c1"># 6. 文档可预览</span>
+</span><span id="__span-43-21"><a id="__codelineno-43-21" name="__codelineno-43-21" href="#__codelineno-43-21"></a>mkdocs<span class="w"> </span>serve
+</span><span id="__span-43-22"><a id="__codelineno-43-22" name="__codelineno-43-22" href="#__codelineno-43-22"></a><span class="c1"># 浏览器打开 http://127.0.0.1:8000</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">阶段 0 的 <code>pytest</code> 输出</p>
+<p><code>no tests ran, no tests collected</code> 不是错误——阶段 0 没写测试。阶段 1 起 <code>tests/</code> 才有内容。</p>
+</div>
+<hr />
+<h2 id="_31">常见问题<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>为什么不用 Poetry / PDM</summary>
+<p>Poetry 和 PDM 都是好工具，但对教学项目：</p>
+<ul>
+<li>Poetry 的 <code>poetry.lock</code> 会进仓库，增加噪音</li>
+<li>PDM 的 PEP 621 支持还在完善</li>
+<li>hatchling 是 PyPA 官方推荐、配置最简、<code>pip install -e .</code> 开箱即用</li>
+</ul>
+<p>选 hatchling 不是因为它最好，是因为它**最简单且够用**。</p>
+</details>
+<details class="question">
+<summary>为什么不用 Sphinx 而用 MkDocs</summary>
+<ul>
+<li>Sphinx 是 Python 文档事实标准，但用 reStructuredText，语法门槛高</li>
+<li>MkDocs 用 Markdown，门槛低，和 README/issue/PR 的 Markdown 一致</li>
+<li>Material 主题开箱即用，比 Sphinx 主题调参省心</li>
+<li>真实 LangGraph 也用 MkDocs Material（<code>langchain-ai/langgraph</code> 的 <code>docs/</code>）</li>
+</ul>
+</details>
+<details class="question">
+<summary>为什么 <code>requires-python = "&gt;=3.10"</code> 而不是 <code>&gt;=3.8</code></summary>
+<p>3.10 引入了：</p>
+<ul>
+<li><code>match</code> 语句（阶段 9 用）</li>
+<li><code>X | Y</code> 类型联合（引擎代码到处用 <code>str | None</code>）</li>
+<li>参数化泛型 <code>dict[str, int]</code>（不用 <code>Dict[str, int]</code>）</li>
+</ul>
+<p>3.8/3.9 不支持这些，强行支持要写一堆 <code>from __future__ import annotations</code> + <code>Optional[X]</code>，代码丑。</p>
+</details>
+<details class="question">
+<summary>为什么 CI 跑 4 个 Python 版本</summary>
+<p><code>requires-python = "&gt;=3.10"</code> 承诺支持 3.10/3.11/3.12/3.13。CI 矩阵确保每个版本都能装、能跑测试。教学项目用户可能用任意版本，不能假设大家都用 3.12。</p>
+</details>
+<details class="question">
+<summary><code>py.typed</code> 是什么</summary>
+<p>PEP 561 规定：一个包要在根目录放一个名为 <code>py.typed</code> 的空文件，标记"本包提供类型信息"。这样 mypy 在别的项目里 import 本包时，会读本包的类型注解做检查。没有这个文件，mypy 会把本包的函数全当成 <code>Any</code>。</p>
+</details>
+<details class="question">
+<summary>为什么 <code>.env.example</code> 进仓库但 <code>.env</code> 不进</summary>
+<p><code>.env</code> 含真实密钥（<code>OPENAI_API_KEY=sk-xxx</code>），泄露了完蛋。<code>.env.example</code> 是样例（<code>OPENAI_API_KEY=your-key-here</code>），给新人看需要配什么变量。<code>.gitignore</code> 里 <code>.env</code> 被忽略，<code>.env.example</code> 用 <code>!.env.example</code> 取反保留。</p>
+</details>
+<details class="question">
+<summary>为什么 <code>mkdocs.yml</code> 里 <code>search.lang</code> 用日语</summary>
+<p>MkDocs Material 的搜索基于 Lunr.js，不内置中文分词。Lunr 的日语分词器按 CJK 字符切分，对中文有奇效（中文没有空格分词，按字符切反而召回率高）。加 <code>en</code> 是为了同时支持英文术语（如 "Pregel"）。</p>
+</details>
+<hr />
+<h2 id="0_1">阶段 0 的产出清单<a class="headerlink" href="#0_1" title="Permanent link">&para;</a></h2>
+<p>阶段 0 完成时，仓库应该有：</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>pyproject.toml</code>（81 行，6 段配置）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>mkdocs.yml</code>（127 行，8 段配置）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>README.md</code>（项目门面）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>LICENSE</code>（MIT）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>.gitignore</code>（74 行，9 段）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>.env.example</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>src/tiny_langgraph/__init__.py</code>（导出公开 API，但阶段 0 还没东西可导）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>src/tiny_langgraph/py.typed</code>（空文件）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>tests/</code> 目录（空，阶段 1 起填充）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>docs/</code> 完整文档站（index、getting_started、principles、stages、api）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>examples/</code> 目录（空，阶段 1 起填充）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>.github/workflows/ci.yml</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>.github/workflows/docs.yml</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>git tag stage-0</code></li>
+</ul>
+<p><strong>没有</strong>：</p>
+<ul>
+<li>引擎代码（<code>graph.py</code> 是空文件或不存在）</li>
+<li>任何测试</li>
+<li>任何示例</li>
+<li>任何依赖（<code>dependencies = []</code>）</li>
+</ul>
+<hr />
+<h2 id="0-1">从阶段 0 到阶段 1 会发生什么<a class="headerlink" href="#0-1" title="Permanent link">&para;</a></h2>
+<p>阶段 1 将：</p>
+<ol>
+<li>创建 <code>src/tiny_langgraph/graph.py</code>，写 <code>Graph</code> + <code>CompiledGraph</code> 两个类（~80 行）</li>
+<li>创建 <code>tests/tiny_langgraph/test_graph.py</code>，写 4 组测试（~160 行）</li>
+<li>创建 <code>examples/stage_1_dag/run.py</code>，3 个示例</li>
+<li>在 <code>__init__.py</code> 导出 <code>Graph</code>、<code>CompiledGraph</code>、<code>START</code>、<code>END</code></li>
+<li>bump <code>pyproject.toml</code> 的 <code>version</code> 到 <code>0.1.0</code></li>
+<li>写 <code>docs/stages/stage_1_dag.md</code></li>
+<li><code>git tag stage-1</code></li>
+</ol>
+<p>diff 规模：约 +300 行代码 + 测试 + 文档。</p>
+<hr />
+<h2 id="_32">设计哲学总结<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<p>阶段 0 看似没写引擎，但它定下了**整个项目的气质**：</p>
+<ul>
+<li><strong>简洁</strong>：hatchling 而非 poetry，MkDocs 而非 Sphinx，标准库而非 pydantic</li>
+<li><strong>可对照</strong>：每个文件都能在真实 LangGraph 里找到对应</li>
+<li><strong>可演进</strong>：src 布局 + 测试镜像 + 文档导航，加 9 个阶段不乱</li>
+<li><strong>可验证</strong>：CI 矩阵 + ruff + mypy + pytest，每次 push 自动检查</li>
+<li><strong>可读</strong>：Material 主题 + mermaid + admonition + 中文，文档像书不像 README</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">一句话总结阶段 0</p>
+<p><strong>先把工地搭好，再开始砌墙。</strong> 后续 9 个阶段都是在这套骨架上机械叠加——加一个文件、加一组测试、加一篇文档、bump 一个版本号、打一个 tag。</p>
+</div>
+<hr />
+<h2 id="_33">下一阶段<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h2>
+<p>👉 <a href="../stage_1_dag/">阶段 1：最小 DAG 执行器</a> —— 从空文件开始写第一个能跑的图引擎：<code>Graph</code> + <code>CompiledGraph</code>，无状态函数链，线性执行。</p>
 
 
 
